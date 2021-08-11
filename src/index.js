@@ -5,10 +5,14 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
 
+import { AuthProviderWrapper } from './context/auth.context'; // <== IMPORT
+
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <App />
+      <AuthProviderWrapper>      {/*  <== ADD  */}
+        <App />
+      </AuthProviderWrapper>     {/*  <== ADD  */}
     </Router>
   </React.StrictMode>,
   document.getElementById("root")
