@@ -6,8 +6,11 @@ import ProjectListPage from "./pages/ProjectListPage";
 import ProjectDetailsPage from "./pages/ProjectDetailsPage";
 import EditProjectPage from "./pages/EditProjectPage";
 import SignupPage from './pages/auth/SignupPage';
-
 import LoginPage from './pages/auth/LoginPage';
+
+import PrivateRoute from './components/PrivateRoute';    // <== IMPORT
+import AnonRoute from './components/AnonRoute';        // <== IMPORT
+
 
 function App() {
   return (
@@ -16,11 +19,15 @@ function App() {
 
       <Switch>      
         <Route exact path="/" component={HomePage} />
-        <Route exact path="/projects" component={ProjectListPage} />
-        <Route exact path="/projects/:id" component={ProjectDetailsPage} />
-        <Route exact path="/projects/edit/:id" component={EditProjectPage} />
-        <Route exact path="/signup" component={SignupPage} />
-        <Route exact path="/login" component={LoginPage} />
+
+        {/* 👇 UPDATE THE EXISTING ROUTES 👇  */}
+        <PrivateRoute exact path="/projects" component={ProjectListPage} />
+        <PrivateRoute exact path="/projects/:id" component={ProjectDetailsPage} />
+        <PrivateRoute exact path="/projects/edit/:id" component={EditProjectPage} />
+        
+        <AnonRoute exact path="/signup" component={SignupPage} />
+        <AnonRoute exact path="/login" component={LoginPage} />
+        
       </Switch>
     </div>
   );
