@@ -1,7 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
-
-const API_URL = "http://localhost:5000";
+import apiService from "../services/api.service";
 
 function AddProject(props) {
   const [title, setTitle] = useState("");
@@ -10,19 +8,10 @@ function AddProject(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const requestBody = { title, description };
+    const newProject = { title, description };
 
-    // Get the token from the localStorage
-    const storedToken = localStorage.getItem('authToken');
-
-    // Send the token through the request "Authorization" Headers
-    axios
-      .post(
-        `${API_URL}/api/projects`,
-        requestBody,
-        { headers: { Authorization: `Bearer ${storedToken}` } }
-      )
-      .then((response) => {
+    apiService.createProject(newProject)
+      .then((data) => {
         // Reset the state
         setTitle("");
         setDescription("");

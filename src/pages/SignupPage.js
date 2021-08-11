@@ -1,9 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import axios from 'axios';
-
-const API_URL = "http://localhost:5000";
-
+import authService from "../services/auth.service";
 
 function SignupPage(props) {
   const [email, setEmail] = useState("");
@@ -19,14 +16,12 @@ function SignupPage(props) {
   
   const handleSignupSubmit = (e) => {
     e.preventDefault();
-    // Create an object representing the request body
-    const requestBody = { email, password, name };
 
     // Make an axios request to the API
     // If POST request is successful redirect to login page
     // If the request resolves with an error, set the error message in the state
-    axios.post(`${API_URL}/auth/signup`, requestBody)
-      .then((response) => props.history.push('/login'))
+    authService.signup({email, password, name})
+      .then((data) => props.history.push('/login'))
       .catch((error) => {
         const errorDescription = error.response.data.message;
         setErrorMessage(errorDescription);

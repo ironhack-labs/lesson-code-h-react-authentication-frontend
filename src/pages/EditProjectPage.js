@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
-
-const API_URL = "http://localhost:5000";
+import apiService from "../services/api.service";
 
 function EditProjectPage(props) {
   const [title, setTitle] = useState("");
@@ -10,17 +8,11 @@ function EditProjectPage(props) {
   
   
   useEffect(() => {
-    // Get the token from the localStorage
-    const storedToken = localStorage.getItem('authToken');
     
     // Send the token through the request "Authorization" Headers 
-    axios
-      .get(
-        `${API_URL}/api/projects/${projectId}`,
-        { headers: { Authorization: `Bearer ${storedToken}` } }    
-      )
-      .then((response) => {
-        const oneProject = response.data;
+    apiService.getProjectById(projectId)
+      .then((data) => {
+        const oneProject = data;
         setTitle(oneProject.title);
         setDescription(oneProject.description);
       })
@@ -31,34 +23,17 @@ function EditProjectPage(props) {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    const requestBody = { title, description };
+    const updatedProject = { title, description };
   
-    // Get the token from the localStorage
-    const storedToken = localStorage.getItem('authToken');  
-
-    // Send the token through the request "Authorization" Headers   
-    axios
-      .put(
-        `${API_URL}/api/projects/${projectId}`,
-        requestBody,
-        { headers: { Authorization: `Bearer ${storedToken}` } }              
-      )
-      .then((response) => {
+    apiService.updateProjectById(projectId, updatedProject)
+      .then((data) => {
         props.history.push(`/projects/${projectId}`)
       });
   };
   
   
-  const deleteProject = () => {
-    // Get the token from the localStorage
-    const storedToken = localStorage.getItem('authToken');      
-    
-    // Send the token through the request "Authorization" Headers   
-    axios
-      .delete(
-        `${API_URL}/api/projects/${projectId}`,
-        { headers: { Authorization: `Bearer ${storedToken}` } }           
-      )
+  const deleteProject = () => {  
+    apiService.deleteProjectById(projectId)
       .then(() => props.history.push("/projects"))
       .catch((err) => console.log(err));
   };  

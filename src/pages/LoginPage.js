@@ -1,9 +1,7 @@
 import { useState, useContext } from "react";
-import axios from 'axios';
 import { Link } from "react-router-dom";
 import { AuthContext } from './../context/auth.context';
-
-const API_URL = "http://localhost:5000";
+import authService from "../services/auth.service";
 
 
 function LoginPage(props) {
@@ -20,14 +18,12 @@ function LoginPage(props) {
   
   const handleLoginSubmit = (e) => {
     e.preventDefault();
-    const requestBody = { email, password };
 
-    axios.post(`${API_URL}/auth/login`, requestBody)
-      .then((response) => {
-        console.log('JWT token', response.data.authToken);
+    authService.login({email, password})
+      .then((authToken) => {
+        console.log('JWT token', authToken);
         
-        const token = response.data.authToken;
-        logInUser(token);
+        logInUser(authToken);
         props.history.push('/');
       })
       .catch((error) => {
