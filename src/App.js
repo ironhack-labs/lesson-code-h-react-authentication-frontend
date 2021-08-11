@@ -6,7 +6,7 @@ import ProjectListPage from "./pages/ProjectListPage";
 import ProjectDetailsPage from "./pages/ProjectDetailsPage";
 import EditProjectPage from "./pages/EditProjectPage";
 
-import SignupPage from './pages/auth/SignupPage';  // <== IMPORT
+import SignupPage from './pages/SignupPage';  // <== IMPORT
 
 function App() {
   return (
