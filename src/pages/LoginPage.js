@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useContext } from "react";         // <== IMPORT useContext HOOK
 import axios from 'axios';
 import { Link } from "react-router-dom";
+import { AuthContext } from './../context/auth.context';  // <== IMPORT
 
 const API_URL = "http://localhost:5000";
 
@@ -9,6 +10,9 @@ function LoginPage(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
+
+  const { logInUser } = useContext(AuthContext);                //  <== ADD
+
 
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
@@ -20,7 +24,11 @@ function LoginPage(props) {
 
     axios.post(`${API_URL}/auth/login`, requestBody)
       .then((response) => {
-        console.log('JWT token', response.data.authToken );
+        console.log('JWT token', response.data.authToken);
+        
+        const token = response.data.authToken;               // <== ADD
+        logInUser(token);                                   // <== ADD
+        props.history.push('/');                            // <== ADD        
       })
       .catch((error) => {
       	const errorDescription = error.response.data.message;
