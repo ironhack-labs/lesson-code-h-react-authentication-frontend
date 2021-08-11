@@ -5,7 +5,7 @@ import { AuthContext } from './../context/auth.context';
 function Navbar() {
   // Subscribe to the AuthContext to gain access to
   // the values from AuthContext.Provider `value` prop
-  const { isLoggedIn, user, logOutUser } = useContext(AuthContext);   // <== UPDATE
+  const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
 
   return (
     <nav>
@@ -18,7 +18,7 @@ function Navbar() {
             <Link to="/projects">
               <button>Projects</button>
             </Link>
-            <button onClick={logOutUser}>Logout</button>    {/*  <== UPDATE   */}
+            <button onClick={logOutUser}>Logout</button>
             <span>{user.name}</span>
           </>)
         : <Link to="/login"> <button>Login</button> </Link>
