@@ -36,6 +36,10 @@ function AuthProviderWrapper(props) {
       });
       
     }
+
+    // If the token is not available
+    setIsLoading(false);
+
   }
   
 

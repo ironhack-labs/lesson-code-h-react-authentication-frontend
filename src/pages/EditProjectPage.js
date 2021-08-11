@@ -8,9 +8,17 @@ function EditProjectPage(props) {
   const [description, setDescription] = useState("");
   const projectId = props.match.params.id;
   
+  
   useEffect(() => {
+    // Get the token from the localStorage
+    const storedToken = localStorage.getItem('authToken');
+    
+    // Send the token through the request "Authorization" Headers 
     axios
-      .get(`${API_URL}/api/projects/${projectId}`)
+      .get(
+        `${API_URL}/api/projects/${projectId}`,
+        { headers: { Authorization: `Bearer ${storedToken}` } }    
+      )
       .then((response) => {
         const oneProject = response.data;
         setTitle(oneProject.title);
@@ -24,9 +32,17 @@ function EditProjectPage(props) {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const requestBody = { title, description };
+  
+    // Get the token from the localStorage
+    const storedToken = localStorage.getItem('authToken');  
 
+    // Send the token through the request "Authorization" Headers   
     axios
-      .put(`${API_URL}/api/projects/${projectId}`, requestBody)
+      .put(
+        `${API_URL}/api/projects/${projectId}`,
+        requestBody,
+        { headers: { Authorization: `Bearer ${storedToken}` } }              
+      )
       .then((response) => {
         props.history.push(`/projects/${projectId}`)
       });
@@ -34,12 +50,16 @@ function EditProjectPage(props) {
   
   
   const deleteProject = () => {
+    // Get the token from the localStorage
+    const storedToken = localStorage.getItem('authToken');      
     
+    // Send the token through the request "Authorization" Headers   
     axios
-      .delete(`${API_URL}/api/projects/${projectId}`)
-      .then(() => {
-        props.history.push("/projects");
-      })
+      .delete(
+        `${API_URL}/api/projects/${projectId}`,
+        { headers: { Authorization: `Bearer ${storedToken}` } }           
+      )
+      .then(() => props.history.push("/projects"))
       .catch((err) => console.log(err));
   };  
 
