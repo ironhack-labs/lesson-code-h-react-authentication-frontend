@@ -1,22 +1,18 @@
 import { Link } from "react-router-dom";
-import { useContext } from 'react';                       // <== IMPORT 
-import { AuthContext } from './../context/auth.context';  // <== IMPORT
+import { useContext } from 'react';
+import { AuthContext } from './../context/auth.context';
 
 function Navbar() {
   // Subscribe to the AuthContext to gain access to
   // the values from AuthContext.Provider `value` prop
-  const { isLoggedIn, user } = useContext(AuthContext);   // <== ADD
+  const { isLoggedIn, user } = useContext(AuthContext);
 
-  
-  // 👇 Update the rendering logic to display different content 
-  //  depending on the user being logged in or not
   return (
     <nav>
       <Link to="/">
         <button>Home</button>
       </Link>
 
-      {/*  👇  UPDATE  👇   */}
       {isLoggedIn
         ? (<>
             <Link to="/projects">
