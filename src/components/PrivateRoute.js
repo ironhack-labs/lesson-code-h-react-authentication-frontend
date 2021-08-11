@@ -3,7 +3,7 @@ import { AuthContext } from './../context/auth.context';
 import { Redirect, Route } from 'react-router-dom';
 
 function PrivateRoute(props) {
-  // Destructure the props sent to the wrapper component
+  // Destructure the props
   const { to, exact, component: Component, ...restProps } = props;
   
   const { isLoggedIn, isLoading } = useContext(AuthContext);
