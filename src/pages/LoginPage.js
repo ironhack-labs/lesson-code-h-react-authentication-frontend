@@ -1,7 +1,7 @@
-import { useState, useContext } from "react";         // <== IMPORT useContext HOOK
+import { useState, useContext } from "react";
 import axios from 'axios';
 import { Link } from "react-router-dom";
-import { AuthContext } from './../context/auth.context';  // <== IMPORT
+import { AuthContext } from './../context/auth.context';
 
 const API_URL = "http://localhost:5000";
 
@@ -11,7 +11,7 @@ function LoginPage(props) {
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
 
-  const { logInUser } = useContext(AuthContext);                //  <== ADD
+  const { logInUser } = useContext(AuthContext);
 
 
   const handleEmail = (e) => setEmail(e.target.value);
@@ -26,9 +26,9 @@ function LoginPage(props) {
       .then((response) => {
         console.log('JWT token', response.data.authToken);
         
-        const token = response.data.authToken;               // <== ADD
-        logInUser(token);                                   // <== ADD
-        props.history.push('/');                            // <== ADD        
+        const token = response.data.authToken;
+        logInUser(token);
+        props.history.push('/');
       })
       .catch((error) => {
       	const errorDescription = error.response.data.message;
