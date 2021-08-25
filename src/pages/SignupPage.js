@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import axios from 'axios';
+import axios from "axios";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "http://localhost:5005";
 
 
 function SignupPage(props) {
@@ -26,7 +26,7 @@ function SignupPage(props) {
     // If POST request is successful redirect to login page
     // If the request resolves with an error, set the error message in the state
     axios.post(`${API_URL}/auth/signup`, requestBody)
-      .then((response) => props.history.push('/login'))
+      .then((response) => props.history.push("/login"))
       .catch((error) => {
         const errorDescription = error.response.data.message;
         setErrorMessage(errorDescription);

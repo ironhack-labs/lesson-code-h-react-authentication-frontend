@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { useContext } from 'react';
-import { AuthContext } from './../context/auth.context';
+import { useContext } from "react";                       // <== IMPORT 
+import { AuthContext } from "./../context/auth.context";  // <== IMPORT
 
 function Navbar() {
   // Subscribe to the AuthContext to gain access to
@@ -21,7 +21,11 @@ function Navbar() {
             <button onClick={logOutUser}>Logout</button>
             <span>{user.name}</span>
           </>)
-        : <Link to="/login"> <button>Login</button> </Link>
+        : 
+        (<>
+          <Link to="/signup"> <button>Signup</button> </Link>
+          <Link to="/login"> <button>Login</button> </Link>
+        </>)
       }
     </nav>
   );
