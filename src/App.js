@@ -5,8 +5,9 @@ import HomePage from "./pages/HomePage";
 import ProjectListPage from "./pages/ProjectListPage";
 import ProjectDetailsPage from "./pages/ProjectDetailsPage";
 import EditProjectPage from "./pages/EditProjectPage";
-import SignupPage from './pages/SignupPage';
-import LoginPage from './pages/LoginPage';  // <== IMPORT
+import SignupPage from "./pages/SignupPage";
+import LoginPage from "./pages/LoginPage";
+
 
 function App() {
   return (
@@ -19,8 +20,6 @@ function App() {
         <Route exact path="/projects/:id" component={ProjectDetailsPage} />
         <Route exact path="/projects/edit/:id" component={EditProjectPage} />
         <Route exact path="/signup" component={SignupPage} />
-        
-        {/*  👇  ADD  👇  */}
         <Route exact path="/login" component={LoginPage} />
       </Switch>
     </div>
