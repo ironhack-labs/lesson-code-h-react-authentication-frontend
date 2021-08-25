@@ -33,14 +33,10 @@ function AuthProviderWrapper(props) {
         setIsLoggedIn(false);
         setUser(null);
         setIsLoading(false);
-<<<<<<< HEAD
+
       });
+
     } else {
-=======
-      }); 
-    } 
-    else {
->>>>>>> 4f8104f45079a75c2d7af62bfa9a37d465a5e9b1
       // If the token is not available
       setIsLoading(false);
     }
