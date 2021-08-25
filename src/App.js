@@ -5,9 +5,14 @@ import HomePage from "./pages/HomePage";
 import ProjectListPage from "./pages/ProjectListPage";
 import ProjectDetailsPage from "./pages/ProjectDetailsPage";
 import EditProjectPage from "./pages/EditProjectPage";
+<<<<<<< HEAD
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 
+=======
+import SignupPage from './pages/SignupPage';
+import LoginPage from './pages/LoginPage';
+>>>>>>> 4f8104f45079a75c2d7af62bfa9a37d465a5e9b1
 
 function App() {
   return (
