@@ -11,10 +11,6 @@ import LoginPage from "./pages/LoginPage";
 import PrivateRoute from "./components/PrivateRoute";    // <== IMPORT
 import AnonRoute from "./components/AnonRoute";        // <== IMPORT
 
-import PrivateRoute from "./components/PrivateRoute";
-import AnonRoute from "./components/AnonRoute";
-
-
 function App() {
   return (
     <div className="App">

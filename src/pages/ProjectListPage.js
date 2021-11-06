@@ -11,7 +11,7 @@ function ProjectListPage() {
 
   const getAllProjects = () => {
     // Get the token from the localStorage
-    const storedToken = localStorage.getItem('authToken');
+    const storedToken = localStorage.getItem("authToken");
 
     // Send the token through the request "Authorization" Headers
     axios
