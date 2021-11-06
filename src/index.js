@@ -10,9 +10,9 @@ import { AuthProviderWrapper } from "./context/auth.context"; // <== IMPORT
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <AuthProviderWrapper>      {/*  <== ADD  */}
+      <AuthProviderWrapper>
         <App />
-      </AuthProviderWrapper>     {/*  <== ADD  */}
+      </AuthProviderWrapper>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")
