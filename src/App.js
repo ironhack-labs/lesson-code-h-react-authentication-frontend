@@ -11,6 +11,9 @@ import LoginPage from "./pages/LoginPage";
 import PrivateRoute from "./components/PrivateRoute";    // <== IMPORT
 import AnonRoute from "./components/AnonRoute";        // <== IMPORT
 
+import PrivateRoute from "./components/PrivateRoute";
+import AnonRoute from "./components/AnonRoute";
+
 
 function App() {
   return (
@@ -19,7 +22,7 @@ function App() {
 
       <Switch>      
         <Route exact path="/" component={HomePage} />
-        
+
         {/* 👇 UPDATE THE EXISTING ROUTES 👇  */}
         <PrivateRoute exact path="/projects" component={ProjectListPage} />
         <PrivateRoute exact path="/projects/:id" component={ProjectDetailsPage} />
@@ -27,6 +30,7 @@ function App() {
         
         <AnonRoute exact path="/signup" component={SignupPage} />
         <AnonRoute exact path="/login" component={LoginPage} />
+
       </Switch>
     </div>
   );
