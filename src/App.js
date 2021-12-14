@@ -1,5 +1,5 @@
 import "./App.css";
-import { Switch, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import ProjectListPage from "./pages/ProjectListPage";
@@ -8,26 +8,36 @@ import EditProjectPage from "./pages/EditProjectPage";
 
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
-import PrivateRoute from "./components/PrivateRoute";    // <== IMPORT
-import AnonRoute from "./components/AnonRoute";        // <== IMPORT
+import IsPrivate from "./components/IsPrivate";
+import IsAnon from "./components/IsAnon";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
 
-      <Switch>      
-        <Route exact path="/" component={HomePage} />
+      <Routes>      
+        <Route path="/" element={<HomePage />} />
 
-        {/* 👇 UPDATE THE EXISTING ROUTES 👇  */}
-        <PrivateRoute exact path="/projects" component={ProjectListPage} />
-        <PrivateRoute exact path="/projects/:id" component={ProjectDetailsPage} />
-        <PrivateRoute exact path="/projects/edit/:id" component={EditProjectPage} />
+        <Route
+          path="/projects"
+          element={ <IsPrivate> <ProjectListPage /> </IsPrivate> } 
+        />
+
+        <Route
+          path="/projects/:id"
+          element={ <IsPrivate> <ProjectDetailsPage /> </IsPrivate> }
+        />
+
+        <Route
+          path="/projects/edit/:id"
+          element={ <IsPrivate> <EditProjectPage /> </IsPrivate> } 
+        />
         
-        <AnonRoute exact path="/signup" component={SignupPage} />
-        <AnonRoute exact path="/login" component={LoginPage} />
+        <Route path="/signup" element={<IsAnon> <SignupPage /> </IsAnon>} />
+        <Route path="/login" element={<IsAnon> <LoginPage /> </IsAnon>} />
 
-      </Switch>
+      </Routes>
     </div>
   );
 }
