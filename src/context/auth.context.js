@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+
 const API_URL = "http://localhost:5005";
 
 const AuthContext = React.createContext();
@@ -9,8 +10,11 @@ function AuthProviderWrapper(props) {
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState(null);
   
+  const storeToken = (token) => {
+    localStorage.setItem("authToken", token);
+  }  
     
-  const verifyStoredToken = () => { 
+  const authenticateUser = () => { 
     // Get the stored token from the localStorage
     const storedToken = localStorage.getItem("authToken");
     
@@ -24,53 +28,47 @@ function AuthProviderWrapper(props) {
       .then((response) => {
         // If the server verifies that JWT token is valid  ✅
         const user = response.data;
-        setUser(user);
+       // Update state variables        
         setIsLoggedIn(true);
         setIsLoading(false);
+        setUser(user);
       })
       .catch((error) => {
         // If the server sends an error response (invalid token) ❌
+        // Update state variables        
         setIsLoggedIn(false);
-        setUser(null);
         setIsLoading(false);
+        setUser(null);
       });
 
     } else {
       // If the token is not available
+      setIsLoggedIn(false);
       setIsLoading(false);
+      setUser(null);
     }
   }
-  
 
-  const logInUser = (token) => {
-    localStorage.setItem("authToken", token);
-    verifyStoredToken();
-    
-    /* 
-      After saving the token in the localStorage we call the
-      function `verifyStoredToken` which sends a new request to the
-      server to verify the token. Upon receiving the response the function 
-      `verifyStoredToken` updates the state variables `isLoggedIn`, `user` and `isLoading`
-    */  
-  }
-
-  const logOutUser = () => {
+  const removeToken = () => {
     // Upon logout, remove the token from the localStorage
     localStorage.removeItem("authToken");
-    
-    // Update the state variables
-    setIsLoggedIn(false);
-    setUser(null);
+  }    
+  
+  const logOutUser = () => {
+    removeToken();
+    authenticateUser();
   }    
 
 
   useEffect(() => {
-    verifyStoredToken();
+    // Run the function after the initial render,
+    // after the components in the App render for the first time.
+    authenticateUser();
   }, []);
 
   return (
     <AuthContext.Provider
-      value={{ isLoggedIn, isLoading, user, logInUser, logOutUser }}
+      value={{ isLoggedIn, isLoading, user, storeToken, authenticateUser, logOutUser }}
     >
       {props.children}
     </AuthContext.Provider>

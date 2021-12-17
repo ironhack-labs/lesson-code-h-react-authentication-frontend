@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate, useParams } from 'react-router-dom';
 
 const API_URL = "http://localhost:5005";
 
 function EditProjectPage(props) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const projectId = props.match.params.id;
+
+  const navigate =  useNavigate();
+  const { projectId } = useParams();
   
   
   useEffect(() => {
@@ -44,7 +47,7 @@ function EditProjectPage(props) {
         { headers: { Authorization: `Bearer ${storedToken}` } }              
       )
       .then((response) => {
-        props.history.push(`/projects/${projectId}`)
+        navigate(`/projects/${projectId}`)
       });
   };
   

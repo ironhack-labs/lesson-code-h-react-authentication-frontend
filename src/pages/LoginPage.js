@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "./../context/auth.context";
 
 const API_URL = "http://localhost:5005";
@@ -11,8 +11,9 @@ function LoginPage(props) {
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
 
-  const { logInUser } = useContext(AuthContext);
+  const navigate = useNavigate();
 
+  const { storeToken, authenticateUser } = useContext(AuthContext);
 
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
@@ -26,9 +27,9 @@ function LoginPage(props) {
       .then((response) => {
         console.log("JWT token", response.data.authToken);
         
-        const token = response.data.authToken;
-        logInUser(token);
-        props.history.push("/");
+        storeToken(response.data.authToken);
+        authenticateUser();
+        navigate("/");
       })
       .catch((error) => {
       	const errorDescription = error.response.data.message;
@@ -42,7 +43,7 @@ function LoginPage(props) {
 
       <form onSubmit={handleLoginSubmit}>
         <label>Email:</label>
-        <input type="text" name="email" value={email} onChange={handleEmail} />
+        <input type="email" name="email" value={email} onChange={handleEmail} />
 
         <label>Password:</label>
         <input type="password" name="password" value={password} onChange={handlePassword} />

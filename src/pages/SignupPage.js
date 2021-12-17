@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const API_URL = "http://localhost:5005";
@@ -10,6 +10,8 @@ function SignupPage(props) {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
+
+  const navigate = useNavigate();
 
   
   const handleEmail = (e) => setEmail(e.target.value);
@@ -26,7 +28,9 @@ function SignupPage(props) {
     // If POST request is successful redirect to login page
     // If the request resolves with an error, set the error message in the state
     axios.post(`${API_URL}/auth/signup`, requestBody)
-      .then((response) => props.history.push("/login"))
+      .then((response) => {
+        navigate("/login");
+      })
       .catch((error) => {
         const errorDescription = error.response.data.message;
         setErrorMessage(errorDescription);
@@ -40,7 +44,7 @@ function SignupPage(props) {
 
       <form onSubmit={handleSignupSubmit}>
         <label>Email:</label>
-        <input type="text" name="email" value={email} onChange={handleEmail} />
+        <input type="email" name="email" value={email} onChange={handleEmail} />
 
         <label>Password:</label>
         <input type="password" name="password" value={password} onChange={handlePassword} />
