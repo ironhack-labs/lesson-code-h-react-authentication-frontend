@@ -25,12 +25,12 @@ function App() {
         />
 
         <Route
-          path="/projects/:id"
+          path="/projects/:projectId"
           element={ <IsPrivate> <ProjectDetailsPage /> </IsPrivate> }
         />
 
         <Route
-          path="/projects/edit/:id"
+          path="/projects/edit/:projectId"
           element={ <IsPrivate> <EditProjectPage /> </IsPrivate> } 
         />
         
