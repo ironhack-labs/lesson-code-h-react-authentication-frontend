@@ -62,7 +62,7 @@ function EditProjectPage(props) {
         `${API_URL}/api/projects/${projectId}`,
         { headers: { Authorization: `Bearer ${storedToken}` } }           
       )
-      .then(() => props.history.push("/projects"))
+      .then(() => navigate("/projects"))
       .catch((err) => console.log(err));
   };  
 
