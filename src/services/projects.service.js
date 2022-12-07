@@ -20,22 +20,22 @@ class ProjectsService {
   }
 
   // POST /api/projects
-  createOne = (requestBody) => {
+  createProject = (requestBody) => {
     return this.api.post('/api/projects', requestBody);
   }
 
   // GET /api/projects
-  getAll = () => {
+  getAllProjects = () => {
     return this.api.get('/api/projects');
   }
 
   // GET /api/projects/:id
-  getOne = (id) => {
+  getProject = (id) => {
     return this.api.get(`/api/projects/${id}`);
   }
 
   // PUT /api/projects/:id
-  updateOne = (id, requestBody) => {
+  updateProject = (id, requestBody) => {
     return this.api.put(`/api/projects/${id}`, requestBody);
   }
 
