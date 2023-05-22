@@ -1,9 +1,9 @@
-import axios from 'axios';
+import axios from "axios";
 
 class ProjectsService {
   constructor() {
     this.api = axios.create({
-      baseURL: process.env.REACT_APP_SERVER_URL || "http://localhost:5005"
+      baseURL: import.meta.env.SERVER_URL || "http://localhost:5005",
     });
 
     // Automatically set JWT token in the headers for every request
@@ -21,30 +21,28 @@ class ProjectsService {
 
   // POST /api/projects
   createProject = (requestBody) => {
-    return this.api.post('/api/projects', requestBody);
-  }
+    return this.api.post("/api/projects", requestBody);
+  };
 
   // GET /api/projects
   getAllProjects = () => {
-    return this.api.get('/api/projects');
-  }
+    return this.api.get("/api/projects");
+  };
 
   // GET /api/projects/:id
   getProject = (id) => {
     return this.api.get(`/api/projects/${id}`);
-  }
+  };
 
   // PUT /api/projects/:id
   updateProject = (id, requestBody) => {
     return this.api.put(`/api/projects/${id}`, requestBody);
-  }
+  };
 
   // DELETE /api/projects/:id
   deleteProject = (id) => {
     return this.api.delete(`/api/projects/${id}`);
-  } 
-
-
+  };
 }
 
 // Create one instance (object) of the service
