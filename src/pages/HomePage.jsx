@@ -1,18 +1,21 @@
+import * as React from "react";
+import { Button, Input } from "@fluentui/react-components";
+
 function HomePage() {
   return (
     <div>
       <div>
-        <button>Non-Fiction</button>
+        <Button>Non-Fiction</Button>
         <div>
-          <button>Fiction</button>
+          <Button>Fiction</Button>
         </div>
         <div>
-          <button>Self-Help</button>
+          <Button>Self-Help</Button>
         </div>
       </div>
       <div>
-        <input placeholder="Add some detail" />
-        <button>Let's Book!</button>
+        <Input placeholder="Add some detail" />
+        <Button>Let's Book!</Button>
       </div>
     </div>
   );
