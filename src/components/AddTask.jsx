@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-const API_URL = process.env.VITE_LIVE_SERVER;
+const API_URL = import.meta.env.VITE_LIVE_SERVER;
 
 function AddTask(props) {
   const [title, setTitle] = useState("");

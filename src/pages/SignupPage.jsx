@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const API_URL = process.env.VITE_LIVE_SERVER;
+const API_URL = import.meta.env.VITE_LIVE_SERVER;
 
 function SignupPage(props) {
   const [email, setEmail] = useState("");
