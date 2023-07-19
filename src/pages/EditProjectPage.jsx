@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 
-const API_URL = process.env.LIVE_SERVER;
+const API_URL = process.env.VITE_LIVE_SERVER;
 
 function EditProjectPage(props) {
   const [title, setTitle] = useState("");

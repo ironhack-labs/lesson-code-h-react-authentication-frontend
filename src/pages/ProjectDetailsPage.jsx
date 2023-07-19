@@ -5,7 +5,7 @@ import AddTask from "../components/AddTask";
 
 import TaskCard from "../components/TaskCard";
 
-const API_URL = process.env.LIVE_SERVER;
+const API_URL = process.env.VITE_LIVE_SERVER;
 
 function ProjectDetailsPage(props) {
   const [project, setProject] = useState(null);
