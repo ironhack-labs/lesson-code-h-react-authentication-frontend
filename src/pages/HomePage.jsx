@@ -1,7 +1,19 @@
 function HomePage() {
   return (
     <div>
-      <h1>Home Page</h1>
+      <div>
+        <button>Non-Fiction</button>
+        <div>
+          <button>Fiction</button>
+        </div>
+        <div>
+          <button>Self-Help</button>
+        </div>
+      </div>
+      <div>
+        <input placeholder="Add some detail" />
+        <button>Let's Book!</button>
+      </div>
     </div>
   );
 }
