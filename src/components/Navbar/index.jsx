@@ -1,3 +1,4 @@
+import { Button } from "@fluentui/react-components";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/auth.context";
@@ -10,16 +11,16 @@ function Navbar() {
   return (
     <nav>
       <Link to="/">
-        <button>Home</button>
+        <Button>Home</Button>
       </Link>
 
       {isLoggedIn && (
         <>
           <Link to="/projects">
-            <button>Projects</button>
+            <Button>Projects</Button>
           </Link>
 
-          <button onClick={logOutUser}>Logout</button>
+          <Button onClick={logOutUser}>Logout</Button>
           <span>{user && user.name}</span>
         </>
       )}
@@ -28,11 +29,11 @@ function Navbar() {
         <>
           <Link to="/signup">
             {" "}
-            <button>Sign Up</button>{" "}
+            <Button>Sign Up</Button>{" "}
           </Link>
           <Link to="/login">
             {" "}
-            <button>Login</button>{" "}
+            <Button>Login</Button>{" "}
           </Link>
         </>
       )}
