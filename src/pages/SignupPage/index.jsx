@@ -1,4 +1,14 @@
-import { useState } from "react";
+import {
+  Button,
+  Input,
+  Toast,
+  Label,
+  Text,
+  Title1,
+  Link as UILink,
+} from "@fluentui/react-components";
+import { useState, useContext } from "react";
+import { AuthContext } from "../../context/auth.context";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -11,6 +21,8 @@ function SignupPage(props) {
   const [errorMessage, setErrorMessage] = useState(undefined);
 
   const navigate = useNavigate();
+
+  const { storeToken, authenticateUser } = useContext(AuthContext);
 
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
@@ -27,7 +39,11 @@ function SignupPage(props) {
     axios
       .post(`${API_URL}/auth/signup`, requestBody)
       .then((response) => {
-        navigate("/login");
+        console.log("JWT token", response.data.authToken);
+
+        storeToken(response.data.authToken);
+        authenticateUser();
+        navigate("/");
       })
       .catch((error) => {
         const errorDescription = error.response.data.message;
@@ -37,30 +53,33 @@ function SignupPage(props) {
 
   return (
     <div className="SignupPage">
-      <h1>Sign Up</h1>
+      <Title1>Create Your Account</Title1>
 
       <form onSubmit={handleSignupSubmit}>
-        <label>Email:</label>
-        <input type="email" name="email" value={email} onChange={handleEmail} />
+        <Label>Email:</Label>
+        <Input type="email" name="email" value={email} onChange={handleEmail} />
 
-        <label>Password:</label>
-        <input
+        <Label>Password:</Label>
+        <Input
           type="password"
           name="password"
           value={password}
           onChange={handlePassword}
         />
 
-        <label>Name:</label>
-        <input type="text" name="name" value={name} onChange={handleName} />
+        <Label>Name:</Label>
+        <Input type="text" name="name" value={name} onChange={handleName} />
 
-        <button type="submit">Sign Up</button>
+        <Button type="submit">Sign Up</Button>
       </form>
 
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
+      {errorMessage && <Toast className="error-message">{errorMessage}</Toast>}
 
-      <p>Already have account?</p>
-      <Link to={"/login"}>Login</Link>
+      <Text>Already have account?</Text>
+
+      <Link to={"/login"}>
+        <UILink>Login here.</UILink>
+      </Link>
     </div>
   );
 }
