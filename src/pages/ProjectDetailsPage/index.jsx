@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
-import AddTask from "../components/AddTask";
+import AddTask from "../../components/AddTask";
 
-import TaskCard from "../components/TaskCard";
+import TaskCard from "../../components/TaskCard";
 
 const API_URL = import.meta.env.VITE_LIVE_SERVER;
 
