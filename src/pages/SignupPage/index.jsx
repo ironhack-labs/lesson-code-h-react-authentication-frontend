@@ -46,7 +46,7 @@ function SignupPage(props) {
 
   return (
     <div className="SignupPage">
-      <Title1>Sign Up</Title1>
+      <Title1>Create Your Account</Title1>
 
       <form onSubmit={handleSignupSubmit}>
         <Label>Email:</Label>
@@ -71,7 +71,7 @@ function SignupPage(props) {
       <Text>Already have account?</Text>
 
       <Link to={"/login"}>
-        <UILink>Login</UILink>
+        <UILink>Login here.</UILink>
       </Link>
     </div>
   );
