@@ -23,8 +23,6 @@ function App() {
       <FluentProvider theme={teamsLightTheme}>
         <Navbar />
 
-        <Button appearance="primary">FLUENT UI FOR STEPHEN</Button>
-
         <Routes>
           <Route path="/" element={<HomePage />} />
 

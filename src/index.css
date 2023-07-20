@@ -1,7 +1,16 @@
-body {
-  margin: 0;
+:root {
+  --background: #b5b0d8;
+  --selected-purple: #857eb9;
+  --logo: #782eff;
 }
 
+body {
+  margin: 0;
+  border: 5px solid red;
+  background-color: var(--background);
+}
+
+/* 
 a {
   list-style: none;
   color: black;
@@ -106,4 +115,4 @@ nav li {
 
 .TaskCard {
   background-color: #dfeef9;
-}
+} */
