@@ -7,7 +7,8 @@ import {
   Title1,
   Link as UILink,
 } from "@fluentui/react-components";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { AuthContext } from "../../context/auth.context";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -20,6 +21,8 @@ function SignupPage(props) {
   const [errorMessage, setErrorMessage] = useState(undefined);
 
   const navigate = useNavigate();
+
+  const { storeToken, authenticateUser } = useContext(AuthContext);
 
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
@@ -36,7 +39,11 @@ function SignupPage(props) {
     axios
       .post(`${API_URL}/auth/signup`, requestBody)
       .then((response) => {
-        navigate("/login");
+        console.log("JWT token", response.data.authToken);
+
+        storeToken(response.data.authToken);
+        authenticateUser();
+        navigate("/");
       })
       .catch((error) => {
         const errorDescription = error.response.data.message;
