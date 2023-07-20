@@ -1,3 +1,12 @@
+import {
+  Button,
+  Input,
+  Toast,
+  Label,
+  Text,
+  Title1,
+  Link as UILink,
+} from "@fluentui/react-components";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -37,30 +46,33 @@ function SignupPage(props) {
 
   return (
     <div className="SignupPage">
-      <h1>Sign Up</h1>
+      <Title1>Sign Up</Title1>
 
       <form onSubmit={handleSignupSubmit}>
-        <label>Email:</label>
-        <input type="email" name="email" value={email} onChange={handleEmail} />
+        <Label>Email:</Label>
+        <Input type="email" name="email" value={email} onChange={handleEmail} />
 
-        <label>Password:</label>
-        <input
+        <Label>Password:</Label>
+        <Input
           type="password"
           name="password"
           value={password}
           onChange={handlePassword}
         />
 
-        <label>Name:</label>
-        <input type="text" name="name" value={name} onChange={handleName} />
+        <Label>Name:</Label>
+        <Input type="text" name="name" value={name} onChange={handleName} />
 
-        <button type="submit">Sign Up</button>
+        <Button type="submit">Sign Up</Button>
       </form>
 
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
+      {errorMessage && <Toast className="error-message">{errorMessage}</Toast>}
 
-      <p>Already have account?</p>
-      <Link to={"/login"}>Login</Link>
+      <Text>Already have account?</Text>
+
+      <Link to={"/login"}>
+        <UILink>Login</UILink>
+      </Link>
     </div>
   );
 }
