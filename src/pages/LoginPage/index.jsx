@@ -68,7 +68,7 @@ function LoginPage(props) {
       <Text>Don't have an account yet?</Text>
       <Link to={"/signup"}>
         {" "}
-        <UILink>Register here.</UILink>
+        <UILink>Register</UILink>
       </Link>
     </div>
   );
