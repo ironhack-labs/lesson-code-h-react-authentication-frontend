@@ -16,6 +16,10 @@ import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import IsPrivate from "./components/IsPrivate";
 import IsAnon from "./components/IsAnon";
+import IsTherapist from "./components/IsTherapist";
+import TherapistLoginPage from "./pages/TherapistLogin";
+import TherapistSignupPage from "./pages/TherapistSignUp";
+import TherapistDashboard from "./pages/TherapistDashboard";
 
 function App() {
   return (
@@ -74,6 +78,34 @@ function App() {
                 {" "}
                 <LoginPage />{" "}
               </IsAnon>
+            }
+          />
+
+          <Route
+            path="/therapist/signup"
+            element={
+              <IsAnon>
+                {" "}
+                <TherapistSignupPage />{" "}
+              </IsAnon>
+            }
+          />
+          <Route
+            path="/therapist/login"
+            element={
+              <IsAnon>
+                {" "}
+                <TherapistLoginPage />{" "}
+              </IsAnon>
+            }
+          />
+          <Route
+            path="/therapist/dashboard"
+            element={
+              <IsTherapist>
+                {" "}
+                <TherapistDashboard />{" "}
+              </IsTherapist>
             }
           />
         </Routes>

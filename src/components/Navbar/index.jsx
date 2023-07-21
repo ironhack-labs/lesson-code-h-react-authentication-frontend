@@ -35,6 +35,13 @@ function Navbar() {
             {" "}
             <Button>Login</Button>{" "}
           </Link>
+          <Link to="/therapist/signup">
+            <Button>Sign Up Therapist</Button>
+          </Link>
+          <Link to="therapist/login">
+            {" "}
+            <Button>TherapistLogin</Button>{" "}
+          </Link>
         </>
       )}
     </nav>
