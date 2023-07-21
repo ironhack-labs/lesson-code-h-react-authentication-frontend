@@ -64,6 +64,16 @@ function App() {
               </IsTherapist>
             }
           />
+
+          {/* <Routes
+            path="/welcome"
+            element={
+              <IsAnon>
+                {" "}
+                <Welcome />{" "}
+              </IsAnon>
+            }
+          /> */}
         </Routes>
       </FluentProvider>
     </div>

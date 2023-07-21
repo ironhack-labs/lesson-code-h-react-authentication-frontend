@@ -1,4 +1,6 @@
 import { useState } from "react";
+import "./TherapistEditProfile.css";
+import "../../App.css";
 
 function TherapistEditProfile() {
   return (
@@ -6,31 +8,56 @@ function TherapistEditProfile() {
       <Title1>Edit Your Account Details</Title1>
 
       <form>
-        <Label>Email:</Label>
-        <Input />
+        <div>
+          {" "}
+          <Label>Email:</Label>
+          <Input />
+        </div>
 
-        <Label>Name:</Label>
-        <Input />
+        <div>
+          <Label>Name:</Label>
+          <Input />
+        </div>
 
-        <Label>Location:</Label>
-        <Input />
+        <div>
+          {" "}
+          <Label>Location:</Label>
+          <Input />
+        </div>
 
-        <Label>Price per session:</Label>
-        <Input />
+        <div>
+          {" "}
+          <Label>Price per session:</Label>
+          <Input />
+        </div>
 
-        <Label>Location:</Label>
-        <Input />
+        <div>
+          {" "}
+          <Label>Location:</Label>
+          <Input />
+        </div>
 
-        <Label>Languages Spoken:</Label>
-        <Input />
+        <div>
+          {" "}
+          <Label>Languages Spoken:</Label>
+          <Input />
+        </div>
 
-        <Label>Availability:</Label>
-        <Input />
+        <div>
+          {" "}
+          <Label>Availability:</Label>
+          <Input />
+        </div>
 
-        <Label>Approach:</Label>
-        <Input />
+        <div>
+          {" "}
+          <Label>Approach:</Label>
+          <Input />
+        </div>
 
-        <Button>Save Changes</Button>
+        <div>
+          <Button>Save Changes</Button>
+        </div>
       </form>
     </div>
   );

@@ -45,7 +45,7 @@ function SignupPage(props) {
 
         storeToken(response.data.authToken);
         authenticateUser();
-        navigate("/");
+        navigate("/welcome");
       })
       .catch((error) => {
         const errorDescription = error.response.data.message;

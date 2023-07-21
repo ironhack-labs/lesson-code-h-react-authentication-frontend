@@ -12,6 +12,8 @@ import { AuthContext } from "../../context/auth.context";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { TherapistAuthContext } from "../../context/therapistAuth.context";
+import "./TherapistSignUp.css";
+import "../../App.css";
 
 const API_URL = import.meta.env.VITE_LIVE_SERVER;
 
@@ -74,73 +76,113 @@ function TherapistSignupPage(props) {
   };
 
   return (
-    <div className="SignupPage">
-      <Title1>Create Your Account</Title1>
+    <div className="container therapistsignup">
+      <div className="therapistsignup-1">
+        <Title1>Create Your Account</Title1>
 
-      <form onSubmit={handleSignupSubmit}>
-        <Label>Email:</Label>
-        <Input type="email" name="email" value={email} onChange={handleEmail} />
+        <form onSubmit={handleSignupSubmit}>
+          <div>
+            {" "}
+            <Label>Email:</Label>
+            <Input
+              type="email"
+              name="email"
+              value={email}
+              onChange={handleEmail}
+            />
+          </div>
 
-        <Label>Password:</Label>
-        <Input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handlePassword}
-        />
+          <div>
+            {" "}
+            <Label>Password:</Label>
+            <Input
+              type="password"
+              name="password"
+              value={password}
+              onChange={handlePassword}
+            />
+          </div>
 
-        <Label>Name:</Label>
-        <Input type="text" name="name" value={name} onChange={handleName} />
+          <div>
+            {" "}
+            <Label>Name:</Label>
+            <Input type="text" name="name" value={name} onChange={handleName} />
+          </div>
 
-        <Label>Location:</Label>
-        <Input
-          type="text"
-          name="location"
-          value={location}
-          onChange={handleLocation}
-        />
+          <div>
+            {" "}
+            <Label>Location:</Label>
+            <Input
+              type="text"
+              name="location"
+              value={location}
+              onChange={handleLocation}
+            />
+          </div>
 
-        <Label>Price per session:</Label>
-        <Input type="text" name="price" value={price} onChange={handlePrice} />
+          <div>
+            {" "}
+            <Label>Price per session:</Label>
+            <Input
+              type="text"
+              name="price"
+              value={price}
+              onChange={handlePrice}
+            />
+          </div>
 
-        <Label>Languages Spoken:</Label>
-        <Input
-          type="text"
-          name="languages"
-          value={languages}
-          onChange={handleLanguages}
-        />
+          <div>
+            {" "}
+            <Label>Languages Spoken:</Label>
+            <Input
+              type="text"
+              name="languages"
+              value={languages}
+              onChange={handleLanguages}
+            />
+          </div>
 
-        <Label>Availability:</Label>
-        <Input
-          type="text"
-          name="availability"
-          value={availability}
-          onChange={handleAvailability}
-        />
+          <div>
+            {" "}
+            <Label>Availability:</Label>
+            <Input
+              type="text"
+              name="availability"
+              value={availability}
+              onChange={handleAvailability}
+            />
+          </div>
 
-        <Label>Approach:</Label>
-        <Input
-          type="text"
-          name="approach"
-          value={approach}
-          onChange={handleApproach}
-        />
+          <div>
+            {" "}
+            <Label>Approach:</Label>
+            <Input
+              type="text"
+              name="approach"
+              value={approach}
+              onChange={handleApproach}
+            />
+          </div>
 
-        <Button type="submit">Sign Up</Button>
-      </form>
+          <div>
+            <Button type="submit">Sign Up</Button>
+          </div>
+        </form>
 
-      {errorMessage && <Toast className="error-message">{errorMessage}</Toast>}
+        {errorMessage && (
+          <Toast className="error-message">{errorMessage}</Toast>
+        )}
 
-      <Text>Already have account?</Text>
+        <Text>Already have account?</Text>
 
-      <Link to={"/therapist/login"}>
-        <UILink>Login here.</UILink>
-      </Link>
+        <Link to={"/therapist/login"}>
+          <UILink>Login here.</UILink>
+        </Link>
 
-      <Link to={"/login"}>
-        <Button>Are you looking for a therapist login/signup here!</Button>
-      </Link>
+        <Link to={"/login"}>
+          <Button>Are you looking for a therapist login/signup here!</Button>
+        </Link>
+      </div>
     </div>
   );
 }
