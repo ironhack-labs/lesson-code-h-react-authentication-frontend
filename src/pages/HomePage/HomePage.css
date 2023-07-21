@@ -8,9 +8,9 @@
 
 .homepage-1 {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
   flex-direction: column;
-  height: 40%;
+  height: 55%;
 }
 
 .homepage-1 > img {
