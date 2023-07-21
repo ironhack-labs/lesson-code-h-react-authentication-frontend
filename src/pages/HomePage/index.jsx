@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@fluentui/react-components";
 import "./HomePage.css";
 import "../../App.css";
@@ -12,7 +13,10 @@ function HomePage() {
       </div>
 
       <div class="homepage-2">
-        <Button>Patient</Button>
+        <Link to="/login">
+          <Button>Patient</Button>
+        </Link>
+
         <Button>Therapist</Button>
       </div>
     </div>
