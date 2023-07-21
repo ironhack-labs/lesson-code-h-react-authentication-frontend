@@ -7,6 +7,8 @@ import {
   Title1,
   Link as UILink,
 } from "@fluentui/react-components";
+import "./SignupPage.css";
+import "../../App.css";
 import { useState, useContext } from "react";
 import { AuthContext } from "../../context/auth.context";
 import { Link, useNavigate } from "react-router-dom";
@@ -43,7 +45,7 @@ function SignupPage(props) {
 
         storeToken(response.data.authToken);
         authenticateUser();
-        navigate("/");
+        navigate("/welcome");
       })
       .catch((error) => {
         const errorDescription = error.response.data.message;
@@ -53,37 +55,54 @@ function SignupPage(props) {
 
   return (
     <div className="SignupPage">
-      <Title1>Create Your User Account</Title1>
+      <div className="container signuppage">
+        <Title1>Create Your User Account</Title1>
 
-      <form onSubmit={handleSignupSubmit}>
-        <Label>Email:</Label>
-        <Input type="email" name="email" value={email} onChange={handleEmail} />
+        <form onSubmit={handleSignupSubmit}>
+          <div>
+            {" "}
+            <Label>Email:</Label>
+            <Input
+              type="email"
+              name="email"
+              value={email}
+              onChange={handleEmail}
+            />
+          </div>
 
-        <Label>Password:</Label>
-        <Input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handlePassword}
-        />
+          <div>
+            {" "}
+            <Label>Password:</Label>
+            <Input
+              type="password"
+              name="password"
+              value={password}
+              onChange={handlePassword}
+            />
+          </div>
 
-        <Label>Name:</Label>
-        <Input type="text" name="name" value={name} onChange={handleName} />
+          <div>
+            <Label>Name:</Label>
+            <Input type="text" name="name" value={name} onChange={handleName} />
+          </div>
 
-        <Button type="submit">Register</Button>
-      </form>
+          <Button type="submit">Register</Button>
+        </form>
 
-      {errorMessage && <Toast className="error-message">{errorMessage}</Toast>}
+        {errorMessage && (
+          <Toast className="error-message">{errorMessage}</Toast>
+        )}
 
-      <Text>Already have account?</Text>
+        <Text>Already have account?</Text>
 
-      <Link to="/login">
-        <UILink>Login here.</UILink>
-      </Link>
+        <Link to="/login">
+          <UILink>Login here.</UILink>
+        </Link>
 
-      <Link to={"/therapist/login"}>
-        <Button>HOPEME THERAPIST MODE</Button>
-      </Link>
+        <Link to={"/therapist/login"}>
+          <Button>HOPEME THERAPIST MODE</Button>
+        </Link>
+      </div>
     </div>
   );
 }

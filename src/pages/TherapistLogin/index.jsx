@@ -11,6 +11,8 @@ import { useState, useContext } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { TherapistAuthContext } from "../../context/therapistAuth.context";
+import "./TherapistLogin.css";
+import "../../App.css";
 
 const API_URL = import.meta.env.VITE_LIVE_SERVER;
 
@@ -47,34 +49,50 @@ function TherapistLoginPage(props) {
   };
 
   return (
-    <div className="LoginPage">
-      <Title1>Therapist Login</Title1>
+    <div className="container therapistlogin ">
+      <div className="therapistlogin-1">
+        <Title1>Therapist Login</Title1>
 
-      <form onSubmit={handleLoginSubmit}>
-        <Label>Email:</Label>
-        <Input type="email" name="email" value={email} onChange={handleEmail} />
+        <form onSubmit={handleLoginSubmit}>
+          <div>
+            {" "}
+            <Label>Email:</Label>
+            <Input
+              type="email"
+              name="email"
+              value={email}
+              onChange={handleEmail}
+            />
+          </div>
 
-        <Label>Password:</Label>
-        <Input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handlePassword}
-        />
+          <div>
+            <Label>Password:</Label>
+            <Input
+              type="password"
+              name="password"
+              value={password}
+              onChange={handlePassword}
+            />
+          </div>
 
-        <Button type="submit">Login</Button>
-      </form>
-      {errorMessage && <Toast className="error-message">{errorMessage}</Toast>}
+          <div>
+            <Button type="submit">Login</Button>
+          </div>
+        </form>
+        {errorMessage && (
+          <Toast className="error-message">{errorMessage}</Toast>
+        )}
 
-      <Text>Don't have an account yet?</Text>
-      <Link to={"/therapist/signup"}>
-        {" "}
-        <UILink>Register</UILink>
-      </Link>
+        <Text>Don't have an account yet?</Text>
+        <Link to={"/therapist/signup"}>
+          {" "}
+          <UILink>Register</UILink>
+        </Link>
 
-      <Link to={"/login"}>
-        <Button>Are you looking for a therapist login/signup here!</Button>
-      </Link>
+        <Link to={"/login"}>
+          <Button>Are you looking for a therapist login/signup here!</Button>
+        </Link>
+      </div>
     </div>
   );
 }
