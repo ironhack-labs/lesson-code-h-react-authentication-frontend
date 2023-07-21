@@ -53,7 +53,7 @@ function SignupPage(props) {
 
   return (
     <div className="SignupPage">
-      <Title1>Create Your Account</Title1>
+      <Title1>Create Your User Account</Title1>
 
       <form onSubmit={handleSignupSubmit}>
         <Label>Email:</Label>
@@ -70,15 +70,19 @@ function SignupPage(props) {
         <Label>Name:</Label>
         <Input type="text" name="name" value={name} onChange={handleName} />
 
-        <Button type="submit">Sign Up</Button>
+        <Button type="submit">Register</Button>
       </form>
 
       {errorMessage && <Toast className="error-message">{errorMessage}</Toast>}
 
       <Text>Already have account?</Text>
 
-      <Link to={"/login"}>
+      <Link to="/login">
         <UILink>Login here.</UILink>
+      </Link>
+
+      <Link to={"/therapist/login"}>
+        <Button>HOPEME THERAPIST MODE</Button>
       </Link>
     </div>
   );

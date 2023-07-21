@@ -47,7 +47,7 @@ function LoginPage(props) {
 
   return (
     <div className="LoginPage">
-      <Title1>Login</Title1>
+      <Title1>User Login</Title1>
 
       <form onSubmit={handleLoginSubmit}>
         <Label>Email:</Label>
@@ -65,10 +65,13 @@ function LoginPage(props) {
       </form>
       {errorMessage && <Toast className="error-message">{errorMessage}</Toast>}
 
-      <Text>Don't have an account yet?</Text>
-      <Link to={"/signup"}>
-        {" "}
-        <UILink>Register</UILink>
+      <Text>Not registered as a user yet?</Text>
+      <Link to="/signup">
+        <UILink>Register here</UILink>
+      </Link>
+
+      <Link to={"/therapist/login"}>
+        <Button>HOPEME THERAPIST MODE</Button>
       </Link>
     </div>
   );
