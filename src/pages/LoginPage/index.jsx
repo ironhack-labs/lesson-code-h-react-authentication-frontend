@@ -61,14 +61,14 @@ function LoginPage(props) {
           onChange={handlePassword}
         />
 
-        <Button type="submit">Login</Button>
+        <Button type="submit">Patient</Button>
       </form>
       {errorMessage && <Toast className="error-message">{errorMessage}</Toast>}
 
       <Text>Don't have an account yet?</Text>
       <Link to={"/signup"}>
         {" "}
-        <UILink>Register</UILink>
+        <UILink>Register here</UILink>
       </Link>
     </div>
   );
