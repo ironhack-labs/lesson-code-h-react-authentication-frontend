@@ -21,7 +21,8 @@ function TherapistLoginPage(props) {
 
   const navigate = useNavigate();
 
-  const { storeToken, authenticateTherapist } = useContext(TherapistAuthContext);
+  const { storeToken, authenticateTherapist } =
+    useContext(TherapistAuthContext);
 
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
@@ -37,7 +38,7 @@ function TherapistLoginPage(props) {
 
         storeToken(response.data.authToken);
         authenticateTherapist();
-        navigate("/");
+        navigate("/therapist/dashboard");
       })
       .catch((error) => {
         const errorDescription = error.response.data.message;

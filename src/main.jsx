@@ -13,7 +13,9 @@ root.render(
   <React.StrictMode>
     <Router>
       <AuthProviderWrapper>
-        <App />
+        <TherapistAuthProviderWrapper>
+          <App />
+        </TherapistAuthProviderWrapper>
       </AuthProviderWrapper>
     </Router>
   </React.StrictMode>

@@ -38,13 +38,13 @@ function TherapistAuthProviderWrapper(props) {
           // Update state variables
           setIsLoggedIn(false);
           setIsLoading(false);
-          setUser(null);
+          setTherapist(null);
         });
     } else {
       // If the token is not available
       setIsLoggedIn(false);
       setIsLoading(false);
-      setUser(null);
+      setTherapist(null);
     }
   };
 

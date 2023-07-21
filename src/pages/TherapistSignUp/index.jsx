@@ -8,9 +8,10 @@ import {
   Link as UILink,
 } from "@fluentui/react-components";
 import { useState, useContext } from "react";
-import { TherapistAuthContext } from "../../context/therapistAuth.context";
+import { AuthContext } from "../../context/auth.context";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { TherapistAuthContext } from "../../context/therapistAuth.context";
 
 const API_URL = import.meta.env.VITE_LIVE_SERVER;
 
@@ -36,14 +37,23 @@ function TherapistSignupPage(props) {
   const handleName = (e) => setName(e.target.value);
   const handleLocation = (e) => setLocation(e.target.value);
   const handlePrice = (e) => setPrice(e.target.value);
-  const handleLanguages = (e) => setLanguages(e.target.value);
-  const handleAvailability = (e) => setAvailability(e.target.value);
-  const handleApproach = (e) => setApproach(e.target.value);
+  const handleLanguages = (e) => setLanguages(e.target.value.split(","));
+  const handleAvailability = (e) => setAvailability(e.target.value.split(","));
+  const handleApproach = (e) => setApproach(e.target.value.split(","));
 
   const handleSignupSubmit = (e) => {
     e.preventDefault();
     // Create an object representing the request body
-    const requestBody = { email, password, name };
+    const requestBody = {
+      email,
+      password,
+      name,
+      location,
+      price,
+      languages,
+      availability,
+      approach,
+    };
 
     // Make an axios request to the API
     // If POST request is successful redirect to login page
@@ -54,8 +64,8 @@ function TherapistSignupPage(props) {
         console.log("JWT token", response.data.authToken);
 
         storeToken(response.data.authToken);
-        authenticateUser();
-        navigate("/");
+        authenticateTherapist();
+        navigate("/therapist/dashboard");
       })
       .catch((error) => {
         const errorDescription = error.response.data.message;
@@ -92,14 +102,6 @@ function TherapistSignupPage(props) {
 
         <Label>Price per session:</Label>
         <Input type="text" name="price" value={price} onChange={handlePrice} />
-
-        <Label>Location:</Label>
-        <Input
-          type="text"
-          name="location"
-          value={location}
-          onChange={handleLocation}
-        />
 
         <Label>Languages Spoken:</Label>
         <Input
