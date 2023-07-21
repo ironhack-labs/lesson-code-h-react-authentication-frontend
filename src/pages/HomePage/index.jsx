@@ -1,71 +1,25 @@
 import * as React from "react";
-import { Button, Input } from "@fluentui/react-components";
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { Link } from "react-router-dom";
+import { Button } from "@fluentui/react-components";
+import "./HomePage.css";
+import "../../App.css";
+import logo from "../../assets/textlogo.png";
 
 function HomePage() {
-  const [prompt, setPrompt] = useState("");
-  const [message, setMessage] = useState("");
-
-  const handlePostReq = () => {
-    const url = "http://localhost:5005/api/completions";
-    const storedToken = localStorage.getItem("authToken");
-    axios
-      .post(
-        url,
-        {
-          message: prompt,
-        },
-        {
-          headers: { Authorization: `Bearer ${storedToken}` },
-        }
-      )
-      .then((resp) => console.log(resp))
-      .catch((error) => console.log(error));
-  };
-
-  // const getMessages = async () => {
-  //   const options = {
-  //     method: "POST",
-  //     body: JSON.stringify({
-  //       message: prompt,
-  //     }),
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //   };
-  //   try {
-  //     const response = await fetch(
-  //       "http://localhost:5005/api/completions",
-  //       options
-  //     );
-  //     console.log("hello");
-  //     const data = await response.json();
-  //     console.log(response);
-  //     console.log(data);
-  //     setMessage(data.choices[0].message);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
-
   return (
-    <div>
-      <div>
-        <Button>Non-Fiction</Button>
-        <div>
-          <Button>Fiction</Button>
-        </div>
-        <div>
-          <Button>Self-Help</Button>
-        </div>
+    <div class="container homepage">
+      <div class="homepage-1">
+        <img src={logo} alt="HopeMe Logo" />
       </div>
-      <div>
-        <Input
-          onChange={(e) => setPrompt(e.target.value)}
-          placeholder="Add some detail"
-        />
-        <Button onClick={handlePostReq}>Let's Book!</Button>
+
+      <div class="homepage-2">
+        <Link to="/login">
+          <Button>Patient</Button>
+        </Link>
+
+        <Link to="/therapist/login">
+          <Button>Therapist</Button>
+        </Link>
       </div>
     </div>
   );
