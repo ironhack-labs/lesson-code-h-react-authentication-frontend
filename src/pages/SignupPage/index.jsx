@@ -70,7 +70,7 @@ function SignupPage(props) {
         <Label>Name:</Label>
         <Input type="text" name="name" value={name} onChange={handleName} />
 
-        <Button type="submit">Sign Up</Button>
+        <Button type="submit">Register</Button>
       </form>
 
       {errorMessage && <Toast className="error-message">{errorMessage}</Toast>}

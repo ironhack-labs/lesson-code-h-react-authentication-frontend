@@ -71,6 +71,10 @@ function TherapistLoginPage(props) {
         {" "}
         <UILink>Register</UILink>
       </Link>
+
+      <Link to={"/login"}>
+        <Button>Are you looking for a therapist login/signup here!</Button>
+      </Link>
     </div>
   );
 }
