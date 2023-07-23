@@ -12,7 +12,9 @@ function Navbar() {
     <nav>
       {isLoggedIn && (
         <>
-          <Button onClick={logOutUser}>Logout</Button>
+          <Button onClick={logOutUser}>
+            <Link to="/">Logout</Link>
+          </Button>
           <span>Welcome, {user && user.name}</span>
         </>
       )}

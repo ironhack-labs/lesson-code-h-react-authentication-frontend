@@ -9,7 +9,7 @@ import luna from "../../assets/luna/welcome.png";
 
 function FindATherapistPage() {
   return (
-    <div class="container aitherapist">
+    <div class="container find-a-therapist">
       <Link to="/dashboard">
         <ReactSVG src={back} alt="mood" />
       </Link>
