@@ -4,6 +4,7 @@ import sun from "../../assets/icons/dark/sun.svg";
 import discover from "../../assets/icons/dark/discover.svg";
 import profile from "../../assets/icons/dark/profile.svg";
 import chat from "../../assets/icons/dark/chat.svg";
+import plus from "../../assets/icons/light/plus.svg";
 import "./Footer.css";
 
 function Footer() {
@@ -18,7 +19,9 @@ function Footer() {
       </div>
 
       <div>
-        <div className="rectangle-menu">+</div>
+        <div className="rectangle-menu">
+          <ReactSVG src={plus} alt="navigate to our exercises" />
+        </div>
       </div>
 
       <div>
