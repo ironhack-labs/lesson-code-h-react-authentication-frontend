@@ -3,6 +3,15 @@
   --selected-purple: #857eb9;
   --logo: #782eff;
   --font: #fff;
+
+  --main: #5e63a3;
+  --background: #b5b0d8;
+  --background2: #cfcce8;
+  --white: #fff;
+  --selected: #857eb9;
+  --bar: #eee;
+  --darkpurple: #464071;
+  --textpurple: #4c438d;
 }
 
 .App {

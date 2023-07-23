@@ -1,9 +1,9 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import { Button, Text } from "@fluentui/react-components";
-import "./Welcome.css";
+import "./WelcomePage.css";
 import "../../App.css";
-import logo from "../../assets/textlogo.png";
+import logo from "../../assets/logos/textlogo.png";
 
 function WelcomePage() {
   return (
