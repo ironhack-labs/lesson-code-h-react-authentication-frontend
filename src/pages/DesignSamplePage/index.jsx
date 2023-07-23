@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Text } from "@fluentui/react-components";
 import "./DesignSample.css";
 import "../../App.css";
-import logo from "../../assets/logos/textlogo.png";
+import Footer from "../../components/Footer";
 
 function DesignSamplePage() {
   return (
@@ -17,6 +17,7 @@ function DesignSamplePage() {
         experience possible, it would be great if you could answer a few
         questions about your current goals with hopeme
       </Text>
+      <Footer />
     </div>
   );
 }
