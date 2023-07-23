@@ -19,7 +19,7 @@ function Footer() {
       </div>
 
       <div className="footer-nav">
-        <Link to="/help-menu">
+        <Link to="/exercises">
           <ReactSVG src={discover} alt="navigate to our exercises" />
         </Link>
 

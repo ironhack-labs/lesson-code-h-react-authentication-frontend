@@ -12,6 +12,9 @@ import TherapistDashboard from "./pages/TherapistDashboard";
 import DesignSamplePage from "./pages/DesignSamplePage";
 import DashboardPage from "./pages/DashboardPage";
 import WelcomePage from "./pages/WelcomePage";
+import TalkPage from "./pages/TalkPage";
+import UserProfilePage from "./pages/UserProfilePage";
+import ExercisesPage from "./pages/ExercisesPage";
 
 function App() {
   return (
@@ -23,6 +26,9 @@ function App() {
           <Route path="/design/sample" element={<DesignSamplePage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/welcome" element={<WelcomePage />} />
+          <Route path="/talk" element={<TalkPage />} />
+          <Route path="/dashboard/profile" element={<UserProfilePage />} />
+          <Route path="/exercises" element={<ExercisesPage />} />
 
           <Route
             path="/signup"

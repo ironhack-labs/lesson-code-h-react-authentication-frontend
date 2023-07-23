@@ -16,26 +16,6 @@ function Navbar() {
           <span>Welcome, {user && user.name}</span>
         </>
       )}
-
-      {!isLoggedIn && (
-        <>
-          <Link to="/signup">
-            {" "}
-            <Button>Sign Up</Button>{" "}
-          </Link>
-          <Link to="/login">
-            {" "}
-            <Button>Login</Button>{" "}
-          </Link>
-          <Link to="/therapist/signup">
-            <Button>Sign Up Therapist</Button>
-          </Link>
-          <Link to="/therapist/login">
-            {" "}
-            <Button>TherapistLogin</Button>{" "}
-          </Link>
-        </>
-      )}
     </nav>
   );
 }
