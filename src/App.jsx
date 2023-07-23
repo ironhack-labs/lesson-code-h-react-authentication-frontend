@@ -16,6 +16,12 @@ import TalkPage from "./pages/TalkPage";
 import UserProfilePage from "./pages/UserProfilePage";
 import ExercisesPage from "./pages/ExercisesPage";
 import CheckinPage from "./pages/CheckinPage";
+import AiTherapistPage from "./pages/AiTherapistPage";
+import FindATherapistPage from "./pages/FindATherapistPage";
+import BreathExercisesPage from "./pages/BreathExercisesPage";
+import ArticlesPage from "./pages/ArticlesPage";
+import CalmcastPage from "./pages/CalmcastPage";
+import ExamplePage from "./pages/ExamplePage";
 
 function App() {
   return (
@@ -31,6 +37,11 @@ function App() {
           <Route path="/dashboard/profile" element={<UserProfilePage />} />
           <Route path="/exercises" element={<ExercisesPage />} />
           <Route path="/checkin" element={<CheckinPage />} />
+          <Route path="/talk-to-luna" element={<AiTherapistPage />} />
+          <Route path="/find-a-therapist" element={<FindATherapistPage />} />
+          <Route path="/breath-exercises" element={<BreathExercisesPage />} />
+          <Route path="/articles" element={<ArticlesPage />} />
+          <Route path="/calmcast" element={<CalmcastPage />} />
 
           <Route
             path="/signup"

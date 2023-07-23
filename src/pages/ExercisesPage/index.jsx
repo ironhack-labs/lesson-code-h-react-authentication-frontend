@@ -18,8 +18,14 @@ function ExercisesPage() {
         <ReactSVG src={back} alt="mood" />
       </Link>
 
-      <div>Breathing Exercises</div>
-      <div>Inspiring Articles</div>
+      <Link to="/breath-exercises">
+        <div>Breathing Exercises</div>
+      </Link>
+
+      <Link to="/articles">
+        <div>Inspiring Articles</div>
+      </Link>
+
       <div>
         {" "}
         <img src={luna} href="Luna, your helpful guide" />
@@ -28,7 +34,10 @@ function ExercisesPage() {
       <Link to="/talk">
         <div>Talk to Someone</div>
       </Link>
-      <div>Relaxing Audios</div>
+
+      <Link to="/calmcast">
+        <div>Relaxing Audios</div>
+      </Link>
 
       <div>
         <div>Do you need help?</div>
