@@ -5,7 +5,7 @@ import "./Welcome.css";
 import "../../App.css";
 import logo from "../../assets/textlogo.png";
 
-function Welcome() {
+function WelcomePage() {
   return (
     <div class="container welcome">
       <div class="welcome-1">
@@ -23,4 +23,4 @@ function Welcome() {
   );
 }
 
-export default HomePage;
+export default WelcomePage;

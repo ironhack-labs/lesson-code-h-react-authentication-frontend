@@ -9,6 +9,7 @@ import IsTherapist from "./components/IsTherapist";
 import TherapistLoginPage from "./pages/TherapistLogin";
 import TherapistSignupPage from "./pages/TherapistSignUp";
 import TherapistDashboard from "./pages/TherapistDashboard";
+import DesignSamplePage from "./pages/DesignSample";
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
       <FluentProvider theme={teamsLightTheme}>
         <Routes>
           <Route path="/" element={<HomePage />} />
+
+          <Route path="/design/sample" element={<DesignSamplePage />} />
 
           <Route
             path="/signup"
@@ -64,16 +67,6 @@ function App() {
               </IsTherapist>
             }
           />
-
-          {/* <Routes
-            path="/welcome"
-            element={
-              <IsAnon>
-                {" "}
-                <Welcome />{" "}
-              </IsAnon>
-            }
-          /> */}
         </Routes>
       </FluentProvider>
     </div>

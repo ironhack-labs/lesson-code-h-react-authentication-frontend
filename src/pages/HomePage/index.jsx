@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@fluentui/react-components";
 import "./HomePage.css";
 import "../../App.css";
-import logo from "../../assets/textlogo.png";
+import logo from "../../assets/logos/textlogo.png";
 
 function HomePage() {
   return (
