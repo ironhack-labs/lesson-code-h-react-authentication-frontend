@@ -1,23 +1,41 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-import { Button, Text } from "@fluentui/react-components";
+import { Button, Text, Link as UILink } from "@fluentui/react-components";
 import "./WelcomePage.css";
 import "../../App.css";
-import logo from "../../assets/logos/textlogo.png";
+import luna from "../../assets/luna/welcome.png";
 
 function WelcomePage() {
   return (
     <div class="container welcome">
       <div class="welcome-1">
-        <Text>Welcome, USER!</Text>
+        <div>
+          <img src={luna} href="Luna, your helpful guide" />
+        </div>
 
-        <Text>
-          Hi, I am Luna! I will be your companion during your experience on
-          hopeme. I am used to providing light when things get dark so I'm happy
-          to help you during your hopeme journey! In order to give you the best
-          experience possible, it would be great if you could answer a few
-          questions about your current goals with hopeme
-        </Text>
+        <div>
+          <Text>Welcome, USER!</Text>
+        </div>
+
+        <div>
+          <Text>
+            Hi, I am Luna! I will be your companion during your experience on
+            hopeme. I am used to providing light when things get dark so I'm
+            happy to help you during your hopeme journey! In order to give you
+            the best experience possible, it would be great if you could answer
+            a few questions about your current goals with hopeme.
+          </Text>
+        </div>
+
+        <div>
+          <Button>NEXT</Button>
+        </div>
+
+        <div>
+          <Link to={"/dashboard"}>
+            <Button>HOPEME DASHBOARD</Button>
+          </Link>
+        </div>
       </div>
     </div>
   );
