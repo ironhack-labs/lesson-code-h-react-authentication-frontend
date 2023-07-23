@@ -9,13 +9,20 @@ import IsTherapist from "./components/IsTherapist";
 import TherapistLoginPage from "./pages/TherapistLogin";
 import TherapistSignupPage from "./pages/TherapistSignUp";
 import TherapistDashboard from "./pages/TherapistDashboard";
+import DesignSamplePage from "./pages/DesignSamplePage";
+import DashboardPage from "./pages/DashboardPage";
+import WelcomePage from "./pages/WelcomePage";
 
 function App() {
   return (
     <div className="App">
       <FluentProvider theme={teamsLightTheme}>
         <Routes>
+          {/* ADD AUTH ROUTES FOR PLACEHOLDER PAGES */}
           <Route path="/" element={<HomePage />} />
+          <Route path="/design/sample" element={<DesignSamplePage />} />
+          <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/welcome" element={<WelcomePage />} />
 
           <Route
             path="/signup"
@@ -64,16 +71,6 @@ function App() {
               </IsTherapist>
             }
           />
-
-          {/* <Routes
-            path="/welcome"
-            element={
-              <IsAnon>
-                {" "}
-                <Welcome />{" "}
-              </IsAnon>
-            }
-          /> */}
         </Routes>
       </FluentProvider>
     </div>
