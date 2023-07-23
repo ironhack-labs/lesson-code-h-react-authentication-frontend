@@ -9,7 +9,7 @@ import IsTherapist from "./components/IsTherapist";
 import TherapistLoginPage from "./pages/TherapistLogin";
 import TherapistSignupPage from "./pages/TherapistSignUp";
 import TherapistDashboard from "./pages/TherapistDashboard";
-import DesignSamplePage from "./pages/DesignSample";
+import DesignSamplePage from "./pages/DesignSamplePage";
 
 function App() {
   return (
