@@ -10,7 +10,7 @@ const API_URL = import.meta.env.VITE_LIVE_SERVER;
 
 function TherapistEditProfile() {
   const { logOutTherapist } = useContext(TherapistAuthContext);
-  const navigate = useNavigate;
+  const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -75,6 +75,21 @@ function TherapistEditProfile() {
       });
   };
 
+  const handleDeleteButton = (e) => {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${authToken}`,
+      },
+    };
+    axios
+      .delete(`${API_URL}/therapist/deleteTherapist`, config)
+      .then((response) => {
+        console.log("Profile deleted!");
+        localStorage.removeItem("authToken");
+        navigate("/");
+      })
+      .catch((error) => console.log(error));
+  };
   return (
     <div>
       <nav>
@@ -159,7 +174,7 @@ function TherapistEditProfile() {
         </div>
       )}
       <div>
-        <Button type="delete">Delete Account</Button>
+        <Button type="delete" onClick={handleDeleteButton}>Delete Account</Button>
       </div>
     </div>
   );
