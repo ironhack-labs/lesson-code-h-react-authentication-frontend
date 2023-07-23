@@ -10,18 +10,10 @@ function Navbar() {
 
   return (
     <nav>
-      <Link to="/">
-        <Button>Home</Button>
-      </Link>
-
       {isLoggedIn && (
         <>
-          <Link to="/projects">
-            <Button>Projects</Button>
-          </Link>
-
           <Button onClick={logOutUser}>Logout</Button>
-          <span>{user && user.name}</span>
+          <span>Welcome, {user && user.name}</span>
         </>
       )}
 
@@ -38,7 +30,7 @@ function Navbar() {
           <Link to="/therapist/signup">
             <Button>Sign Up Therapist</Button>
           </Link>
-          <Link to="therapist/login">
+          <Link to="/therapist/login">
             {" "}
             <Button>TherapistLogin</Button>{" "}
           </Link>
