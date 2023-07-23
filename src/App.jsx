@@ -8,7 +8,8 @@ import IsAnon from "./components/IsAnon";
 import IsTherapist from "./components/IsTherapist";
 import TherapistLoginPage from "./pages/TherapistLogin";
 import TherapistSignupPage from "./pages/TherapistSignUp";
-import TherapistDashboard from "./pages/TherapistDashboard";
+import TherapistProfile from "./pages/TherapistProfile";
+import TherapistEditProfile from "./pages/TherapistEditProfile";
 
 function App() {
   return (
@@ -56,15 +57,23 @@ function App() {
             }
           />
           <Route
-            path="/therapist/dashboard"
+            path="/therapist/profile"
             element={
               <IsTherapist>
                 {" "}
-                <TherapistDashboard />{" "}
+                <TherapistProfile />{" "}
               </IsTherapist>
             }
           />
-
+          <Route
+            path="/therapist/editProfile"
+            element={
+              <IsTherapist>
+                (" ")
+                <TherapistEditProfile />{" "}
+              </IsTherapist>
+            }
+          />
           {/* <Routes
             path="/welcome"
             element={
