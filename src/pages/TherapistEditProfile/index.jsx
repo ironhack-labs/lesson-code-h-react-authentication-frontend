@@ -1,4 +1,10 @@
-import { Title1, Label, Input, Button } from "@fluentui/react-components";
+import {
+  Title1,
+  Label,
+  Input,
+  Button,
+  Toast,
+} from "@fluentui/react-components";
 import { useState, useContext, useEffect } from "react";
 import "./TherapistEditProfile.css";
 import "../../App.css";
@@ -20,6 +26,7 @@ function TherapistEditProfile() {
   const [availability, setAvailability] = useState([]);
   const [approach, setApproach] = useState([]);
   const [successMessage, setSuccessMessage] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(undefined);
 
   const authToken = localStorage.getItem("authToken");
   useEffect(() => {
@@ -71,7 +78,8 @@ function TherapistEditProfile() {
       })
       .catch((error) => {
         // Handle error, if needed.
-        console.error("Error updating profile:", error);
+        const errorDescription = error.response.data.message;
+        setErrorMessage(errorDescription);
       });
   };
 
@@ -168,13 +176,16 @@ function TherapistEditProfile() {
           <Button type="submit">Save Changes</Button>
         </div>
       </form>
+      {errorMessage && <Toast className="error-message">{errorMessage}</Toast>}
       {successMessage && (
         <div style={{ color: "green", fontWeight: "bold" }}>
           Profile updated successfully!
         </div>
       )}
       <div>
-        <Button type="delete" onClick={handleDeleteButton}>Delete Account</Button>
+        <Button type="delete" onClick={handleDeleteButton}>
+          Delete Account
+        </Button>
       </div>
     </div>
   );
