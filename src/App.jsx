@@ -15,6 +15,7 @@ import WelcomePage from "./pages/WelcomePage";
 import TalkPage from "./pages/TalkPage";
 import UserProfilePage from "./pages/UserProfilePage";
 import ExercisesPage from "./pages/ExercisesPage";
+import CheckinPage from "./pages/CheckinPage";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/talk" element={<TalkPage />} />
           <Route path="/dashboard/profile" element={<UserProfilePage />} />
           <Route path="/exercises" element={<ExercisesPage />} />
+          <Route path="/checkin" element={<CheckinPage />} />
 
           <Route
             path="/signup"
