@@ -12,13 +12,18 @@ function Footer() {
   return (
     <div className="footer">
       <div className="footer-nav">
-        <ReactSVG src={sun} alt="mood" />
+        <Link to="/dashboard">
+          <ReactSVG src={sun} alt="mood" />
+        </Link>
         <div>Home</div>
       </div>
 
       <div className="footer-nav">
-        <ReactSVG src={discover} alt="navigate to our exercises" />
-        <div>Discover</div>
+        <Link to="/help-menu">
+          <ReactSVG src={discover} alt="navigate to our exercises" />
+        </Link>
+
+        <div>Exercises</div>
       </div>
 
       <div className="footer-nav">
@@ -28,12 +33,16 @@ function Footer() {
       </div>
 
       <div className="footer-nav">
-        <ReactSVG src={profile} alt="user profile" />
+        <Link to="/dashboard/profile">
+          <ReactSVG src={profile} alt="user profile" />
+        </Link>
         <div>Profile</div>
       </div>
 
       <div className="footer-nav">
-        <ReactSVG src={chat} alt="ai chatbot" />
+        <Link to="/talk">
+          <ReactSVG src={chat} alt="ai chatbot" />
+        </Link>
         <div>Talk</div>
       </div>
     </div>

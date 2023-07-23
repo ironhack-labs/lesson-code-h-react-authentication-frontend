@@ -29,3 +29,8 @@
   align-items: center;
   justify-content: center;
 }
+
+.footer-nav > a {
+  text-decoration: none;
+  color: var(--selected-purple, #857eb9);
+}
