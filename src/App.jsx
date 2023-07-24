@@ -1,15 +1,12 @@
+import { Routes, Route } from "react-router-dom";
 import { FluentProvider, teamsLightTheme } from "@fluentui/react-components";
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+
+// User Pages
 import HomePage from "./pages/HomePage";
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import IsAnon from "./components/IsAnon";
-import IsTherapist from "./components/IsTherapist";
-import TherapistLoginPage from "./pages/TherapistLogin";
-import TherapistSignupPage from "./pages/TherapistSignUp";
-import TherapistDashboard from "./pages/TherapistDashboard";
-import DesignSamplePage from "./pages/DesignSamplePage";
 import DashboardPage from "./pages/DashboardPage";
 import WelcomePage from "./pages/WelcomePage";
 import TalkPage from "./pages/TalkPage";
@@ -21,6 +18,16 @@ import FindATherapistPage from "./pages/FindATherapistPage";
 import BreathExercisesPage from "./pages/BreathExercisesPage";
 import ArticlesPage from "./pages/ArticlesPage";
 import CalmcastPage from "./pages/CalmcastPage";
+
+// Therapist Routes
+import IsTherapist from "./components/IsTherapist";
+import TherapistLoginPage from "./pages/TherapistLogin";
+import TherapistSignupPage from "./pages/TherapistSignUp";
+import TherapistProfile from "./pages/TherapistProfile";
+import TherapistEditProfile from "./pages/TherapistEditProfile";
+
+// Sample Component Setup
+import DesignSamplePage from "./pages/DesignSamplePage";
 import ExamplePage from "./pages/ExamplePage";
 
 function App() {
@@ -82,11 +89,20 @@ function App() {
             }
           />
           <Route
-            path="/therapist/dashboard"
+            path="/therapist/profile"
             element={
               <IsTherapist>
                 {" "}
-                <TherapistDashboard />{" "}
+                <TherapistProfile />{" "}
+              </IsTherapist>
+            }
+          />
+          <Route
+            path="/therapist/editProfile"
+            element={
+              <IsTherapist>
+                (" ")
+                <TherapistEditProfile />{" "}
               </IsTherapist>
             }
           />

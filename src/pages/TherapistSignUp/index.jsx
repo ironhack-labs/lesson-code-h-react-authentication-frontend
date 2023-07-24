@@ -67,7 +67,7 @@ function TherapistSignupPage(props) {
 
         storeToken(response.data.authToken);
         authenticateTherapist();
-        navigate("/therapist/dashboard");
+        navigate("/therapist/profile");
       })
       .catch((error) => {
         const errorDescription = error.response.data.message;
