@@ -88,7 +88,7 @@ function SignupPage(props) {
           </div>
 
           <div className="form">
-            Name:
+            Username:
             <Input type="text" name="name" value={name} onChange={handleName} />
           </div>
 

@@ -15,7 +15,7 @@ function Navbar() {
           <Button onClick={logOutUser}>
             <Link to="/">Logout</Link>
           </Button>
-          <span>Welcome, {user && user.name}</span>
+          <span>{user && user.name}'s hopeme Dashboard</span>
         </>
       )}
     </nav>
