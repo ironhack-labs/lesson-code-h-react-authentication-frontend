@@ -3,7 +3,6 @@
   --selected-purple: #857eb9;
   --logo: #782eff;
   --font: #fff;
-
   --main: #5e63a3;
   --background: #b5b0d8;
   --background2: #cfcce8;
@@ -35,4 +34,62 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.button-primary {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--font), #fff;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  min-width: 300px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  height: 50px;
+  border-radius: 50px;
+  background: var(--selected-purple, #857eb9);
+  /* Shadow Button */
+  overflow: hidden;
+  padding: 5px 15px;
+}
+
+.link {
+  color: var(--font), #fff;
+  text-decoration: none;
+}
+
+.link:visited {
+  color: var(--font), #fff;
+  text-decoration: none;
+}
+
+.button-options {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--font), #fff;
+  font-weight: bold;
+  min-width: 200px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  padding: 10px 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--selected-purple, #857eb9);
+}
+
+.modal-menu {
+  width: 163px;
+  height: 201px;
+  flex-shrink: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
 }

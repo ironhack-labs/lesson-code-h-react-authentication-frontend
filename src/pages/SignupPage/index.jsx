@@ -12,6 +12,8 @@ import "../../App.css";
 import { useState, useContext } from "react";
 import { AuthContext } from "../../context/auth.context";
 import { Link, useNavigate } from "react-router-dom";
+import luna from "../../assets/luna/welcome.png";
+
 import axios from "axios";
 
 const API_URL = import.meta.env.VITE_LIVE_SERVER;
@@ -56,12 +58,16 @@ function SignupPage(props) {
   return (
     <div className="SignupPage">
       <div className="container signuppage">
-        <Title1>Create Your User Account</Title1>
+        <div>
+          <img src={luna} />
+        </div>
+
+        <div>Create Your hopeme Profile Here</div>
 
         <form onSubmit={handleSignupSubmit}>
-          <div>
+          <div className="form">
             {" "}
-            <Label>Email:</Label>
+            Email:
             <Input
               type="email"
               name="email"
@@ -70,9 +76,9 @@ function SignupPage(props) {
             />
           </div>
 
-          <div>
+          <div className="form">
             {" "}
-            <Label>Password:</Label>
+            Password:
             <Input
               type="password"
               name="password"
@@ -81,27 +87,31 @@ function SignupPage(props) {
             />
           </div>
 
-          <div>
-            <Label>Name:</Label>
+          <div className="form">
+            Username:
             <Input type="text" name="name" value={name} onChange={handleName} />
           </div>
 
-          <Button type="submit">Register</Button>
+          <div className="form">
+            <button type="submit" className="button-primary">
+              Register
+            </button>
+          </div>
         </form>
-
         {errorMessage && (
           <Toast className="error-message">{errorMessage}</Toast>
         )}
+        <div className="form">
+          <Text>Already have account?</Text>
 
-        <Text>Already have account?</Text>
+          <Link to="/login">
+            <UILink>Login here.</UILink>
+          </Link>
 
-        <Link to="/login">
-          <UILink>Login here.</UILink>
-        </Link>
-
-        <Link to={"/therapist/login"}>
-          <Button>HOPEME THERAPIST MODE</Button>
-        </Link>
+          <Link to={"/therapist/login"} className="button-options">
+            Are you a therapist?
+          </Link>
+        </div>
       </div>
     </div>
   );
