@@ -29,14 +29,14 @@ function WelcomePage() {
 
         <div>
           {/* Should go to the mental health survey */}
-          <Link to={"/checkin"}>
-            <Button>How Are You Feeling Today?</Button>
+          <Link to={"/checkin"} className="button-primary">
+            Your First Check-In With Luna
           </Link>
         </div>
 
         <div>
-          <Link to={"/dashboard"}>
-            <Button>hopme Dashboard</Button>
+          <Link to={"/dashboard"} className="button-primary">
+            Your hopme Dashboard
           </Link>
         </div>
       </div>

@@ -62,12 +62,12 @@ function SignupPage(props) {
           <img src={luna} />
         </div>
 
-        <div>Create Your hopeme Profile</div>
+        <div>Create Your hopeme Profile Here</div>
 
         <form onSubmit={handleSignupSubmit}>
           <div className="form">
             {" "}
-            <Label>Email:</Label>
+            Email:
             <Input
               type="email"
               name="email"
@@ -78,7 +78,7 @@ function SignupPage(props) {
 
           <div className="form">
             {" "}
-            <Label>Password:</Label>
+            Password:
             <Input
               type="password"
               name="password"
@@ -88,7 +88,7 @@ function SignupPage(props) {
           </div>
 
           <div className="form">
-            <Label>Name:</Label>
+            Name:
             <Input type="text" name="name" value={name} onChange={handleName} />
           </div>
 
@@ -108,8 +108,8 @@ function SignupPage(props) {
             <UILink>Login here.</UILink>
           </Link>
 
-          <Link to={"/therapist/login"} className="link">
-            <button className="button-options">Are you a therapist?</button>
+          <Link to={"/therapist/login"} className="button-options">
+            Are you a therapist?
           </Link>
         </div>
       </div>
