@@ -79,3 +79,8 @@
   height: 201px;
   flex-shrink: 0;
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
