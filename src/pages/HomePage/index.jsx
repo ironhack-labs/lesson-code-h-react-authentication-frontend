@@ -13,7 +13,7 @@ function HomePage() {
 
       <div class="homepage-2">
         <Link to="/login" className="link">
-          <button className="button-options"> Patient</button>
+          <button className="button-options">Patient</button>
         </Link>
 
         <Link to="/therapist/login" className="link">
