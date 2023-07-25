@@ -3,7 +3,7 @@ import { ReactSVG } from "react-svg";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import back from "../../assets/icons/light/back-button.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "../../components/Footer";
 import "../../App.css";
 import "./FindATherapistPage.css";
@@ -15,6 +15,7 @@ const API_URL = import.meta.env.VITE_LIVE_SERVER;
 
 function FindATherapistPage() {
   const [therapists, setTherapists] = useState([]);
+  const navigate = useNavigate();
 
   const getAllTherapists = () => {
     // Get the token from the localStorage
@@ -35,6 +36,10 @@ function FindATherapistPage() {
     getAllTherapists();
   }, []);
 
+  const handleLearnMore = (therapistId) => {
+    // Navigate to the therapist details page, passing the therapistId as a parameter
+    navigate(`/find-a-therapist/${therapistId}`);
+  };
   return (
     <div className="container find-a-therapist">
       <Link to="/dashboard">
@@ -55,7 +60,7 @@ function FindATherapistPage() {
           <div key={therapist._id}>
             <h3>{therapist.name}</h3>
             <div>
-            <img src={chat} />
+              <img src={chat} />
             </div>
             <ul>
               <li>{therapist.location}</li>
@@ -63,7 +68,9 @@ function FindATherapistPage() {
               <li>{therapist.approach}</li>
               <li>{therapist.availability}</li>
             </ul>
-            <Button>Learn More</Button>
+            <Button onClick={() => handleLearnMore(therapist._id)}>
+              Learn More
+            </Button>
           </div>
         ))}
       </div>

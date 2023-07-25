@@ -20,6 +20,7 @@ function TherapistEditProfile() {
 
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
+  const [introduction, setIntroduction] = useState("");
   const [location, setLocation] = useState("");
   const [price, setPrice] = useState(0);
   const [languages, setLanguages] = useState([]);
@@ -42,6 +43,7 @@ function TherapistEditProfile() {
         console.log(response.data);
         setEmail(oneTherapist.email);
         setName(oneTherapist.name);
+        setIntroduction(oneTherapist.introduction);
         setLocation(oneTherapist.location);
         setPrice(oneTherapist.price);
         setLanguages(oneTherapist.languages);
@@ -62,6 +64,7 @@ function TherapistEditProfile() {
     const requestBody = {
       email,
       name,
+      introduction,
       location,
       price,
       languages,
@@ -126,7 +129,14 @@ function TherapistEditProfile() {
             onChange={(ev, value) => setName(ev.target.value)}
           />
         </div>
-
+        <div>
+          <Label>Introduction:</Label>
+          <Input
+            value={value}
+            name="introduction"
+            onChange={(ev, value) => setIntroduction(ev.target.value)}
+          />
+        </div>
         <div>
           <Label>Location:</Label>
           <Input
