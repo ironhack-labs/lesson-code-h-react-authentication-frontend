@@ -1,33 +1,50 @@
 import * as React from "react";
-import { ReactSVG } from "react-svg";
-import back from "../../assets/icons/light/back-button.svg";
-import { Button } from "@fluentui/react-components";
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import Footer from "../../components/Footer";
-import Navbar from "../../components/Navbar";
 import "../../App.css";
 import "./CheckinPage.css";
-import luna from "../../assets/luna/welcome.png";
-import slider from "../../assets/icons/slider.svg";
+
+import Checkin1 from "../../components/Checkin1";
+import Checkin2 from "../../components/Checkin2";
+import Checkin3 from "../../components/Checkin3";
+import Checkin4 from "../../components/Checkin4";
 
 function CheckinPage() {
+  const [step, setStep] = useState(0);
+
+  const [formData, setFormData] = useState({
+    step1: "",
+    step2: "",
+    step3: "",
+    step4: "",
+    step5: "",
+    step6: "",
+    step7: "",
+    step8: "",
+  });
+
+  const handleNext = () => {
+    if (step === 3) return;
+    setStep((prevStep) => prevStep + 1);
+  };
+
+  const handlePrev = () => {
+    if (step === 0) return;
+    setStep((prevStep) => prevStep - 1);
+  };
+
   return (
-    <div class="container checkin">
-      <Link to="/dashboard">
-        <ReactSVG src={back} alt="mood" />
-      </Link>
+    <div className="container checkin">
+      {step === 0 && <Checkin1 />}
 
-      <div>
-        <img src={luna} />
-      </div>
+      {step === 1 && <Checkin2 />}
 
-      <div>Completely Okay</div>
+      {step === 2 && <Checkin3 />}
 
-      <div>
-        <img src={slider} />
-      </div>
+      {step === 3 && <Checkin4 />}
 
-      <Button>Continue</Button>
+      <button onClick={handleNext}>Continue </button>
+      <button onClick={handlePrev}>Previous</button>
 
       <Footer />
     </div>
