@@ -35,7 +35,7 @@ function TherapistDetailsPage(props) {
 
   return (
     <div className="container therapist-details">
-      <div>
+      <div className="therpist-list">
         <Link to="/find-a-therapist">
           <ReactSVG src={back} alt="mood" />
         </Link>
@@ -43,6 +43,7 @@ function TherapistDetailsPage(props) {
           <>
             <h1>{therapist.name}</h1>
             <p>{therapist.introduction}</p>
+            <img src={therapist.imageUrl}  width="100"/>
             <div>
               <ul>
                 <li>{therapist.location}</li>
