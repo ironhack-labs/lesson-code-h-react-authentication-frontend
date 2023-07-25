@@ -11,6 +11,7 @@ import { useState, useContext } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context";
+import luna from "../../assets/luna/welcome.png";
 import "../../App.css";
 import "./LoginPage.css";
 
@@ -50,43 +51,56 @@ function LoginPage(props) {
   return (
     <div className="container loginpage">
       <div className="login-page-1">
-        <Title1>User Login</Title1>
+        <div>
+          <img src={luna} />
+        </div>
 
-        <form onSubmit={handleLoginSubmit}>
-          <div>
-            <Label>Email:</Label>
-            <Input
-              type="email"
-              name="email"
-              value={email}
-              onChange={handleEmail}
-            />
-          </div>
+        <div>Welcome Back!</div>
 
-          <div>
-            <Label>Password:</Label>
-            <Input
-              type="password"
-              name="password"
-              value={password}
-              onChange={handlePassword}
-            />
-          </div>
+        <div>
+          <form onSubmit={handleLoginSubmit}>
+            <div className="form">
+              Email:
+              <Input
+                type="email"
+                name="email"
+                value={email}
+                onChange={handleEmail}
+              />
+            </div>
 
-          <Button type="submit">Login</Button>
-        </form>
+            <div className="form">
+              Password:
+              <Input
+                type="password"
+                name="password"
+                value={password}
+                onChange={handlePassword}
+              />
+            </div>
+
+            <div>
+              <button type="submit" className="button-primary">
+                Login
+              </button>
+            </div>
+          </form>
+        </div>
+
         {errorMessage && (
           <Toast className="error-message">{errorMessage}</Toast>
         )}
 
-        <Text>Not registered as a user yet?</Text>
-        <Link to="/signup">
-          <UILink>Register here</UILink>
-        </Link>
+        <div className="form">
+          <Text>Not registered as a user yet?</Text>
+          <Link to="/signup">
+            <UILink>Register here</UILink>
+          </Link>
 
-        <Link to={"/therapist/login"}>
-          <Button>HOPEME THERAPIST MODE</Button>
-        </Link>
+          <Link to={"/"} className="link">
+            <button className="button-options">Are you a therapist?</button>
+          </Link>
+        </div>
       </div>
     </div>
   );

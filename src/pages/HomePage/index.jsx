@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-import { Button } from "@fluentui/react-components";
 import "./HomePage.css";
 import "../../App.css";
 import logo from "../../assets/logos/textlogo.png";
@@ -13,14 +12,16 @@ function HomePage() {
       </div>
 
       <div class="homepage-2">
-        <Link to="/login">
-          <Button>Patient</Button>
+        <Link to="/login" className="button-primary">
+          I am looking for help
         </Link>
 
-        <Link to="/therapist/login">
-          <Button>Therapist</Button>
+        <Link to="/therapist/login" className="button-primary">
+          I am a Therapist
         </Link>
       </div>
+
+      <div class="homepage-3">An Andev App &copy; 2023</div>
     </div>
   );
 }
