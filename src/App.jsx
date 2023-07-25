@@ -15,6 +15,7 @@ import ExercisesPage from "./pages/ExercisesPage";
 import CheckinPage from "./pages/CheckinPage";
 import AiTherapistPage from "./pages/AiTherapistPage";
 import FindATherapistPage from "./pages/FindATherapistPage";
+import TherapistDetailsPage from "./pages/TherapistDetailsPage";
 import BreathExercisesPage from "./pages/BreathExercisesPage";
 import ArticlesPage from "./pages/ArticlesPage";
 import CalmcastPage from "./pages/CalmcastPage";
@@ -45,7 +46,6 @@ function App() {
           <Route path="/exercises" element={<ExercisesPage />} />
           <Route path="/checkin" element={<CheckinPage />} />
           <Route path="/talk-to-luna" element={<AiTherapistPage />} />
-          <Route path="/find-a-therapist" element={<FindATherapistPage />} />
           <Route path="/breath-exercises" element={<BreathExercisesPage />} />
           <Route path="/articles" element={<ArticlesPage />} />
           <Route path="/calmcast" element={<CalmcastPage />} />
@@ -105,6 +105,12 @@ function App() {
                 <TherapistEditProfile />{" "}
               </IsTherapist>
             }
+          />
+
+          <Route path="/find-a-therapist" element={<FindATherapistPage />} />
+          <Route
+            path="/find-a-therapist/:therapistId"
+            element={<TherapistDetailsPage />}
           />
         </Routes>
       </FluentProvider>
