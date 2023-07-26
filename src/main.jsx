@@ -6,6 +6,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 import { AuthProviderWrapper } from "./context/auth.context";
 import { TherapistAuthProviderWrapper } from "./context/therapistAuth.context";
+import { CheckInProviderWrapper } from "./context/checkIn.context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -14,7 +15,9 @@ root.render(
     <Router>
       <AuthProviderWrapper>
         <TherapistAuthProviderWrapper>
-          <App />
+          <CheckInProviderWrapper>
+            <App />
+          </CheckInProviderWrapper>
         </TherapistAuthProviderWrapper>
       </AuthProviderWrapper>
     </Router>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useCheckInContext } from "../../context/checkIn.context";
 
 import slider1 from "../../assets/slider/1.png";
 import slider2 from "../../assets/slider/2.png";
@@ -15,8 +16,8 @@ import luna5 from "../../assets/luna/encouragement.png";
 import "../../App.css";
 import "./Checkin1.css";
 
-function Checkin1() {
-  const [mood, setMood] = useState(3);
+function Checkin1({ setFormData, formData }) {
+  const { mood, setMood } = useCheckInContext();
 
   let step1 = {
     1: {
