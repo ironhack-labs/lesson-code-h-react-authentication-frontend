@@ -40,28 +40,33 @@ function CheckinPage() {
   return (
     <div className="container checkin">
       <Navbar />
-      {step === 0 && <Checkin1 />}
 
-      {step === 1 && <Checkin2 />}
+      <div className="step-pages">
+        {step === 0 && <Checkin1 />}
 
-      {step === 2 && <Checkin3 />}
+        {step === 1 && <Checkin2 />}
 
-      {step === 3 && <Checkin4 />}
+        {step === 2 && <Checkin3 />}
 
-      <div class="nav-buttons">
-        <button className="nav-button" onClick={handlePrev}>
-          {step === 0 ? (
-            <Link to="/dashboard">
-              <ReactSVG src={back} alt="mood" />
-            </Link>
-          ) : (
-            step + " / 4"
-          )}
-        </button>
+        {step === 3 && <Checkin4 />}
+      </div>
 
-        <button className="nav-button" onClick={handleNext}>
-          {step === 3 ? 4 : step + 2}/4
-        </button>
+      <div className="nav-buttons-container">
+        <div class="nav-buttons">
+          <button className="nav-button" onClick={handlePrev}>
+            {step === 0 ? (
+              <Link to="/dashboard">
+                <ReactSVG src={back} alt="mood" />
+              </Link>
+            ) : (
+              step + " / 4"
+            )}
+          </button>
+
+          <button className="nav-button" onClick={handleNext}>
+            {step === 3 ? 4 : step + 2}/4
+          </button>
+        </div>
       </div>
 
       <Footer />
