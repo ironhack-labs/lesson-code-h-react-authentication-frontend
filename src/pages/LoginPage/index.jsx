@@ -96,7 +96,7 @@ function LoginPage(props) {
         </div>
 
         <div className="form-flex">
-          <Link to={"/"} className="link">
+          <Link to={"/therapist/login"} className="link">
             <button className="button-options">Are you a therapist?</button>
           </Link>
           <br></br>
