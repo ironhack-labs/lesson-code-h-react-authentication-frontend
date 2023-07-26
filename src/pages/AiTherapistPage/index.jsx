@@ -9,7 +9,7 @@ import "../../App.css";
 import "./AiTherapistPage.css";
 import luna from "../../assets/luna/welcome.png";
 import chat from "../../assets/luna/breathe.png";
-import { Button, Input, Image } from "@fluentui/react-components";
+import { Button, Textarea, Image } from "@fluentui/react-components";
 
 function AiTherapistPage() {
   const [prompt, setPrompt] = useState("");
@@ -62,7 +62,7 @@ function AiTherapistPage() {
         ))}
       </div>
       <div>
-        <Input onChange={handlePrompt} placeholder="Start talking with Luna" />
+        <Textarea onChange={handlePrompt} placeholder="Start talking with Luna" />
         <Button onClick={handlePostReq}>
           <Image src={chat} />
         </Button>
