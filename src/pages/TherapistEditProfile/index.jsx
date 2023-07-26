@@ -19,6 +19,7 @@ function TherapistEditProfile() {
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
+  const [imageUrl, setimageUrl] = useState("");
   const [name, setName] = useState("");
   const [introduction, setIntroduction] = useState("");
   const [location, setLocation] = useState("");
@@ -36,11 +37,13 @@ function TherapistEditProfile() {
         Authorization: `Bearer ${authToken}`,
       },
     };
+
     axios
       .get(`${API_URL}/therapist/therapistInfo`, config)
       .then((response) => {
         const oneTherapist = response.data;
         console.log(response.data);
+        setimageUrl(oneTherapist.imageUrl);
         setEmail(oneTherapist.email);
         setName(oneTherapist.name);
         setIntroduction(oneTherapist.introduction);
@@ -53,6 +56,24 @@ function TherapistEditProfile() {
       .catch((error) => console.log(error));
   }, []);
 
+  const uploadImage = (e) => {
+    const configuration = {
+      Headers: {
+        "Content-Type": `'multipart/form-data'`,
+        Authorization: `Bearer ${authToken}`,
+      },
+    };
+    const data = new FormData();
+    data.append("imageUrl", e.target.files[0]);
+    axios
+      .post(`${API_URL}/therapist/upload`, data, configuration)
+      .then((res) => {
+        console.log(res.data);
+        setimageUrl(res.data);
+      })
+      .catch((error) => console.log(error));
+  };
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const config = {
@@ -62,6 +83,7 @@ function TherapistEditProfile() {
     };
 
     const requestBody = {
+      imageUrl,
       email,
       name,
       introduction,
@@ -102,7 +124,7 @@ function TherapistEditProfile() {
       .catch((error) => console.log(error));
   };
   return (
-    <div>
+    <div className="container therapist-edit-profile">
       <nav>
         <Link to="/therapist/profile">
           <Button>Back to profile</Button>
@@ -112,6 +134,15 @@ function TherapistEditProfile() {
       <Title1>Edit Your Account Details</Title1>
 
       <form onSubmit={handleFormSubmit}>
+        <div>
+          <Label>Image:</Label>
+          <Input
+            type="file"
+            name="imageUrl"
+            accept="/image/*"
+            onChange={(e) => uploadImage(e)}
+          />
+        </div>
         <div>
           <Label>Email:</Label>
           <Input
@@ -132,7 +163,7 @@ function TherapistEditProfile() {
         <div>
           <Label>Introduction:</Label>
           <Input
-            value={value}
+            value={introduction}
             name="introduction"
             onChange={(ev, value) => setIntroduction(ev.target.value)}
           />

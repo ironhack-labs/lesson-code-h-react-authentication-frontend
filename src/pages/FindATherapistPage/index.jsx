@@ -60,7 +60,7 @@ function FindATherapistPage() {
           <div key={therapist._id}>
             <h3>{therapist.name}</h3>
             <div>
-              <img src={chat} />
+              <img src={therapist.imageUrl} width="100" />
             </div>
             <ul>
               <li>{therapist.location}</li>
