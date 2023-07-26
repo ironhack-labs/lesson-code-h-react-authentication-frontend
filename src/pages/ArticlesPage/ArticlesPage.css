@@ -1,18 +1,15 @@
-.container.articles {
+.aricles-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
+  flex-wrap: wrap;
+  padding-top: 7%;
+  justify-content: space-around;
+  height: 90vh;
+  width: 95vw;
+  overflow: hidden;
 }
 
-.articles-1 {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 99%;
+.articles-2 {
+  overflow: hidden;
+  width: 100%;
+  height: 80%;
 }
