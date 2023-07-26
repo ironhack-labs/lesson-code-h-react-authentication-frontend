@@ -1,10 +1,56 @@
 import "../../App.css";
 import "./Checkin2.css";
+import { useState } from "react";
+import axios from "axios";
+import { AuthContext } from "../../context/auth.context";
+import { useCheckInContext } from "../../context/checkIn.context";
 
-function Checkin2() {
+const API_URL = import.meta.env.VITE_LIVE_SERVER;
+
+function Checkin2({ setFormData, formData }) {
+  const { imageUrl, setImageUrl } = useCheckInContext();
+  const authToken = localStorage.getItem("authToken");
+
+  const uploadImage = (e) => {
+    const configuration = {
+      headers: {
+        "Content-Type": `'multipart/form-data'`,
+        Authorization: `Bearer ${authToken}`,
+      },
+    };
+    console.log(authToken);
+    const data = new FormData();
+    data.append("imageUrl", e.target.files[0]);
+
+    axios
+      .post(`${API_URL}/checkIn/uploadImg`, data, configuration)
+      .then((res) => {
+        console.log(res.data);
+        setImageUrl(res.data);
+      })
+      .catch((error) => console.log(error));
+  };
+
+
   return (
     <div className="checkin2">
-      <div>Image Upload</div>
+      <div>
+        <h2>Image Upload</h2>
+        <p>
+          A picture speaks a thousand words. Upload a picture to remind yourself
+          how you're doing or what you're up to.
+        </p>
+      </div>
+      <div>
+        <label>Image:</label>
+        <input
+          value={formData.imageUrl}
+          type="file"
+          name="imageUrl"
+          accept="/image/*"
+          onChange={(e) => uploadImage(e)}
+        />
+      </div>
     </div>
   );
 }
