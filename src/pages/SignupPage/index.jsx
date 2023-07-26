@@ -114,8 +114,8 @@ function SignupPage(props) {
           <div className="flex-center">
             <Text>Already have account?</Text>
 
-            <Link to="/login">
-              <UILink>Login here.</UILink>
+            <Link to="/login" className="link">
+              <UILink>Login here</UILink>
             </Link>
           </div>
         </div>
