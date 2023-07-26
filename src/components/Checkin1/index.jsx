@@ -1,7 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { ReactSVG } from "react-svg";
-import back from "../../assets/icons/light/back-button.svg";
 
 import slider1 from "../../assets/slider/1.png";
 import slider2 from "../../assets/slider/2.png";
@@ -11,9 +8,9 @@ import slider5 from "../../assets/slider/5.png";
 
 import luna1 from "../../assets/luna/despair.png";
 import luna2 from "../../assets/luna/concern.png";
-import luna3 from "../../assets/luna/aokay.png";
+import luna3 from "../../assets/luna/welcome.png";
 import luna4 from "../../assets/luna/happy.png";
-import luna5 from "../../assets/luna/determined.png";
+import luna5 from "../../assets/luna/encouragement.png";
 
 import "../../App.css";
 import "./Checkin1.css";
@@ -60,13 +57,11 @@ function Checkin1() {
   };
 
   return (
-    <div>
-      <Link to="/dashboard">
-        <ReactSVG src={back} alt="mood" />
-      </Link>
+    <div className="checkin1">
+      <div>HOW ARE YOU FEELING TODAY?</div>
 
-      <div>
-        <img src={step1[mood].luna} alt="mood slider" />
+      <div className="luna-container">
+        <img className="luna-mood" src={step1[mood].luna} alt="mood slider" />
       </div>
 
       <div>
@@ -77,8 +72,15 @@ function Checkin1() {
         <img src={step1[mood].slider} />
       </div>
 
-      <button onClick={decreaseMood}>Decrease Mood</button>
-      <button onClick={increaseMood}>Increase Mood</button>
+      <div className="mood-button-container">
+        <button className="mood-button" onClick={decreaseMood}>
+          -
+        </button>
+
+        <button className="mood-button" onClick={increaseMood}>
+          +
+        </button>
+      </div>
     </div>
   );
 }

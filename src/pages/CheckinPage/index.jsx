@@ -1,6 +1,10 @@
 import * as React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { ReactSVG } from "react-svg";
+import back from "../../assets/icons/light/back-button.svg";
 import Footer from "../../components/Footer";
+import Navbar from "../../components/Navbar";
 import "../../App.css";
 import "./CheckinPage.css";
 
@@ -35,6 +39,7 @@ function CheckinPage() {
 
   return (
     <div className="container checkin">
+      <Navbar />
       {step === 0 && <Checkin1 />}
 
       {step === 1 && <Checkin2 />}
@@ -43,8 +48,21 @@ function CheckinPage() {
 
       {step === 3 && <Checkin4 />}
 
-      <button onClick={handleNext}>Continue </button>
-      <button onClick={handlePrev}>Previous</button>
+      <div class="nav-buttons">
+        <button className="nav-button" onClick={handlePrev}>
+          {step === 0 ? (
+            <Link to="/dashboard">
+              <ReactSVG src={back} alt="mood" />
+            </Link>
+          ) : (
+            step + " / 4"
+          )}
+        </button>
+
+        <button className="nav-button" onClick={handleNext}>
+          {step === 3 ? 4 : step + 2}/4
+        </button>
+      </div>
 
       <Footer />
     </div>
