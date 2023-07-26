@@ -6,6 +6,7 @@
   height: 100vh;
   margin: 0;
   padding: 0;
+  width: 99vw;
 }
 
 .checkin-1 {
@@ -15,4 +16,41 @@
   align-items: center;
   justify-content: center;
   width: 99%;
+}
+
+.nav-buttons {
+  height: 7vh;
+  width: 95vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-button {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--font), #fff;
+  font-size: 1.5rem;
+  min-width: 180px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  padding: 10px 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--selected-purple, #857eb9);
+}
+
+.step-pages {
+  width: 99vw;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-buttons-container {
+  height: 10%;
 }
