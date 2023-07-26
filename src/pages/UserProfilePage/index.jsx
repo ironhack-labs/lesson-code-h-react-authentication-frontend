@@ -10,9 +10,8 @@ import "./UserProfilePage.css";
 
 function UserProfilePage() {
   return (
-    <div class="container userprofile">
-      <Navbar />
-      <Link to="/dashboard">
+    <div class="container">
+      <Link to="/dashboard" className="back-link">
         <ReactSVG src={back} alt="mood" />
       </Link>
       <div>Hi, Username!</div>
@@ -23,7 +22,7 @@ function UserProfilePage() {
 
       <div>Mood Tracker</div>
       <Link to="/dashboard/profile/editUser">
-        <button>Edit profile</button>
+        <button className="button-primary">Edit profile</button>
       </Link>
 
       <Footer />

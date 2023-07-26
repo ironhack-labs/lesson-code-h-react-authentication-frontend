@@ -10,7 +10,10 @@ import "./EditUserProfile.css";
 import "../../App.css";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context";
+import Footer from "../../components/Footer";
 import axios from "axios";
+import "../../App.css";
+import logo from "../../assets/logos/textlogo.png";
 
 const API_URL = import.meta.env.VITE_LIVE_SERVER;
 
@@ -84,48 +87,56 @@ function EditUserPage() {
       .catch((error) => console.log(error));
   };
   return (
-    <div>
-      <nav>
-        <Link to="/dashboard/profile">
-          <Button>Back to profile</Button>
-        </Link>
-        <Button onClick={logOutUser}>Logout</Button>
-      </nav>
-      <Title1>Edit Your Account Details</Title1>
+    <div className="container">
+      <div className="edit-profile-page">
+        <Title1>Edit Your hopeme</Title1>
 
-      <form onSubmit={handleFormSubmit}>
-        <div>
-          <Label>Email:</Label>
-          <Input
-            value={email}
-            name="email"
-            onChange={(ev, value) => setEmail(ev.target.value)}
-          />
-        </div>
+        <img src={logo} className="therpist-reg-logo" />
+
+        <form onSubmit={handleFormSubmit}>
+          <div class="form">
+            Email:
+            <Input
+              value={email}
+              name="email"
+              onChange={(ev, value) => setEmail(ev.target.value)}
+            />
+          </div>
+
+          <div class="form">
+            Name:
+            <Input
+              value={name}
+              name="name"
+              onChange={(ev, value) => setName(ev.target.value)}
+            />
+          </div>
+          <div>
+            <br></br>
+            <button type="submit" className="button-primary">
+              Save Changes
+            </button>
+          </div>
+
+          <br></br>
+          <div className="center-text">
+            {errorMessage && <div>{errorMessage}</div>}
+            {successMessage && <div>Profile updated successfully!</div>}
+          </div>
+        </form>
 
         <div>
-          <Label>Name:</Label>
-          <Input
-            value={name}
-            name="name"
-            onChange={(ev, value) => setName(ev.target.value)}
-          />
+          <button
+            type="delete"
+            onClick={handleDeleteButton}
+            className="button-primary"
+          >
+            Delete Your hopeme Account
+          </button>
         </div>
-        <div>
-          <Button type="submit">Save Changes</Button>
-        </div>
-      </form>
-      {errorMessage && <Toast className="error-message">{errorMessage}</Toast>}
-      {successMessage && (
-        <div style={{ color: "green", fontWeight: "bold" }}>
-          Profile updated successfully!
-        </div>
-      )}
-      <div>
-        <Button type="delete" onClick={handleDeleteButton}>
-          Delete Account
-        </Button>
       </div>
+
+      <Footer />
     </div>
   );
 }
