@@ -12,11 +12,11 @@ function HomePage() {
       </div>
 
       <div class="homepage-2">
-        <Link to="/login" className="button-primary">
+        <Link to="/signup" className="button-primary">
           I am looking for help
         </Link>
 
-        <Link to="/therapist/login" className="button-primary">
+        <Link to="/therapist/signup" className="button-primary">
           I am a Therapist
         </Link>
       </div>
