@@ -12,6 +12,7 @@ import { AuthContext } from "../../context/auth.context";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { TherapistAuthContext } from "../../context/therapistAuth.context";
+import logo from "../../assets/logos/textlogo.png";
 import "./TherapistSignUp.css";
 import "../../App.css";
 
@@ -78,12 +79,12 @@ function TherapistSignupPage(props) {
   return (
     <div className="container therapistsignup">
       <div className="therapistsignup-1">
-        <Title1>Create Your Account</Title1>
+        <img src={logo} className="therpist-reg-logo" />
 
         <form onSubmit={handleSignupSubmit}>
-          <div>
+          <div className="form">
             {" "}
-            <Label>Email:</Label>
+            Email:
             <Input
               type="email"
               name="email"
@@ -92,9 +93,9 @@ function TherapistSignupPage(props) {
             />
           </div>
 
-          <div>
+          <div className="form">
             {" "}
-            <Label>Password:</Label>
+            Password:
             <Input
               type="password"
               name="password"
@@ -103,15 +104,15 @@ function TherapistSignupPage(props) {
             />
           </div>
 
-          <div>
+          <div className="form">
             {" "}
-            <Label>Name:</Label>
+            Name:
             <Input type="text" name="name" value={name} onChange={handleName} />
           </div>
 
-          <div>
+          <div className="form">
             {" "}
-            <Label>Location:</Label>
+            Location:
             <Input
               type="text"
               name="location"
@@ -120,20 +121,20 @@ function TherapistSignupPage(props) {
             />
           </div>
 
-          <div>
+          <div className="form">
             {" "}
-            <Label>Price per session:</Label>
+            Price per session:
             <Input
-              type="text"
+              type="number"
               name="price"
               value={price}
               onChange={handlePrice}
             />
           </div>
 
-          <div>
+          <div className="form">
             {" "}
-            <Label>Languages Spoken:</Label>
+            Languages Spoken:
             <Input
               type="text"
               name="languages"
@@ -142,9 +143,9 @@ function TherapistSignupPage(props) {
             />
           </div>
 
-          <div>
+          <div className="form">
             {" "}
-            <Label>Availability:</Label>
+            Availability:
             <Input
               type="text"
               name="availability"
@@ -153,9 +154,9 @@ function TherapistSignupPage(props) {
             />
           </div>
 
-          <div>
+          <div className="form">
             {" "}
-            <Label>Approach:</Label>
+            Approach:
             <Input
               type="text"
               name="approach"
@@ -164,24 +165,29 @@ function TherapistSignupPage(props) {
             />
           </div>
 
-          <div>
-            <Button type="submit">Sign Up</Button>
+          <div className="form">
+            <br></br>
+            <button className="button-primary" type="submit">
+              Register as a therapist
+            </button>
           </div>
         </form>
 
-        {errorMessage && (
-          <Toast className="error-message">{errorMessage}</Toast>
-        )}
+        <div>
+          {errorMessage && <div className="error-message">{errorMessage}</div>}
+        </div>
 
-        <Text>Already have account?</Text>
-
-        <Link to={"/therapist/login"}>
-          <UILink>Login here.</UILink>
+        <br></br>
+        <Link className="button-options " to={"/login"}>
+          Are you looking for a therapist?
         </Link>
 
-        <Link to={"/login"}>
-          <Button>Are you looking for a therapist login/signup here!</Button>
-        </Link>
+        <div className="flex-center">
+          <Text>Already have account?</Text>
+          <Link to={"/therapist/login"} className="link">
+            <UILink>Login here.</UILink>
+          </Link>
+        </div>
       </div>
     </div>
   );

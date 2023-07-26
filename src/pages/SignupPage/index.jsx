@@ -98,6 +98,7 @@ function SignupPage(props) {
           </div>
         </form>
 
+        <br></br>
         <div>
           {errorMessage && <div className="error-message">{errorMessage}</div>}
         </div>
