@@ -120,3 +120,17 @@
 .page-header {
   font-size: 2rem;
 }
+
+.logo-container {
+  height: 320px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}

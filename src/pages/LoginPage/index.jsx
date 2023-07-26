@@ -11,7 +11,7 @@ import { useState, useContext } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context";
-import luna from "../../assets/luna/welcome.png";
+import luna from "../../assets/luna/happy.png";
 import "../../App.css";
 import "./LoginPage.css";
 
@@ -55,7 +55,7 @@ function LoginPage(props) {
 
         <div>
           <form onSubmit={handleLoginSubmit} className="form-flex">
-            <div className="form">
+            <div className="logo-container">
               <img src={luna} />
             </div>
 
@@ -88,9 +88,7 @@ function LoginPage(props) {
           </form>
         </div>
 
-        {errorMessage && (
-          <Toast className="error-message">{errorMessage}</Toast>
-        )}
+        {errorMessage && <div className="error-message">{errorMessage}</div>}
 
         <div className="form-flex">
           <Link to={"/"} className="link">

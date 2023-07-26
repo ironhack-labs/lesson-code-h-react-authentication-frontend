@@ -6,14 +6,3 @@
   justify-content: center;
   width: 99%;
 }
-
-.logo-container {
-  height: 320px;
-  width: 300px;
-}
-
-.logo-image {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}

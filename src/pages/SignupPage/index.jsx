@@ -98,10 +98,11 @@ function SignupPage(props) {
           </div>
         </form>
 
+        <div>
+          {errorMessage && <div className="error-message">{errorMessage}</div>}
+        </div>
+
         <br></br>
-        {errorMessage && (
-          <Toast className="error-message">{errorMessage}</Toast>
-        )}
         <div className="form">
           <Link to={"/therapist/login"} className="button-options ">
             Are you a therapist?
