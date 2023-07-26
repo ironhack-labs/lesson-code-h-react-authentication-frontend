@@ -64,7 +64,7 @@ function CheckinPage() {
           </button>
 
           <button className="nav-button" onClick={handleNext}>
-            {step === 3 ? 4 : step + 2}/4
+            {step === 3 ? "SAVE" : step + 2 + " / 4"}
           </button>
         </div>
       </div>

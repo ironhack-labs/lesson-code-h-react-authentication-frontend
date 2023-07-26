@@ -29,7 +29,7 @@
   text-transform: uppercase;
   text-decoration: none;
   color: var(--font), #fff;
-  font-weight: bold;
+  font-size: 1.5rem;
   min-width: 180px;
   border: 2px solid rgba(0, 0, 0, 0.1);
   border-radius: 50px;
