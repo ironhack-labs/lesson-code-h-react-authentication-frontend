@@ -14,6 +14,8 @@ import Footer from "../../components/Footer";
 import axios from "axios";
 import "../../App.css";
 import logo from "../../assets/logos/textlogo.png";
+import { ReactSVG } from "react-svg";
+import back from "../../assets/icons/light/back-button.svg";
 
 const API_URL = import.meta.env.VITE_LIVE_SERVER;
 
@@ -89,6 +91,9 @@ function EditUserPage() {
   return (
     <div className="container">
       <div className="edit-profile-page">
+        <Link to="/dashboard" className="back-link">
+          <ReactSVG src={back} alt="mood" />
+        </Link>
         <Title1>Edit Your hopeme</Title1>
 
         <img src={logo} className="therpist-reg-logo" />
