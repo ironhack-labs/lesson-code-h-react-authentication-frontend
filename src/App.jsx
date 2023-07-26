@@ -19,6 +19,7 @@ import TherapistDetailsPage from "./pages/TherapistDetailsPage";
 import BreathExercisesPage from "./pages/BreathExercisesPage";
 import ArticlesPage from "./pages/ArticlesPage";
 import CalmcastPage from "./pages/CalmcastPage";
+import EditUserPage from "./pages/EditUserProfile";
 
 // Therapist Routes
 import IsTherapist from "./components/IsTherapist";
@@ -112,6 +113,8 @@ function App() {
             path="/find-a-therapist/:therapistId"
             element={<TherapistDetailsPage />}
           />
+
+          <Route path="dashboard/profile/editUser" element={<EditUserPage />} />
         </Routes>
       </FluentProvider>
     </div>

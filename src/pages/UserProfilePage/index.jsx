@@ -22,6 +22,9 @@ function UserProfilePage() {
       <div>My Weekly/Monthly Report</div>
 
       <div>Mood Tracker</div>
+      <Link to="/dashboard/profile/editUser">
+        <button>Edit profile</button>
+      </Link>
 
       <Footer />
     </div>
