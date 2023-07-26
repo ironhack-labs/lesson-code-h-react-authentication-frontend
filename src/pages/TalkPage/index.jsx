@@ -3,13 +3,15 @@ import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
 import "../../App.css";
 import "./TalkPage.css";
-import luna from "../../assets/luna/welcome.png";
+import luna from "../../assets/luna/aokay.png";
 
 function TalkPage() {
   return (
     <div class="container">
       <div className="talk-page">
-        <img src={luna} className="talk-1" />
+        <div className="talk-1">
+          <img className="luna-hero" src={luna} />
+        </div>
 
         <div className="main-text">
           AT hopeme we provide a few services. You can talk with professional
@@ -19,8 +21,11 @@ function TalkPage() {
           free and we can start from 0 each time you chat with me. Have you ever
           gotten so frustrated, angry, or upset that you would like to write a
           letter, email, or message to someone? Have you ever done this then
-          burned, deleted, or erased the message without sending it? This is
-          what our ai-powered chatbot is designed to replicate.
+          burned, deleted, or erased the message without sending it? Well this
+          is what our ai-powered chatbot is designed to replicate.
+          <br></br>
+          <br></br>
+          How can we help you today?
         </div>
 
         <div className="talk-3">
