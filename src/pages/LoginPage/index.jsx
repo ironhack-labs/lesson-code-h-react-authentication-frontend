@@ -49,16 +49,16 @@ function LoginPage(props) {
   };
 
   return (
-    <div className="container loginpage">
+    <div className="container">
       <div className="login-page-1">
-        <div>
-          <img src={luna} />
-        </div>
-
-        <div>Welcome Back!</div>
+        <div className="page-header">Welcome Back!</div>
 
         <div>
-          <form onSubmit={handleLoginSubmit}>
+          <form onSubmit={handleLoginSubmit} className="form-flex">
+            <div className="form">
+              <img src={luna} />
+            </div>
+
             <div className="form">
               Email:
               <Input
@@ -78,6 +78,7 @@ function LoginPage(props) {
                 onChange={handlePassword}
               />
             </div>
+            <br />
 
             <div>
               <button type="submit" className="button-primary">
@@ -91,15 +92,17 @@ function LoginPage(props) {
           <Toast className="error-message">{errorMessage}</Toast>
         )}
 
-        <div className="form">
-          <Text>Not registered as a user yet?</Text>
-          <Link to="/signup">
-            <UILink>Register here</UILink>
-          </Link>
-
+        <div className="form-flex">
           <Link to={"/"} className="link">
             <button className="button-options">Are you a therapist?</button>
           </Link>
+
+          <div class="flex-center">
+            <Text>Not registered as a user yet?</Text>
+            <Link to="/signup">
+              <UILink>Register here</UILink>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
