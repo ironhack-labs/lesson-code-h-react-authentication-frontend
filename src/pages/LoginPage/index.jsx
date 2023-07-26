@@ -99,10 +99,10 @@ function LoginPage(props) {
           <Link to={"/"} className="link">
             <button className="button-options">Are you a therapist?</button>
           </Link>
-
+          <br></br>
           <div class="flex-center">
             <Text>Not registered as a user yet?</Text>
-            <Link to="/signup">
+            <Link to="/signup" className="link">
               <UILink>Register here</UILink>
             </Link>
           </div>
