@@ -51,10 +51,12 @@ function LoginPage(props) {
   return (
     <div className="container">
       <div className="login-page-1">
-        <div className="page-header">Welcome Back!</div>
-
         <div>
           <form onSubmit={handleLoginSubmit} className="form-flex">
+            <div>
+              <div className="page-header">Welcome Back!</div>
+            </div>
+
             <div className="logo-container">
               <img src={luna} />
             </div>
@@ -84,11 +86,14 @@ function LoginPage(props) {
               <button type="submit" className="button-primary">
                 Login
               </button>
+              <br></br>
+
+              {errorMessage && (
+                <div className="error-message">{errorMessage}</div>
+              )}
             </div>
           </form>
         </div>
-
-        {errorMessage && <div className="error-message">{errorMessage}</div>}
 
         <div className="form-flex">
           <Link to={"/"} className="link">

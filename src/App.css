@@ -119,6 +119,9 @@
 
 .page-header {
   font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo-container {
@@ -133,4 +136,9 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+
+.error-message {
+  display: flex;
+  justify-content: center;
 }
