@@ -142,3 +142,9 @@
   display: flex;
   justify-content: center;
 }
+
+.back-link {
+  position: absolute;
+  top: 40px;
+  left: 30px;
+}

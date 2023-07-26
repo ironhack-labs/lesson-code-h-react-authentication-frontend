@@ -9,11 +9,18 @@ import love from "../../assets/luna/love.png";
 import running from "../../assets/luna/determined.png";
 import mindfulness from "../../assets/luna/meditate.png";
 import recovery from "../../assets/luna/aokay.png";
+import { ReactSVG } from "react-svg";
+import back from "../../assets/icons/light/back-button.svg";
+import { Link } from "react-router-dom";
 
 function ArticlesPage() {
   return (
     <div class="container">
       <div className="aricles-container">
+        <Link to="/exercises">
+          <ReactSVG src={back} alt="mood" />
+        </Link>
+
         <div className="breath-card">
           <div className="card-1">
             Anxiety <br></br> <div></div>

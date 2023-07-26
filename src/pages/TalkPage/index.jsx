@@ -4,11 +4,17 @@ import Footer from "../../components/Footer";
 import "../../App.css";
 import "./TalkPage.css";
 import luna from "../../assets/luna/aokay.png";
+import { ReactSVG } from "react-svg";
+import back from "../../assets/icons/light/back-button.svg";
 
 function TalkPage() {
   return (
     <div class="container">
       <div className="talk-page">
+        <Link className="back-link" to="/exercises">
+          <ReactSVG src={back} alt="mood" />
+        </Link>
+
         <div className="talk-1">
           <img className="luna-hero" src={luna} />
         </div>

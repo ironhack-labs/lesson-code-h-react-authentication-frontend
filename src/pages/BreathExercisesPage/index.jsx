@@ -17,7 +17,7 @@ function BreathExercisesPage() {
     <div class="container">
       <div className="breath">
         <div className="breath-1">
-          <Link to="/dashboard">
+          <Link to="/exercises" className="back-link">
             <ReactSVG src={back} alt="mood" />
           </Link>
 
