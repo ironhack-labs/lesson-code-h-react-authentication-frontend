@@ -11,7 +11,7 @@ import { useState, useContext } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context";
-import luna from "../../assets/luna/welcome.png";
+import luna from "../../assets/luna/happy.png";
 import "../../App.css";
 import "./LoginPage.css";
 
@@ -49,16 +49,18 @@ function LoginPage(props) {
   };
 
   return (
-    <div className="container loginpage">
+    <div className="container">
       <div className="login-page-1">
         <div>
-          <img src={luna} />
-        </div>
+          <form onSubmit={handleLoginSubmit} className="form-flex">
+            <div>
+              <div className="page-header">Welcome Back!</div>
+            </div>
 
-        <div>Welcome Back!</div>
+            <div className="logo-container">
+              <img src={luna} />
+            </div>
 
-        <div>
-          <form onSubmit={handleLoginSubmit}>
             <div className="form">
               Email:
               <Input
@@ -78,28 +80,32 @@ function LoginPage(props) {
                 onChange={handlePassword}
               />
             </div>
+            <br />
 
             <div>
               <button type="submit" className="button-primary">
                 Login
               </button>
+              <br></br>
+
+              {errorMessage && (
+                <div className="error-message">{errorMessage}</div>
+              )}
             </div>
           </form>
         </div>
 
-        {errorMessage && (
-          <Toast className="error-message">{errorMessage}</Toast>
-        )}
-
-        <div className="form">
-          <Text>Not registered as a user yet?</Text>
-          <Link to="/signup">
-            <UILink>Register here</UILink>
-          </Link>
-
-          <Link to={"/"} className="link">
+        <div className="form-flex">
+          <Link to={"/therapist/login"} className="link">
             <button className="button-options">Are you a therapist?</button>
           </Link>
+          <br></br>
+          <div class="flex-center">
+            <Text>Not registered as a user yet?</Text>
+            <Link to="/signup" className="link">
+              <UILink>Register here</UILink>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

@@ -13,6 +13,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { TherapistAuthContext } from "../../context/therapistAuth.context";
 import "./TherapistLogin.css";
 import "../../App.css";
+import luna from "../../assets/luna/welcome.png";
 
 const API_URL = import.meta.env.VITE_LIVE_SERVER;
 
@@ -51,12 +52,17 @@ function TherapistLoginPage(props) {
   return (
     <div className="container therapistlogin ">
       <div className="therapistlogin-1">
-        <Title1>Therapist Login</Title1>
+        <div>
+          <div className="page-header">Welcome Back!</div>
+        </div>
+
+        <div className="logo-container">
+          <img src={luna} />
+        </div>
 
         <form onSubmit={handleLoginSubmit}>
-          <div>
-            {" "}
-            <Label>Email:</Label>
+          <div className="form">
+            Email:
             <Input
               type="email"
               name="email"
@@ -65,8 +71,8 @@ function TherapistLoginPage(props) {
             />
           </div>
 
-          <div>
-            <Label>Password:</Label>
+          <div className="form">
+            Password:
             <Input
               type="password"
               name="password"
@@ -75,23 +81,41 @@ function TherapistLoginPage(props) {
             />
           </div>
 
+          <br></br>
+
           <div>
-            <Button type="submit">Login</Button>
+            <button className="button-primary" type="submit">
+              Login
+            </button>
+
+            <br></br>
+
+            {errorMessage && (
+              <div className="error-message">{errorMessage}</div>
+            )}
+
+            <br></br>
           </div>
         </form>
-        {errorMessage && (
-          <Toast className="error-message">{errorMessage}</Toast>
-        )}
 
-        <Text>Don't have an account yet?</Text>
-        <Link to={"/therapist/signup"}>
-          {" "}
-          <UILink>Register</UILink>
-        </Link>
+        <div class="form-flex">
+          <Link to={"/login"} className="link">
+            <button className="button-options">
+              {" "}
+              Are you Looking for a therapist?
+            </button>
+          </Link>
 
-        <Link to={"/login"}>
-          <Button>Are you looking for a therapist login/signup here!</Button>
-        </Link>
+          <br></br>
+          <div class="flex-center">
+            {" "}
+            <Text>Don't have a professional account yet?</Text>
+            <Link to={"/therapist/signup"} className="link">
+              {" "}
+              <UILink className="link">Register here </UILink>
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );

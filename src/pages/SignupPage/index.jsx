@@ -13,6 +13,7 @@ import { useState, useContext } from "react";
 import { AuthContext } from "../../context/auth.context";
 import { Link, useNavigate } from "react-router-dom";
 import luna from "../../assets/luna/welcome.png";
+import logo from "../../assets/logos/textlogo.png";
 
 import axios from "axios";
 
@@ -56,15 +57,12 @@ function SignupPage(props) {
   };
 
   return (
-    <div className="SignupPage">
-      <div className="container signuppage">
-        <div>
-          <img src={luna} />
-        </div>
-
-        <div>Create Your hopeme Profile Here</div>
-
+    <div className="container">
+      <div className="signup-page-1">
         <form onSubmit={handleSignupSubmit}>
+          <div className="logo-container">
+            <img className="logo-image" src={logo} />
+          </div>
           <div className="form">
             {" "}
             Email:
@@ -93,24 +91,33 @@ function SignupPage(props) {
           </div>
 
           <div className="form">
+            <br></br>
             <button type="submit" className="button-primary">
               Register
             </button>
           </div>
         </form>
-        {errorMessage && (
-          <Toast className="error-message">{errorMessage}</Toast>
-        )}
+
+        <br></br>
+        <div>
+          {errorMessage && <div className="error-message">{errorMessage}</div>}
+        </div>
+
+        <br></br>
         <div className="form">
-          <Text>Already have account?</Text>
-
-          <Link to="/login">
-            <UILink>Login here.</UILink>
-          </Link>
-
-          <Link to={"/therapist/login"} className="button-options">
+          <Link to={"/therapist/login"} className="button-options ">
             Are you a therapist?
           </Link>
+
+          <br></br>
+
+          <div className="flex-center">
+            <Text>Already have account?</Text>
+
+            <Link to="/login" className="link">
+              <UILink>Login here</UILink>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
