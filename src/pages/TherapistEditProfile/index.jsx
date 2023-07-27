@@ -5,12 +5,14 @@ import {
   Button,
   Toast,
 } from "@fluentui/react-components";
+import { ReactSVG } from "react-svg";
 import { useState, useContext, useEffect } from "react";
 import "./TherapistEditProfile.css";
 import "../../App.css";
 import { Link, useNavigate } from "react-router-dom";
 import { TherapistAuthContext } from "../../context/therapistAuth.context";
 import axios from "axios";
+import back from "../../assets/icons/light/back-button.svg";
 
 const API_URL = import.meta.env.VITE_LIVE_SERVER;
 
@@ -124,109 +126,122 @@ function TherapistEditProfile() {
       .catch((error) => console.log(error));
   };
   return (
-    <div className="container therapist-edit-profile">
-      <nav>
-        <Link to="/therapist/profile">
-          <Button>Back to profile</Button>
-        </Link>
-        <Button onClick={logOutTherapist}>Logout</Button>
-      </nav>
-      <Title1>Edit Your Account Details</Title1>
-
-      <form onSubmit={handleFormSubmit}>
-        <div>
-          <Label>Image:</Label>
-          <Input
-            type="file"
-            name="imageUrl"
-            accept="/image/*"
-            onChange={(e) => uploadImage(e)}
-          />
-        </div>
-        <div>
-          <Label>Email:</Label>
-          <Input
-            value={email}
-            name="email"
-            onChange={(ev, value) => setEmail(ev.target.value)}
-          />
+    <div className="container">
+      <div className="therapist-edit-profile-page-container">
+        <div className="therapist-profile-box-1">
+          <div>
+            <p>Update your profile information</p>
+          </div>
         </div>
 
+        <form onSubmit={handleFormSubmit}>
+          <div className="form">
+            Profile Picture:
+            <Input
+              type="file"
+              name="imageUrl"
+              accept="/image/*"
+              onChange={(e) => uploadImage(e)}
+            />
+          </div>
+          <div className="form">
+            Email:
+            <Input
+              value={email}
+              name="email"
+              onChange={(ev, value) => setEmail(ev.target.value)}
+            />
+          </div>
+
+          <div className="form">
+            Name:
+            <Input
+              value={name}
+              name="name"
+              onChange={(ev, value) => setName(ev.target.value)}
+            />
+          </div>
+          <div className="form">
+            Introduction:
+            <Input
+              value={introduction}
+              name="introduction"
+              onChange={(ev, value) => setIntroduction(ev.target.value)}
+            />
+          </div>
+          <div className="form">
+            Location:
+            <Input
+              value={location}
+              name="location"
+              onChange={(ev, value) => setLocation(ev.target.value)}
+            />
+          </div>
+
+          <div className="form">
+            Price per session (€):
+            <Input
+              value={price}
+              name="price"
+              onChange={(ev, value) => setPrice(ev.target.value)}
+            />
+          </div>
+
+          <div className="form">
+            Languages Spoken:
+            <Input
+              value={languages}
+              name="languages"
+              onChange={(ev, value) => setLanguages(ev.target.value)}
+            />
+          </div>
+
+          <div className="form">
+            Availability:
+            <Input
+              value={availability}
+              name="availability"
+              onChange={(ev, value) => setAvailability(ev.target.value)}
+            />
+          </div>
+
+          <div className="form">
+            Approach:
+            <Input
+              value={approach}
+              name="approach"
+              onChange={(ev, value) => setApproach(ev.target.value)}
+            />
+          </div>
+
+          <div>
+            <br></br>
+            <button type="submit" className="button-primary">
+              Save Changes
+            </button>
+
+            {errorMessage && (
+              <Toast className="error-message">{errorMessage}</Toast>
+            )}
+          </div>
+        </form>
+
+        {successMessage && <div>Profile updated successfully!</div>}
         <div>
-          <Label>Name:</Label>
-          <Input
-            value={name}
-            name="name"
-            onChange={(ev, value) => setName(ev.target.value)}
-          />
-        </div>
-        <div>
-          <Label>Introduction:</Label>
-          <Input
-            value={introduction}
-            name="introduction"
-            onChange={(ev, value) => setIntroduction(ev.target.value)}
-          />
-        </div>
-        <div>
-          <Label>Location:</Label>
-          <Input
-            value={location}
-            name="location"
-            onChange={(ev, value) => setLocation(ev.target.value)}
-          />
+          <button
+            type="delete"
+            onClick={handleDeleteButton}
+            className="button-primary"
+          >
+            Delete Account
+          </button>
         </div>
 
         <div>
-          <Label>Price per session (€):</Label>
-          <Input
-            value={price}
-            name="price"
-            onChange={(ev, value) => setPrice(ev.target.value)}
-          />
+          <Link to="/therapist/profile" className="link">
+            <div className="button-primary">Back to My Profile</div>
+          </Link>
         </div>
-
-        <div>
-          <Label>Languages Spoken:</Label>
-          <Input
-            value={languages}
-            name="languages"
-            onChange={(ev, value) => setLanguages(ev.target.value)}
-          />
-        </div>
-
-        <div>
-          <Label>Availability:</Label>
-          <Input
-            value={availability}
-            name="availability"
-            onChange={(ev, value) => setAvailability(ev.target.value)}
-          />
-        </div>
-
-        <div>
-          <Label>Approach:</Label>
-          <Input
-            value={approach}
-            name="approach"
-            onChange={(ev, value) => setApproach(ev.target.value)}
-          />
-        </div>
-
-        <div>
-          <Button type="submit">Save Changes</Button>
-        </div>
-      </form>
-      {errorMessage && <Toast className="error-message">{errorMessage}</Toast>}
-      {successMessage && (
-        <div style={{ color: "green", fontWeight: "bold" }}>
-          Profile updated successfully!
-        </div>
-      )}
-      <div>
-        <Button type="delete" onClick={handleDeleteButton}>
-          Delete Account
-        </Button>
       </div>
     </div>
   );

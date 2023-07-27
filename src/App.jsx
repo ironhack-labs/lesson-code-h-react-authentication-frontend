@@ -106,7 +106,6 @@ function App() {
             path="/therapist/editProfile"
             element={
               <IsTherapist>
-                (" ")
                 <TherapistEditProfile />{" "}
               </IsTherapist>
             }
