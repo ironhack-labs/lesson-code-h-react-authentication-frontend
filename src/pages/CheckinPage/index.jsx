@@ -5,7 +5,6 @@ import { ReactSVG } from "react-svg";
 import axios from "axios";
 import back from "../../assets/icons/light/back-button.svg";
 import Footer from "../../components/Footer";
-import Navbar from "../../components/Navbar";
 import "../../App.css";
 import "./CheckinPage.css";
 import { CheckInContext } from "../../context/checkIn.context";
@@ -71,8 +70,6 @@ function CheckinPage(props) {
 
   return (
     <div className="container checkin">
-      <Navbar />
-
       <div className="step-pages">
         {step === 0 && <Checkin1 />}
         {step === 1 && <Checkin2 />}
