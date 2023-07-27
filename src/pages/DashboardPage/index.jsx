@@ -14,8 +14,8 @@ function DashboardPage() {
   const { logOutUser } = useContext(AuthContext);
   return (
     <div className="container ">
-      <div onClick={logOutUser} className="dashboard-user-container">
-        <Link to="/" className="logout-main">
+      <div className="dashboard-user-container">
+        <Link to="/" onClick={logOutUser} className="logout-main">
           <img src={logout} />
         </Link>
 
