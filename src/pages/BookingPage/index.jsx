@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { ReactSVG } from "react-svg";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Calendar from "react-calendar";
+import back from "../../assets/icons/light/back-button.svg";
 
 function BookingPage() {
   const [selectedDate, setSelectedDate] = useState(null);
@@ -24,6 +26,9 @@ function BookingPage() {
 
   return (
     <div>
+      <Link to="/find-a-therapist">
+        <ReactSVG src={back} alt="mood" />
+      </Link>
       <div>
         <Calendar onChange={setSelectedDate} />
       </div>
@@ -51,6 +56,9 @@ function BookingPage() {
           {/* Add any additional booking details here */}
           <p>Date: {selectedDate && selectedDate.toDateString()}</p>
           <p>Time: {selectedTime}</p>
+          <Link to="/dashboard">
+            <button>Back to Dashboard</button>
+          </Link>
         </div>
       )}
     </div>

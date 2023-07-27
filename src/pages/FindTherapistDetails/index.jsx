@@ -54,6 +54,11 @@ function TherapistDetailsPage(props) {
             </div>
           </>
         )}
+        <div>
+          <Link to="/book-a-therapist">
+            <button>Book an Appointment</button>
+          </Link>
+        </div>
       </div>
       <Footer />
     </div>
