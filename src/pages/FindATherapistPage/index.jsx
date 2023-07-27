@@ -12,7 +12,7 @@ import { Button } from "@fluentui/react-components";
 import luna from "../../assets/luna/breathe.png";
 import location from "../../assets/icons/dark/location.png";
 import euro from "../../assets/icons/dark/euro.png";
-import therapist from "../../assets/therapist.png";
+import therapistexample from "../../assets/therapist.png";
 
 const API_URL = import.meta.env.VITE_LIVE_SERVER;
 
@@ -63,41 +63,51 @@ function FindATherapistPage() {
         </div>
 
         <div className="find-a-therapist-container-2">
-          <div className="therapist-info-card">
-            <div className="therapist-card-1">
-              <div className="find-therapist-pic">
-                <img src={therapist} className="therapist-card-pic" />
+          {therapists.map((therapist) => (
+            <div className="therapist-info-card" key={therapist._id}>
+              <div className="therapist-card-1">
+                <div className="find-therapist-pic">
+                  <img
+                    src={therapist.imageUrl || luna}
+                    className="therapist-card-pic"
+                  />
+                </div>
+                <div className="find-therapist-name ">
+                  <div className="main-name">{therapist.name}</div>
+                  <div className="field-of-study">
+                    Supervised Psycology Student
+                  </div>
+                </div>
               </div>
-              <div className="find-therapist-name ">
-                <div className="main-name">Name of therapist</div>
-                <div className="field-of-study">
-                  Supervised Psycology Student
+
+              <div className="therapist-card-2">
+                <div className="therpist-card-info-section">
+                  {" "}
+                  <img src={location} /> {therapist.location}
+                </div>
+
+                <div className="therpist-card-info-section-2">
+                  <img src={euro} /> {therapist.price}/h
+                </div>
+
+                <div className="therpist-card-info-section-2">
+                  {" "}
+                  <div className="circle">DE</div>
+                  <div className="circle">EN</div>
+                  <div className="circle">ES</div>
+                </div>
+              </div>
+
+              <div className="therapist-card-3">
+                <div
+                  className="button-options"
+                  onClick={() => handleLearnMore(therapist._id)}
+                >
+                  MAKE AN APPOINTMENT
                 </div>
               </div>
             </div>
-
-            <div className="therapist-card-2">
-              <div className="therpist-card-info-section">
-                {" "}
-                <img src={location} /> Schöneberg, Berlin 12157
-              </div>
-
-              <div className="therpist-card-info-section-2">
-                <img src={euro} /> Free
-              </div>
-
-              <div className="therpist-card-info-section-2">
-                {" "}
-                <div className="circle">DE</div>
-                <div className="circle">EN</div>
-                <div className="circle">ES</div>
-              </div>
-            </div>
-
-            <div className="therapist-card-3">
-              <div className="button-options">MAKE AN APPOINTMENT</div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
       {/* 
