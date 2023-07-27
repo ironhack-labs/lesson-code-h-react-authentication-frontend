@@ -95,7 +95,13 @@ function CheckinPage(props) {
             className="nav-button"
             onClick={step === 3 ? handleSubmit : handleNext}
           >
-            {step === 3 ? "SAVE" : step + 2 + " / 4"}
+            {step === 3 ? (
+              <Link to="/dashboard" className="link">
+                SAVE
+              </Link>
+            ) : (
+              step + 2 + " / 4"
+            )}
           </button>
         </div>
       </div>
