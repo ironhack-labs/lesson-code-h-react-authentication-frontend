@@ -32,6 +32,7 @@ import TherapySuccessPage from "./pages/TherapySuccessPage";
 // Sample Component Setup
 import DesignSamplePage from "./pages/DesignSamplePage";
 import ExamplePage from "./pages/ExamplePage";
+import FollowTheBreath from "./pages/FollowTheBreath";
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
           <Route path="/articles" element={<ArticlesPage />} />
           <Route path="/calmcast" element={<CalmcastPage />} />
           <Route path="/therapist/success" element={<TherapySuccessPage />} />
+          <Route path="/follow-the-breath" element={<FollowTheBreath />} />
 
           <Route
             path="/signup"

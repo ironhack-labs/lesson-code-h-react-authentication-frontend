@@ -31,7 +31,9 @@ function BreathExercisesPage() {
             </div>
 
             <div className="card-2">
-              <img src={anxiety} className="mini-luna" />
+              <Link className="link" to="/follow-the-breath">
+                <img src={anxiety} className="mini-luna" />
+              </Link>
             </div>
           </div>
 
@@ -41,7 +43,9 @@ function BreathExercisesPage() {
             </div>
 
             <div className="card-2">
-              <img src={anger} className="mini-luna" />
+              <Link className="link" to="/follow-the-breath">
+                <img src={anger} className="mini-luna" />
+              </Link>
             </div>
           </div>
 
@@ -51,7 +55,9 @@ function BreathExercisesPage() {
             </div>
 
             <div className="card-2">
-              <img src={irritation} className="mini-luna" />
+              <Link className="link" to="/follow-the-breath">
+                <img src={irritation} className="mini-luna" />
+              </Link>
             </div>
           </div>
 
@@ -61,7 +67,9 @@ function BreathExercisesPage() {
             </div>
 
             <div className="card-2">
-              <img src={sadness} className="mini-luna" />
+              <Link className="link" to="/follow-the-breath">
+                <img src={sadness} className="mini-luna" />
+              </Link>
             </div>
           </div>
 
@@ -71,16 +79,21 @@ function BreathExercisesPage() {
             </div>
 
             <div className="card-2">
-              <img src={mindfulness} className="mini-luna" />
+              <Link className="link" to="/follow-the-breath">
+                <img src={mindfulness} className="mini-luna" />
+              </Link>
             </div>
           </div>
+
           <div className="breath-card">
             <div className="card-1">
               Worry <div>3min</div>
             </div>
 
             <div className="card-2">
-              <img src={worry} className="mini-luna" />
+              <Link className="link" to="/follow-the-breath">
+                <img src={worry} className="mini-luna" />
+              </Link>
             </div>
           </div>
         </div>

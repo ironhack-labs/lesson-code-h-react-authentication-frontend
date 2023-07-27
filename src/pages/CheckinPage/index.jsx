@@ -19,7 +19,7 @@ const API_URL = import.meta.env.VITE_LIVE_SERVER;
 function CheckinPage(props) {
   const authToken = localStorage.getItem("authToken");
   const [step, setStep] = useState(0);
-  const [successMessage, setSuccessMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
   const {
@@ -58,6 +58,9 @@ function CheckinPage(props) {
       .then((res) => {
         console.log("Data saved: ", res.data);
         setSuccessMessage(true);
+        setTimeout(() => {
+          setSuccessMessage(false);
+        }, 3000);
       })
       .catch((error) => {
         console.log(error.response);
@@ -76,7 +79,9 @@ function CheckinPage(props) {
         {step === 2 && <Checkin3 />}
         {step === 3 && <Checkin4 />}
       </div>
-
+      {successMessage && (
+        <div className="success-message">Check-in saved successfully!</div>
+      )}
       <div className="nav-buttons-container">
         <div className="nav-buttons">
           <button className="nav-button" onClick={handlePrev}>
