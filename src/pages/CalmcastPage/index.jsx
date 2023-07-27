@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState, useEffect } from "react";
 import { ReactSVG } from "react-svg";
 import back from "../../assets/icons/light/back-button.svg";
 import { Link } from "react-router-dom";
@@ -9,8 +10,28 @@ import play from "../../assets/icons/dark/Play Button.png";
 import progress from "../../assets/slider/2.png";
 import soundwaves from "../../assets/icons/light/soundwaves.png";
 import luna from "../../assets/luna/breathe.png";
+import song from "../../assets/sounds/chill-out-sound.mp3";
 
 function CalmcastPage() {
+  const [audio] = useState(new Audio(song));
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const playPause = () => {
+    if (isPlaying) {
+      audio.pause();
+    } else {
+      audio.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
+
+  // useEffect hook to add a cleanup function
+  useEffect(() => {
+    return () => {
+      audio.pause(); // Pause the audio when the component unmounts
+    };
+  }, [audio]);
+
   return (
     <div class="container">
       <Link to="/exercises" className="back-link">
@@ -38,7 +59,7 @@ function CalmcastPage() {
         </div>
 
         <div className="calmcast-4">
-          <img src={play} alt="play button" />
+          <img onClick={playPause} src={play} alt="play button" />
         </div>
       </div>
 
