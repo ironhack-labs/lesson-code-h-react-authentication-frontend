@@ -27,17 +27,53 @@
   height: 60px;
 }
 .ai-chat-2 {
-  height: 25%;
+  padding-top: 5%;
+  height: 65%;
+  overflow-y: scroll;
   width: 100%;
-  border: 1px solid green;
 }
+
+.ai-message-chat {
+  border: 1px solid red;
+  margin-bottom: 15px;
+}
+
+.user-message {
+  border: 2px solid #fff;
+  background-color: #857eb9;
+  color: #fff;
+}
+
+.bot-message {
+  border: 2px solid #857eb9;
+  background-color: #fff;
+  color: #857eb9;
+}
+
 .ai-chat-3 {
-  height: 25%;
+  height: 15%;
   width: 100%;
-  border: 1px solid green;
+  border: 3px solid rgba(0, 0, 0, 0.3);
+  margin-bottom: 10px;
+  display: flex;
 }
+
 .ai-chat-4 {
-  height: 25%;
+  height: 5%;
   width: 100%;
-  border: 1px solid green;
+  border: 3px solid rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #857eb9;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.luna-user-chat {
+  width: 100%;
+}
+
+.luna-send {
+  height: 60%;
 }
