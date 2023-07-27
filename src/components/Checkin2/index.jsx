@@ -7,8 +7,10 @@ import { useCheckInContext } from "../../context/checkIn.context";
 
 const API_URL = import.meta.env.VITE_LIVE_SERVER;
 
-function Checkin2({ setFormData, formData }) {
-  const { imageUrl, setImageUrl } = useCheckInContext();
+function Checkin2() {
+  const { imageState } = useCheckInContext();
+  const [imageUrl, setImageUrl] = imageState;
+
   const authToken = localStorage.getItem("authToken");
 
   const uploadImage = (e) => {
@@ -25,12 +27,10 @@ function Checkin2({ setFormData, formData }) {
     axios
       .post(`${API_URL}/checkIn/uploadImg`, data, configuration)
       .then((res) => {
-        console.log(res.data);
         setImageUrl(res.data);
       })
       .catch((error) => console.log(error));
   };
-
 
   return (
     <div className="checkin2">
@@ -44,7 +44,6 @@ function Checkin2({ setFormData, formData }) {
       <div>
         <label>Image:</label>
         <input
-          value={formData.imageUrl}
           type="file"
           name="imageUrl"
           accept="/image/*"
