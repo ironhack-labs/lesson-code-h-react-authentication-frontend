@@ -99,7 +99,7 @@ function EditUserPage() {
         <img src={logo} className="therpist-reg-logo" />
 
         <form onSubmit={handleFormSubmit}>
-          <div class="form">
+          <div className="form">
             Email:
             <Input
               value={email}
@@ -108,7 +108,7 @@ function EditUserPage() {
             />
           </div>
 
-          <div class="form">
+          <div className="form">
             Name:
             <Input
               value={name}

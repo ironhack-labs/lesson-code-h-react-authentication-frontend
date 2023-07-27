@@ -16,11 +16,6 @@ function CheckInProviderWrapper(props) {
     diaryState: [diaryEntry, setDiaryEntry],
   };
 
-  console.log("mood in context", mood);
-  console.log("nmageUrl in context", imageUrl);
-  console.log("audioUrl in context", audioUrl);
-  console.log("diary in context", diaryEntry);
-
   return (
     <CheckInContext.Provider value={multipleValues}>
       {props.children}

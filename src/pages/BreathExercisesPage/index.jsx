@@ -14,7 +14,7 @@ import worry from "../../assets/luna/concern.png";
 
 function BreathExercisesPage() {
   return (
-    <div class="container">
+    <div className="container">
       <div className="breath">
         <div className="breath-1">
           <Link to="/exercises" className="back-link">

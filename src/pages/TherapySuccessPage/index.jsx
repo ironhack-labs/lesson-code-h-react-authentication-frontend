@@ -17,9 +17,9 @@ import luna from "../../assets/luna/love.png";
 
 function TherapySuccessPage() {
   return (
-    <div class="container ">
-      <div class="therapist-success-page">
-        <div class="thank-you">THANKS A MILLION!</div>
+    <div className="container ">
+      <div className="therapist-success-page">
+        <div className="thank-you">THANKS A MILLION!</div>
 
         <br></br>
         <br></br>
@@ -41,14 +41,14 @@ function TherapySuccessPage() {
         <div>
           <div className="flex-center">
             <Link to={"/therapist/login"} className="link">
-              <div class="button-primary">Therapist Login</div>
+              <div className="button-primary">Therapist Login</div>
             </Link>
           </div>
 
           <br></br>
           <div>
             <Link to="/login" className="link">
-              <div class="button-primary">Login as a patient here</div>
+              <div className="button-primary">Login as a patient here</div>
             </Link>
           </div>
         </div>

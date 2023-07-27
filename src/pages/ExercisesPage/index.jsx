@@ -7,7 +7,7 @@ import "./ExercisesPage.css";
 
 function ExercisesPage() {
   return (
-    <div class="container">
+    <div className="container">
       <div className="exercises">
         <div className="main-container">
           <div className="ex-box-1">

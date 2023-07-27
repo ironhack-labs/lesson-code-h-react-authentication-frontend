@@ -70,7 +70,6 @@ function TherapistEditProfile() {
     axios
       .post(`${API_URL}/therapist/upload`, data, configuration)
       .then((res) => {
-        console.log(res.data);
         setimageUrl(res.data);
       })
       .catch((error) => console.log(error));
@@ -100,7 +99,6 @@ function TherapistEditProfile() {
       .put(`${API_URL}/therapist/updateProfile`, requestBody, config)
       .then((response) => {
         // Handle success, if needed.
-        console.log("Profile updated successfully!", response.data);
         setSuccessMessage(true);
       })
       .catch((error) => {
@@ -119,7 +117,6 @@ function TherapistEditProfile() {
     axios
       .delete(`${API_URL}/therapist/deleteTherapist`, config)
       .then((response) => {
-        console.log("Profile deleted!");
         localStorage.removeItem("authToken");
         navigate("/");
       })

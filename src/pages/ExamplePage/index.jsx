@@ -9,7 +9,7 @@ import luna from "../../assets/luna/welcome.png";
 
 function ExamplePage() {
   return (
-    <div class="container example">
+    <div className="container example">
       <Link to="/dashboard">
         <ReactSVG src={back} alt="mood" />
       </Link>

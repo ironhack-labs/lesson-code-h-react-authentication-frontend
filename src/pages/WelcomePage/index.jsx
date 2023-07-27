@@ -11,9 +11,9 @@ function WelcomePage() {
   const { isLoggedIn, user } = useContext(AuthContext);
 
   return (
-    <div class="container ">
+    <div className="container ">
       {isLoggedIn && (
-        <div class="welcome">
+        <div className="welcome">
           <div>
             <img src={luna} href="Luna, your helpful guide" />
           </div>

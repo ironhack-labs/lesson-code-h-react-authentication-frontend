@@ -34,7 +34,7 @@ function CalmcastPage() {
   }, [audio]);
 
   return (
-    <div class="container">
+    <div className="container">
       <div className="calmcast-container"></div>
       <Link to="/exercises" className="back-link">
         <ReactSVG src={back} alt="mood" />

@@ -36,8 +36,6 @@ function LoginPage(props) {
     axios
       .post(`${API_URL}/auth/login`, requestBody)
       .then((response) => {
-        console.log("JWT token", response.data.authToken);
-
         storeToken(response.data.authToken);
         authenticateUser();
         navigate("/dashboard");
@@ -100,7 +98,7 @@ function LoginPage(props) {
             <button className="button-options">Are you a therapist?</button>
           </Link>
           <br></br>
-          <div class="flex-center">
+          <div className="flex-center">
             <Text>Not registered as a user yet?</Text>
             <Link to="/signup" className="link">
               <UILink>Register here</UILink>

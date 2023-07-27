@@ -37,8 +37,6 @@ function TherapistLoginPage(props) {
     axios
       .post(`${API_URL}/therapist/login`, requestBody)
       .then((response) => {
-        console.log("JWT token", response.data.authToken);
-
         storeToken(response.data.authToken);
         authenticateTherapist();
         navigate("/therapist/profile");
@@ -98,7 +96,7 @@ function TherapistLoginPage(props) {
           </div>
         </form>
 
-        <div class="form-flex">
+        <div className="form-flex">
           <Link to={"/login"} className="link">
             <button className="button-options">
               {" "}
@@ -107,7 +105,7 @@ function TherapistLoginPage(props) {
           </Link>
 
           <br></br>
-          <div class="flex-center">
+          <div className="flex-center">
             {" "}
             <Text>Don't have a professional account yet?</Text>
             <Link to={"/therapist/signup"} className="link">
