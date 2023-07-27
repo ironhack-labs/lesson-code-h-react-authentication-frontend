@@ -1,1 +1,143 @@
+.find-a-therapist-container {
+  width: 99vw;
+  height: 90vh;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
+.tiny-luna {
+  width: 50px;
+}
+.find-a-therapist-container-1 {
+  width: 96%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.find-a-therapist-container-2 {
+  width: 100%;
+  height: 100%;
+  padding: 2%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.therapist-info-card {
+  width: 85%;
+  height: 180px;
+  border: 3px solid rgba(70, 64, 113, 0.6);
+  display: flex;
+  flex-direction: column;
+  border-radius: 5%;
+  background-color: #fff;
+}
+
+.therapist-card-1 {
+  height: 40%;
+  width: 100%;
+  display: flex;
+}
+
+.find-therapist-pic {
+  height: 100%;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.therapist-card-pic {
+  border: 3px solid rgba(70, 64, 113, 0.6);
+  border-radius: 50%;
+}
+
+.find-therapist-name {
+  height: 100%;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 2%;
+  color: var(--main-purple, #5e63a3);
+  font-family: Helvetica;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.field-of-study {
+  display: flex;
+  align-items: center;
+  height: 40%;
+}
+
+.main-name {
+  color: var(--dark-purple, #464071);
+  font-family: Helvetica;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  height: 40%;
+}
+
+.therapist-card-2 {
+  display: flex;
+  align-items: center;
+  height: 20%;
+  width: 100%;
+  color: var(--main-purple, #5e63a3);
+}
+
+.therpist-card-info-section {
+  width: 56%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 2%;
+  color: var(--main-purple, #5e63a3);
+}
+
+.therpist-card-info-section-2 {
+  height: 100%;
+  width: 22%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.circle {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: #857eb9;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  color: #fff;
+}
+
+.therapist-card-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 40%;
+  width: 100%;
+}
