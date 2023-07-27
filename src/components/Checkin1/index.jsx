@@ -20,7 +20,7 @@ function Checkin1() {
   const {
     moodState: [mood, setMood],
   } = useContext(CheckInContext);
-  
+
   const handleChange = (e) => {
     setMood(e.target.value);
   };
@@ -76,7 +76,9 @@ function Checkin1() {
       </div>
 
       <div>
-        <div onChange={handleChange}>{step1[mood].number}</div>
+        <div className="hide-it" onChange={handleChange}>
+          {step1[mood].number}
+        </div>
         <div>{step1[mood].text}</div>
       </div>
 

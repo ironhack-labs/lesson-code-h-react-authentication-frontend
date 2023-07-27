@@ -79,7 +79,9 @@ function CheckinPage(props) {
         {step === 2 && <Checkin3 />}
         {step === 3 && <Checkin4 />}
       </div>
-
+      {successMessage && (
+        <div className="success-message">Check-in saved successfully!</div>
+      )}
       <div className="nav-buttons-container">
         <div className="nav-buttons">
           <button className="nav-button" onClick={handlePrev}>
@@ -92,9 +94,6 @@ function CheckinPage(props) {
             )}
           </button>
 
-          {successMessage && (
-            <div className="success-message">Check-in saved successfully!</div>
-          )}
           <button
             className="nav-button"
             onClick={step === 3 ? handleSubmit : handleNext}

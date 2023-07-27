@@ -6,6 +6,10 @@
   align-items: center;
 }
 
+.hide-it {
+  color: #b5b0d8;
+}
+
 .luna-container {
   display: flex;
   align-items: center;
