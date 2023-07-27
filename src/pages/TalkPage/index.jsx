@@ -28,7 +28,8 @@ function TalkPage() {
           gotten so frustrated, angry, or upset that you would like to write a
           letter, email, or message to someone? Have you ever done this then
           burned, deleted, or erased the message without sending it? Well this
-          is what our ai-powered chatbot is designed to replicate.
+          is what our ai-powered chatbot is designed to replicate tension and
+          speak your mind.
           <br></br>
           <br></br>
           How can we help you today?

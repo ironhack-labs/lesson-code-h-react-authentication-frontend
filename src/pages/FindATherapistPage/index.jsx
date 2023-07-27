@@ -7,9 +7,12 @@ import { Link, useNavigate } from "react-router-dom";
 import Footer from "../../components/Footer";
 import "../../App.css";
 import "./FindATherapistPage.css";
-import luna from "../../assets/luna/welcome.png";
 import chat from "../../assets/luna/breathe.png";
 import { Button } from "@fluentui/react-components";
+import luna from "../../assets/luna/breathe.png";
+import location from "../../assets/icons/dark/location.png";
+import euro from "../../assets/icons/dark/euro.png";
+import therapistexample from "../../assets/therapist.png";
 
 const API_URL = import.meta.env.VITE_LIVE_SERVER;
 
@@ -41,20 +44,74 @@ function FindATherapistPage() {
     navigate(`/find-a-therapist/${therapistId}`);
   };
   return (
-    <div className="container find-a-therapist">
-      <Link to="/dashboard">
-        <ReactSVG src={back} alt="mood" />
-      </Link>
+    <div className="container">
+      <div className="find-a-therapist-container">
+        <Link to="/talk">
+          <ReactSVG src={back} alt="mood" className="back-link" />
+        </Link>
 
-      <div>
-        <h1>Find a therapist</h1>
-        <p>
-          Searching for help is hard at the best of times. HopeMe provides free
-          and paid therapy options through partnerships with universities. All
-          student collaborators receive guidance from their professors
-          throughout the process of helping you.
-        </p>
+        <div className="find-a-therapist-container-1">
+          <div className="flex-center">
+            <img src={luna} className="tiny-luna" />
+            <h1>Find a therapist</h1>
+            Searching for help is hard at the best of times. hopeme provides
+            free and paid therapy options through partnerships with
+            universities. All student collaborators receive guidance from their
+            professors throughout the process of helping you and are experts in
+            training.
+          </div>
+        </div>
+
+        <div className="find-a-therapist-container-2">
+          {therapists.map((therapist) => (
+            <div className="therapist-info-card" key={therapist._id}>
+              <div className="therapist-card-1">
+                <div className="find-therapist-pic">
+                  <img
+                    src={therapist.imageUrl || luna}
+                    className="therapist-card-pic"
+                  />
+                </div>
+                <div className="find-therapist-name ">
+                  <div className="main-name">{therapist.name}</div>
+                  <div className="field-of-study">
+                    Supervised Psycology Student
+                  </div>
+                </div>
+              </div>
+
+              <div className="therapist-card-2">
+                <div className="therpist-card-info-section">
+                  {" "}
+                  <img src={location} /> {therapist.location}
+                </div>
+
+                <div className="therpist-card-info-section-2">
+                  <img src={euro} /> {therapist.price}/h
+                </div>
+
+                <div className="therpist-card-info-section-2">
+                  {" "}
+                  <div className="circle">DE</div>
+                  <div className="circle">EN</div>
+                  <div className="circle">ES</div>
+                </div>
+              </div>
+
+              <div className="therapist-card-3">
+                <div
+                  className="button-options"
+                  onClick={() => handleLearnMore(therapist._id)}
+                >
+                  MAKE AN APPOINTMENT
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
+      {/* 
+
       <div>
         {therapists.map((therapist) => (
           <div key={therapist._id}>
@@ -73,7 +130,7 @@ function FindATherapistPage() {
             </Button>
           </div>
         ))}
-      </div>
+      </div> */}
 
       <Footer />
     </div>

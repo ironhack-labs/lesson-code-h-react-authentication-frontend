@@ -30,6 +30,9 @@ function AiTherapistPage() {
           headers: { Authorization: `Bearer ${storedToken}` },
         }
       );
+
+      setPrompt("");
+
       const data = response.data;
       const reply = JSON.stringify(data);
       const parsedReply = JSON.parse(reply);
@@ -46,29 +49,48 @@ function AiTherapistPage() {
     }
   };
   return (
-    <div className="container aitherapist">
-      <Link to="/dashboard">
-        <ReactSVG src={back} alt="mood" />
-      </Link>
-      <div>
-        <h1>Talk to Luna, our AI assistant</h1>
-      </div>
-      <div>
-        <img src={luna} />
-      </div>
-      <div className="conversation">
-        {conversation.map((msg, index) => (
-          <div key={index}>{msg.text.content || msg.text}</div>
-        ))}
-      </div>
-      <div>
-        <Textarea onChange={handlePrompt} placeholder="Start talking with Luna" />
-        <Button onClick={handlePostReq}>
-          <Image src={chat} />
-        </Button>
-      </div>
+    <div className="container">
+      <div className="ai-therapist-container">
+        <Link to="/talk">
+          <ReactSVG src={back} alt="mood" className="back-link-dark " />
+        </Link>
 
-      <Footer />
+        <div className="ai-chat-1">
+          <div>Talk to Luna! Our AI Therapist</div>
+          <div>
+            <img src={luna} className="ai-chat-luna" />
+          </div>
+        </div>
+
+        <div className="ai-chat-2">
+          {conversation.map((msg, index) => (
+            <div
+              key={index}
+              className={`ai-message-chat ${
+                index % 2 === 0 ? "user-message" : "bot-message"
+              }`}
+            >
+              {index % 2 === 0 ? "Me: " : "Luna: "}{" "}
+              {msg.text.content || msg.text}
+            </div>
+          ))}
+        </div>
+
+        <div className="ai-chat-3">
+          {" "}
+          <Textarea
+            className="luna-user-chat"
+            onChange={handlePrompt}
+            placeholder="Luna is here to listen without judgement, what would you like to say to her?"
+          />
+        </div>
+
+        <div className="ai-chat-4" onClick={handlePostReq}>
+          <Image src={chat} className="luna-send" />
+          SEND MESSAGE
+          <Image src={chat} className="luna-send" />
+        </div>
+      </div>
     </div>
   );
 }

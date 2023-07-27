@@ -27,6 +27,7 @@ import TherapistLoginPage from "./pages/TherapistLogin";
 import TherapistSignupPage from "./pages/TherapistSignUp";
 import TherapistProfile from "./pages/TherapistProfile";
 import TherapistEditProfile from "./pages/TherapistEditProfile";
+import TherapySuccessPage from "./pages/TherapySuccessPage";
 
 // Sample Component Setup
 import DesignSamplePage from "./pages/DesignSamplePage";
@@ -50,6 +51,7 @@ function App() {
           <Route path="/breath-exercises" element={<BreathExercisesPage />} />
           <Route path="/articles" element={<ArticlesPage />} />
           <Route path="/calmcast" element={<CalmcastPage />} />
+          <Route path="/therapist/success" element={<TherapySuccessPage />} />
 
           <Route
             path="/signup"
