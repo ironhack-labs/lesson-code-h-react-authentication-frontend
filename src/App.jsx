@@ -20,6 +20,7 @@ import BreathExercisesPage from "./pages/BreathExercisesPage";
 import ArticlesPage from "./pages/ArticlesPage";
 import CalmcastPage from "./pages/CalmcastPage";
 import EditUserPage from "./pages/EditUserProfile";
+import BookingPage from "./pages/BookingPage";
 
 // Therapist Routes
 import IsTherapist from "./components/IsTherapist";
@@ -54,6 +55,7 @@ function App() {
           <Route path="/calmcast" element={<CalmcastPage />} />
           <Route path="/therapist/success" element={<TherapySuccessPage />} />
           <Route path="/follow-the-breath" element={<FollowTheBreath />} />
+          <Route path="/book-a-therapist" element={<BookingPage />} />
 
           <Route
             path="/signup"
