@@ -47,30 +47,35 @@ function AiTherapistPage() {
   };
   return (
     <div className="container">
-      <Link to="/talk">
-        <ReactSVG src={back} alt="mood" className="back-link" />
-      </Link>
-      <div>
-        <h1>Talk to Luna, our AI assistant</h1>
-      </div>
-      <div>
-        <img src={luna} />
-      </div>
-      <div className="conversation">
-        {conversation.map((msg, index) => (
-          <div key={index}>{msg.text.content || msg.text}</div>
-        ))}
-      </div>
-      <div>
-        <Textarea
-          onChange={handlePrompt}
-          placeholder="Start talking with Luna"
-        />
+      <div className="ai-therapist-container">
+        <Link to="/talk">
+          <ReactSVG src={back} alt="mood" className="back-link-dark " />
+        </Link>
 
-        <Image onClick={handlePostReq} src={chat} />
-      </div>
+        <div className="ai-chat-1">
+          <div>Talk to Luna! Our AI Therapist</div>
+          <div>
+            <img src={luna} className="ai-chat-luna" />
+          </div>
+        </div>
+        <div className="ai-chat-2"></div>
+        <div className="ai-chat-3"></div>
+        <div className="ai-chat-4"></div>
 
-      <Footer />
+        <div className="conversation">
+          {conversation.map((msg, index) => (
+            <div key={index}>{msg.text.content || msg.text}</div>
+          ))}
+        </div>
+        <div>
+          <Textarea
+            onChange={handlePrompt}
+            placeholder="Start talking with Luna"
+          />
+
+          <Image onClick={handlePostReq} src={chat} />
+        </div>
+      </div>
     </div>
   );
 }

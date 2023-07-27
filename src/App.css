@@ -149,3 +149,18 @@
   top: 40px;
   left: 30px;
 }
+
+.back-link-dark {
+  position: absolute;
+  top: 60px;
+  left: 30px;
+  height: 40px;
+  width: 45px;
+  border: 5px solid #857eb9;
+  background-color: #857eb9;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
