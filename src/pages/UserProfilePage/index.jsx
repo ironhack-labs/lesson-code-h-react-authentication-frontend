@@ -9,7 +9,17 @@ import "../../App.css";
 import "./UserProfilePage.css";
 import profile from "../../assets/luna/aokay.png";
 
+import { useContext } from "react";
+import { CheckInContext } from "../../context/checkIn.context";
+import { AuthContext } from "../../context/auth.context";
+
 function UserProfilePage() {
+  const { user } = useContext(AuthContext);
+  const {
+    moodState: [mood, setMood],
+    diaryState: [diaryEntry, setDiaryEntry],
+  } = useContext(CheckInContext);
+
   return (
     <div class="container">
       <div className="user-profile-page">
@@ -26,14 +36,24 @@ function UserProfilePage() {
           </div>
 
           <div className="user-profile-page-2-1">
-            <div>Username: </div>
-            <div>Email: </div>
+            <div>Username: {user.name}</div>
+            <div>Email: {user.email}</div>
           </div>
         </div>
 
         <div className="user-profile-page-3">My Weekly/Monthly Report</div>
 
-        <div className="user-profile-page-4">Mood Tracker</div>
+        <div className="user-profile-page-4">
+          Mood Tracker
+          <div>
+            <p>Today's mood score:</p>
+            <h4>{mood}/5</h4>
+          </div>
+          <div>
+            <p>Today's diary entry:</p>
+            <p>{diaryEntry}</p>
+          </div>
+        </div>
 
         <div className="user-profile-page-5">
           <Link to="/dashboard/profile/editUser" className="link">

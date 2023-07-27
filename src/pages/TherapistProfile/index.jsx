@@ -1,11 +1,10 @@
 import { useContext, useState } from "react";
-import axios from "axios";
 import { Button, Input } from "@fluentui/react-components";
 import { Link } from "react-router-dom";
 import { TherapistAuthContext } from "../../context/therapistAuth.context";
 
 function TherapistProfile() {
-  const { logOutTherapist } = useContext(TherapistAuthContext);
+  const { logOutTherapist, therapist } = useContext(TherapistAuthContext);
   return (
     <div>
       <nav>
@@ -13,7 +12,7 @@ function TherapistProfile() {
       </nav>
       <div>
         <h1>Hello</h1>
-        <p>Welcome back (username).</p>
+        <p>Welcome back {therapist.username}.</p>
       </div>
       <div>
         <Link to="/therapist/editProfile">
