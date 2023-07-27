@@ -1,0 +1,149 @@
+:root {
+  --primary-purple: #857eb9;
+  --secondary-purple: #b5b0d8;
+  --white: #ffffff;
+}
+
+/* Button styles */
+.button {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--font), #fff;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  min-width: 300px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  height: 50px;
+  border-radius: 50px;
+  background: var(--selected-purple, #857eb9);
+  /* Shadow Button */
+  overflow: hidden;
+  padding: 5px 15px;
+}
+
+.button.primary {
+  background-color: var(--primary-purple);
+}
+
+.button.secondary {
+  background-color: var(--secondary-purple);
+}
+
+.select-element {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--white);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  min-width: 100px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  height: 50px;
+  background: var(--selected-purple, #857eb9);
+  /* Shadow Button */
+  overflow: hidden;
+  padding: 5px 15px;
+  margin-bottom: 30px;
+}
+
+/* Apply the secondary color to the select dropdown arrow */
+.select-element select {
+  color: var(--secondary-purple);
+  background-color: var(--white);
+  appearance: none;
+  padding: 5px 30px 5px 10px;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.select-element select::-ms-expand {
+  display: none;
+}
+
+/* Style the options within the select dropdown */
+.select-element select option {
+  background-color: var(--selected-purple, #857eb9);
+  color: var(--white);
+}
+
+.custom-calendar {
+  font-family: Arial, sans-serif;
+  color: #857eb9;
+  background-color: #b5b0d8;
+  box-shadow: 2px 3px 4px 1px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.react-calendar {
+  max-width: 100%;
+  background-color: #b5b0d8;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 3px 4px 1px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+}
+
+.react-calendar__tile {
+  padding: 0.5em;
+}
+
+.react-calendar__navigation {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 1em;
+}
+
+.react-calendar__navigation__label {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.react-calendar__navigation button {
+  font-size: 1em;
+  font-weight: bold;
+  color: #ffffff;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background-color: #b5b0d8;
+}
+
+.react-calendar__month-view__days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.react-calendar__month-view__weekdays {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 0.5em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.react-calendar__tile--now {
+  background: #b5b0d8;
+}
+
+.react-calendar__tile--active,
+.react-calendar__tile--hasActive {
+  background: #857eb9;
+  color: #ffffff;
+}

@@ -78,7 +78,12 @@ function TherapistDetailsPage(props) {
             </div>
 
             <div className="therapist-card-3">
-              <div className="button-options">MAKE AN APPOINTMENT</div>
+              <Link
+                style={{ textDecoration: "none", color: "white" }}
+                to="/book-a-therapist"
+              >
+                <div className="button-options">MAKE AN APPOINTMENT</div>
+              </Link>
             </div>
           </div>
         )}
