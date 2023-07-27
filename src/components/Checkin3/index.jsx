@@ -1,13 +1,14 @@
 import "../../App.css";
 import "./Checkin3.css";
-import { useState } from "react";
 import axios from "axios";
 import { useCheckInContext } from "../../context/checkIn.context";
 
 const API_URL = import.meta.env.VITE_LIVE_SERVER;
 
-function Checkin3({ setFormData, formData }) {
-  const { audioUrl, setAudioUrl } = useCheckInContext();
+function Checkin3() {
+  const { audioState } = useCheckInContext();
+  const [audioUrl, setAudioUrl] = audioState;
+
   const authToken = localStorage.getItem("authToken");
 
   const uploadAudio = (e) => {
@@ -22,18 +23,9 @@ function Checkin3({ setFormData, formData }) {
     axios
       .post(`${API_URL}/checkIn/uploadAudio`, data, configuration)
       .then((res) => {
-        console.log(res.data);
         setAudioUrl(res.data);
       })
       .catch((error) => console.log(error));
-  };
-
-  const handleNext = () => {
-    // Update the formData with the selected mood
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      audioUrl: "audioUrl",
-    }));
   };
 
   return (
@@ -48,14 +40,12 @@ function Checkin3({ setFormData, formData }) {
       <div>
         <label>Audio:</label>
         <input
-          value={formData.audioUrl}
           type="file"
           name="audioUrl"
           accept="/audio/*"
           onChange={(e) => uploadAudio(e)}
         />
       </div>
-      <button onClick={handleNext}>Next</button>
     </div>
   );
 }
