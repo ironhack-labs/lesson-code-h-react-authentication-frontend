@@ -1,8 +1,9 @@
 import * as React from "react";
+import { useContext } from "react";
 import { Text } from "@fluentui/react-components";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
-import Navbar from "../../components/Navbar";
+import { AuthContext } from "../../context/auth.context";
 import logout from "../../assets/icons/light/logout.png";
 import "../../App.css";
 import "./DashboardPage.css";
@@ -10,9 +11,10 @@ import luna from "../../assets/luna/animate/inhaleexhale.svg";
 import okay from "../../assets/luna/aokay.png";
 
 function DashboardPage() {
+  const { logOutUser } = useContext(AuthContext);
   return (
     <div class="container ">
-      <div className="dashboard-user-container">
+      <div onClick={logOutUser} className="dashboard-user-container">
         <Link to="/" className="logout-main">
           <img src={logout} />
         </Link>
