@@ -100,7 +100,7 @@ function LoginPage(props) {
             <button className="button-options">Are you a therapist?</button>
           </Link>
           <br></br>
-          <div class="flex-center">
+          <div className="flex-center">
             <Text>Not registered as a user yet?</Text>
             <Link to="/signup" className="link">
               <UILink>Register here</UILink>

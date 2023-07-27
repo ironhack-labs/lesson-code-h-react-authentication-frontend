@@ -7,7 +7,7 @@ import Loading from "../../components/Loading";
 
 function DesignSamplePage() {
   return (
-    <div class="container design-sample">
+    <div className="container design-sample">
       <Loading />
     </div>
   );

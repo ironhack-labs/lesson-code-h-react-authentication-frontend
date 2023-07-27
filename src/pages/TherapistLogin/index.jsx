@@ -98,7 +98,7 @@ function TherapistLoginPage(props) {
           </div>
         </form>
 
-        <div class="form-flex">
+        <div className="form-flex">
           <Link to={"/login"} className="link">
             <button className="button-options">
               {" "}
@@ -107,7 +107,7 @@ function TherapistLoginPage(props) {
           </Link>
 
           <br></br>
-          <div class="flex-center">
+          <div className="flex-center">
             {" "}
             <Text>Don't have a professional account yet?</Text>
             <Link to={"/therapist/signup"} className="link">

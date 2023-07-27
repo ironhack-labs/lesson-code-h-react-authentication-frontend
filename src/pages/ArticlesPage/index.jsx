@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 
 function ArticlesPage() {
   return (
-    <div class="container">
+    <div className="container">
       <div className="aricles-container">
         <Link to="/exercises">
           <ReactSVG src={back} alt="mood" />

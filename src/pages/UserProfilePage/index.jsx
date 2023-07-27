@@ -22,7 +22,7 @@ function UserProfilePage() {
   } = useContext(CheckInContext);
 
   return (
-    <div class="container">
+    <div className="container">
       <div className="user-profile-page">
         <Link to="/dashboard" className="back-link">
           <ReactSVG src={back} alt="mood" />

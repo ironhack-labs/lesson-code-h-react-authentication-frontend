@@ -9,7 +9,7 @@ import back from "../../assets/icons/light/back-button.svg";
 
 function TalkPage() {
   return (
-    <div class="container">
+    <div className="container">
       <div className="talk-page">
         <Link className="back-link" to="/exercises">
           <ReactSVG src={back} alt="mood" />

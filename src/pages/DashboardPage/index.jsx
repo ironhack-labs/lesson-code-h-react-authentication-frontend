@@ -13,7 +13,7 @@ import okay from "../../assets/luna/aokay.png";
 function DashboardPage() {
   const { logOutUser } = useContext(AuthContext);
   return (
-    <div class="container ">
+    <div className="container ">
       <div onClick={logOutUser} className="dashboard-user-container">
         <Link to="/" className="logout-main">
           <img src={logout} />
