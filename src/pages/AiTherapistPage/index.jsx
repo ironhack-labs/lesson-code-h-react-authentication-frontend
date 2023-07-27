@@ -46,9 +46,9 @@ function AiTherapistPage() {
     }
   };
   return (
-    <div className="container aitherapist">
-      <Link to="/dashboard">
-        <ReactSVG src={back} alt="mood" />
+    <div className="container">
+      <Link to="/talk">
+        <ReactSVG src={back} alt="mood" className="back-link" />
       </Link>
       <div>
         <h1>Talk to Luna, our AI assistant</h1>
@@ -62,10 +62,12 @@ function AiTherapistPage() {
         ))}
       </div>
       <div>
-        <Textarea onChange={handlePrompt} placeholder="Start talking with Luna" />
-        <Button onClick={handlePostReq}>
-          <Image src={chat} />
-        </Button>
+        <Textarea
+          onChange={handlePrompt}
+          placeholder="Start talking with Luna"
+        />
+
+        <Image onClick={handlePostReq} src={chat} />
       </div>
 
       <Footer />

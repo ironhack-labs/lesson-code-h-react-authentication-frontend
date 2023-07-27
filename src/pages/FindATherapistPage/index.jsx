@@ -41,9 +41,11 @@ function FindATherapistPage() {
     navigate(`/find-a-therapist/${therapistId}`);
   };
   return (
-    <div className="container find-a-therapist">
-      <Link to="/dashboard">
-        <ReactSVG src={back} alt="mood" />
+    <div className="container">
+      <div className="find-a-therapist-container"></div>
+
+      <Link to="/talk">
+        <ReactSVG src={back} alt="mood" className="back-link" />
       </Link>
 
       <div>
