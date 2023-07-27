@@ -3,6 +3,8 @@ import { ReactSVG } from "react-svg";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Calendar from "react-calendar";
 import back from "../../assets/icons/light/back-button.svg";
+import "./BookingPage.css";
+import "../../App.css";
 
 function BookingPage() {
   const [selectedDate, setSelectedDate] = useState(null);
@@ -25,44 +27,51 @@ function BookingPage() {
   };
 
   return (
-    <div>
+    <div className="container">
       <Link to="/find-a-therapist">
         <ReactSVG src={back} alt="mood" />
       </Link>
       <div>
-        <Calendar onChange={setSelectedDate} />
+        <Calendar onChange={setSelectedDate} className="custom-calendar" />
       </div>
       <div>
         {selectedDate ? (
-          <h2>Select a time for {selectedDate.toDateString()}</h2>
+            <h2 className="primary">
+            Select a time for {selectedDate.toDateString()}
+          </h2>
         ) : (
-          <h2>Select a date</h2>
+            <h2 className="primary">Select a date</h2>
         )}
-        <select onChange={(e) => setSelectedTime(e.target.value)}>
-          <option value="">Select a time</option>
-          {timeSlots.map((slot, index) => (
-            <option key={index} value={slot}>
-              {slot}
-            </option>
-          ))}
-        </select>
+        <div className="select-element">
+          <select onChange={(e) => setSelectedTime(e.target.value)}>
+            <option value="">Select a time</option>
+            {timeSlots.map((slot, index) => (
+              <option key={index} value={slot}>
+                {slot}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
       <div>
-        <button onClick={handleConfirmBooking}>Confirm Booking</button>
+        <button onClick={handleConfirmBooking} className="button primary">
+          Confirm Booking
+        </button>
       </div>
       {isConfirmed && (
         <div>
-          <h2>Your booking is confirmed!</h2>
+          <h2 className="primary">Your booking is confirmed!</h2>
           {/* Add any additional booking details here */}
           <p>Date: {selectedDate && selectedDate.toDateString()}</p>
           <p>Time: {selectedTime}</p>
           <Link to="/dashboard">
-            <button>Back to Dashboard</button>
+            <button className="button primary">Back to Dashboard</button>
           </Link>
         </div>
       )}
     </div>
   );
 }
+
 
 export default BookingPage;
