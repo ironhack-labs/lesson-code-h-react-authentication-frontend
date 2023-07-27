@@ -27,7 +27,7 @@ function BreathExercisesPage() {
         <div className="breath-2">
           <div className="breath-card">
             <div className="card-1">
-              Anxiety <br></br> <div>3min</div>
+              Anxiety <div>3min</div>
             </div>
 
             <div className="card-2">
@@ -37,7 +37,7 @@ function BreathExercisesPage() {
 
           <div className="breath-card">
             <div className="card-1">
-              Anger <br></br> 3min
+              Anger <div>3min</div>
             </div>
 
             <div className="card-2">
@@ -46,7 +46,9 @@ function BreathExercisesPage() {
           </div>
 
           <div className="breath-card">
-            <div className="card-1">Irritation 3min</div>
+            <div className="card-1">
+              Irritation <div>3min</div>
+            </div>
 
             <div className="card-2">
               <img src={irritation} className="mini-luna" />
@@ -55,7 +57,7 @@ function BreathExercisesPage() {
 
           <div className="breath-card">
             <div className="card-1">
-              Sadness <br></br> 3min
+              Sadness<div>3min</div>
             </div>
 
             <div className="card-2">
@@ -65,7 +67,7 @@ function BreathExercisesPage() {
 
           <div className="breath-card">
             <div className="card-1">
-              Mindfulness <br></br> 3min
+              Mindfulness <div>3min</div>
             </div>
 
             <div className="card-2">
@@ -74,7 +76,7 @@ function BreathExercisesPage() {
           </div>
           <div className="breath-card">
             <div className="card-1">
-              Worry <br></br> 3min
+              Worry <div>3min</div>
             </div>
 
             <div className="card-2">
