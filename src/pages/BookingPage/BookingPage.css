@@ -3,6 +3,22 @@
   --secondary-purple: #b5b0d8;
   --white: #ffffff;
 }
+.book-appointment-container {
+  width: 90vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-title {
+  position: absolute;
+  top: 40px;
+  font-size: 15px;
+  font-weight: 700;
+}
 
 /* Button styles */
 .button {

@@ -36,8 +36,8 @@ function UserProfilePage() {
           </div>
 
           <div className="user-profile-page-2-1">
-            <div>Username: {user.name}</div>
-            <div>Email: {user.email}</div>
+            <div>Username: Devin Fiachra DM</div>
+            <div>Email: therapist@helpme.com</div>
           </div>
         </div>
 
@@ -49,15 +49,8 @@ function UserProfilePage() {
         </div>
 
         <div className="user-profile-page-4">
-          Mood Tracker
-          <div>
-            <p>Today's mood score:</p>
-            <h4>{mood}/5</h4>
-          </div>
-          <div>
-            <p>Today's diary entry:</p>
-            <p>{diaryEntry}</p>
-          </div>
+          <p>Your Daily Mood score:</p>
+          {mood || "Please checkin with Luna"}
         </div>
 
         <div className="user-profile-page-5">

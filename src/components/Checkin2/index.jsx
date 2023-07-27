@@ -4,6 +4,7 @@ import { useState } from "react";
 import axios from "axios";
 import { AuthContext } from "../../context/auth.context";
 import { useCheckInContext } from "../../context/checkIn.context";
+import luna from "../../assets/luna/love.png";
 
 const API_URL = import.meta.env.VITE_LIVE_SERVER;
 
@@ -33,16 +34,13 @@ function Checkin2() {
   };
 
   return (
-    <div className="checkin2">
-      <div>
-        <h2>Image Upload</h2>
-        <p>
-          A picture speaks a thousand words. Upload a picture to remind yourself
-          how you're doing or what you're up to.
-        </p>
-      </div>
-      <div>
-        <label>Image:</label>
+    <div className="container">
+      <div className="container-holder-checkin">
+        Image Upload A picture speaks a thousand words. Upload a picture to
+        remind yourself how you're doing or what you're up to. Think of
+        something that sums up the moment - a meme, selfie, candid portrait, or
+        a rough and ready reel.
+        <img src={luna} />
         <input
           type="file"
           name="imageUrl"

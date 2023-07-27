@@ -6,3 +6,9 @@
   align-items: center;
   justify-content: center;
 }
+
+.last-step-text {
+  width: 80vw;
+  height: 20vh;
+  overflow-y: scroll;
+}
