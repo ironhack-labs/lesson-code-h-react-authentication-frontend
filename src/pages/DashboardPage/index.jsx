@@ -33,7 +33,7 @@ function DashboardPage() {
 
             <div className="dashboard-box-4-3">
               Complete your daily check-in by sharing an image, audio clip, or
-              dairy entry about how you're feeling today.
+              diary entry about how you're feeling today.
             </div>
           </div>
         </Link>

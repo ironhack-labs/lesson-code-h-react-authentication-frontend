@@ -30,9 +30,9 @@ function TherapySuccessPage() {
         <div>
           Thank you for applying as a therapy provider on hopeme. Our team will
           review your application and activate your account in 3 - 5 working
-          days to let you know abou the status of your application! In the
-          meantime, please feel free to setup a user account and familarise
-          yourself with our app - your hopeme team
+          days to let you know about the status of your application! In the
+          meantime, please feel free to setup a user account and familarize
+          yourself with our app - your hopeme team.
         </div>
 
         <br></br>

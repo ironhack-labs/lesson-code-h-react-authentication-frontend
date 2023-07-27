@@ -34,7 +34,7 @@ function TherapistProfile() {
             <div className="day-box-1">ABOUT ME</div>
 
             <div className="day-box-2-therapy-prof">
-              Hello there, my name is Jannifer. I'm a dedicated student
+              Hello there, my name is Jennifer. I'm a dedicated student
               therapist specializing in Cognitive Behavioral Therapy (CBT). As
               part of my studies on the HOPEME platform, I'm delighted to offer
               free therapy to those seeking help with anxiety, depression,
