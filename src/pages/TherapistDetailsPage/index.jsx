@@ -104,6 +104,15 @@ function TherapistDetailsPage(props) {
             a journey of healing and growth together on HOPEME.
           </div>
         </div>
+
+        <div className="therapist-info-card">
+          <div className="day-box-3">AVAILABILITY</div>
+          <div className="day-box-4">
+            <div>Monday - Friday</div>
+            <div>8:00 - 17:00</div>
+            <div>In Person / Virtual</div>
+          </div>
+        </div>
       </div>
       <Footer />
     </div>
