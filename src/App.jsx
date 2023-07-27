@@ -31,6 +31,7 @@ import TherapistEditProfile from "./pages/TherapistEditProfile";
 // Sample Component Setup
 import DesignSamplePage from "./pages/DesignSamplePage";
 import ExamplePage from "./pages/ExamplePage";
+import FollowTheBreath from "./pages/FollowTheBreath";
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
           <Route path="/breath-exercises" element={<BreathExercisesPage />} />
           <Route path="/articles" element={<ArticlesPage />} />
           <Route path="/calmcast" element={<CalmcastPage />} />
+          <Route path="/follow-the-breath" element={<FollowTheBreath />} />
 
           <Route
             path="/signup"

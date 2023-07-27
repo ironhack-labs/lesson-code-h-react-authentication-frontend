@@ -26,60 +26,71 @@ function BreathExercisesPage() {
 
         <div className="breath-2">
           <div className="breath-card">
-            <div className="card-1">
-              Anxiety <br></br> <div>3min</div>
-            </div>
-
-            <div className="card-2">
-              <img src={anxiety} className="mini-luna" />
-            </div>
+            <Link className="link" to="/follow-the-breath">
+              <div className="card-1">
+                Anxiety <br></br> <div>3min</div>
+              </div>
+              <div className="card-2">
+                <img src={anxiety} className="mini-luna" />
+              </div>
+            </Link>
           </div>
 
           <div className="breath-card">
-            <div className="card-1">
-              Anger <br></br> 3min
-            </div>
+            <Link className="link" to="/follow-the-breath">
+              <div className="card-1">
+                Anger <br></br> 3min
+              </div>
 
-            <div className="card-2">
-              <img src={anger} className="mini-luna" />
-            </div>
+              <div className="card-2">
+                <img src={anger} className="mini-luna" />
+              </div>
+            </Link>
           </div>
 
           <div className="breath-card">
-            <div className="card-1">Irritation 3min</div>
+            <Link className="link" to="/follow-the-breath">
+              <div className="card-1">Irritation 3min</div>
 
-            <div className="card-2">
-              <img src={irritation} className="mini-luna" />
-            </div>
+              <div className="card-2">
+                <img src={irritation} className="mini-luna" />
+              </div>
+            </Link>
           </div>
 
           <div className="breath-card">
-            <div className="card-1">
-              Sadness <br></br> 3min
-            </div>
+            <Link className="link" to="/follow-the-breath">
+              <div className="card-1">
+                Sadness <br></br> 3min
+              </div>
 
-            <div className="card-2">
-              <img src={sadness} className="mini-luna" />
-            </div>
+              <div className="card-2">
+                <img src={sadness} className="mini-luna" />
+              </div>
+            </Link>
           </div>
 
           <div className="breath-card">
-            <div className="card-1">
-              Mindfulness <br></br> 3min
-            </div>
+            <Link className="link" to="/follow-the-breath">
+              <div className="card-1">
+                Mindfulness <br></br> 3min
+              </div>
 
-            <div className="card-2">
-              <img src={mindfulness} className="mini-luna" />
-            </div>
+              <div className="card-2">
+                <img src={mindfulness} className="mini-luna" />
+              </div>
+            </Link>
           </div>
           <div className="breath-card">
-            <div className="card-1">
-              Worry <br></br> 3min
-            </div>
+            <Link className="link" to="/follow-the-breath">
+              <div className="card-1">
+                Worry <br></br> 3min
+              </div>
 
-            <div className="card-2">
-              <img src={worry} className="mini-luna" />
-            </div>
+              <div className="card-2">
+                <img src={worry} className="mini-luna" />
+              </div>
+            </Link>
           </div>
         </div>
       </div>
