@@ -11,6 +11,7 @@ import progress from "../../assets/slider/2.png";
 import soundwaves from "../../assets/icons/light/soundwaves.png";
 import luna from "../../assets/luna/breathe.png";
 import song from "../../assets/sounds/chill-out-sound.mp3";
+import pause from "../../assets/icons/dark/pause2.png";
 
 function CalmcastPage() {
   const [audio] = useState(new Audio(song));
@@ -47,7 +48,7 @@ function CalmcastPage() {
         <div className="calmcast-2">
           <div>
             Relax and unwind with our daily curated calmcast. Every day we
-            choose a podcast, audio clip, or song to eincourage you to think,
+            choose a podcast, audio clip, or song to encourage you to think,
             reflect, or unwind.
           </div>
         </div>
@@ -59,7 +60,11 @@ function CalmcastPage() {
         </div>
 
         <div className="calmcast-4">
-          <img onClick={playPause} src={play} alt="play button" />
+          {isPlaying ? (
+            <img onClick={playPause} src={pause} alt="pause button" />
+          ) : (
+            <img onClick={playPause} src={play} alt="play button" />
+          )}
         </div>
       </div>
 

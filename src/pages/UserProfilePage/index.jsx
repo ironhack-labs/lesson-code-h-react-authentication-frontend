@@ -8,6 +8,7 @@ import Navbar from "../../components/Navbar";
 import "../../App.css";
 import "./UserProfilePage.css";
 import profile from "../../assets/luna/aokay.png";
+import graphImage from "../../assets/graphs/graph.png";
 
 import { useContext } from "react";
 import { CheckInContext } from "../../context/checkIn.context";
@@ -32,7 +33,6 @@ function UserProfilePage() {
         <div className="user-profile-page-2">
           <div className="user-profile-page-2-1">
             <img src={profile} className="profile-photo" />
-            <div>Upload New Photo</div>
           </div>
 
           <div className="user-profile-page-2-1">
@@ -41,7 +41,12 @@ function UserProfilePage() {
           </div>
         </div>
 
-        <div className="user-profile-page-3">My Weekly/Monthly Report</div>
+        <div className="user-profile-page-3">
+          My Weekly/Monthly Report
+          <div>
+            <img src={graphImage} width="300" className="graphImg" />
+          </div>
+        </div>
 
         <div className="user-profile-page-4">
           Mood Tracker
