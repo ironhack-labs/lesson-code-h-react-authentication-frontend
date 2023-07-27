@@ -37,8 +37,6 @@ function TherapistLoginPage(props) {
     axios
       .post(`${API_URL}/therapist/login`, requestBody)
       .then((response) => {
-        console.log("JWT token", response.data.authToken);
-
         storeToken(response.data.authToken);
         authenticateTherapist();
         navigate("/therapist/profile");

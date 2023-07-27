@@ -44,8 +44,6 @@ function SignupPage(props) {
     axios
       .post(`${API_URL}/auth/signup`, requestBody)
       .then((response) => {
-        console.log("JWT token", response.data.authToken);
-
         storeToken(response.data.authToken);
         authenticateUser();
         navigate("/welcome");
