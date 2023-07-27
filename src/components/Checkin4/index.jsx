@@ -6,8 +6,9 @@ import { useCheckInContext } from "../../context/checkIn.context";
 
 const API_URL = import.meta.env.VITE_LIVE_SERVER;
 
-function Checkin4({ setFormData, formData }) {
-  const { diaryEntry, setDiaryEntry } = useCheckInContext();
+function Checkin4() {
+  const { diaryState } = useCheckInContext();
+  const [diaryEntry, setDiaryEntry] = diaryState; 
 
   const handleDiaryChange = (event) => {
     const entry = event.target.value;
@@ -31,7 +32,6 @@ function Checkin4({ setFormData, formData }) {
         <textarea
           type="text"
           name="diaryEntry"
-          value={diaryEntry}
           onChange={handleDiaryChange}
           placeholder="Write your thoughts here"
         ></textarea>

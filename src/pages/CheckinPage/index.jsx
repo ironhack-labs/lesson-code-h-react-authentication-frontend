@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { ReactSVG } from "react-svg";
 import axios from "axios";
@@ -8,7 +8,7 @@ import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import "../../App.css";
 import "./CheckinPage.css";
-
+import { CheckInContext } from "../../context/checkIn.context";
 import Checkin1 from "../../components/Checkin1";
 import Checkin2 from "../../components/Checkin2";
 import Checkin3 from "../../components/Checkin3";
@@ -22,12 +22,12 @@ function CheckinPage(props) {
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const [formData, setFormData] = useState({
-    mood: "",
-    imageUrl: "",
-    audioUrl: "",
-    diaryEntry: "",
-  });
+  const {
+    moodState: [mood, setMood],
+    imageState: [imageUrl, setImageUrl],
+    audioState: [audioUrl, setAudioUrl],
+    diaryState: [diaryEntry, setDiaryEntry],
+  } = useContext(CheckInContext);
 
   const handleNext = () => {
     if (step === 3) return;
@@ -47,10 +47,10 @@ function CheckinPage(props) {
       },
     };
     const checkInData = {
-      mood: formData.mood,
-      imageUrl: formData.imageUrl,
-      audioUrl: formData.audioUrl,
-      diaryEntry: formData.diaryEntry,
+      mood: mood,
+      imageUrl: imageUrl,
+      audioUrl: audioUrl,
+      diaryEntry: diaryEntry,
     };
     console.log(checkInData);
     axios
@@ -60,6 +60,7 @@ function CheckinPage(props) {
         setSuccessMessage(true);
       })
       .catch((error) => {
+        console.log(error.response);
         const errorDescription = error.response.data.message;
         setErrorMessage(errorDescription);
       });
@@ -70,18 +71,10 @@ function CheckinPage(props) {
       <Navbar />
 
       <div className="step-pages">
-        {step === 0 && (
-          <Checkin1 setFormData={setFormData} formData={formData} />
-        )}
-        {step === 1 && (
-          <Checkin2 setFormData={setFormData} formData={formData} />
-        )}
-        {step === 2 && (
-          <Checkin3 setFormData={setFormData} formData={formData} />
-        )}
-        {step === 3 && (
-          <Checkin4 setFormData={setFormData} formData={formData} />
-        )}
+        {step === 0 && <Checkin1 />}
+        {step === 1 && <Checkin2 />}
+        {step === 2 && <Checkin3 />}
+        {step === 3 && <Checkin4 />}
       </div>
 
       <div className="nav-buttons-container">

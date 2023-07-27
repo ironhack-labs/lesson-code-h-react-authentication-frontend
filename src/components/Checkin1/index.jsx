@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useCheckInContext } from "../../context/checkIn.context";
+import { useState, useContext } from "react";
+import { CheckInContext } from "../../context/checkIn.context";
 
 import slider1 from "../../assets/slider/1.png";
 import slider2 from "../../assets/slider/2.png";
@@ -16,31 +16,42 @@ import luna5 from "../../assets/luna/encouragement.png";
 import "../../App.css";
 import "./Checkin1.css";
 
-function Checkin1({ setFormData, formData }) {
-  const { mood, setMood } = useCheckInContext();
+function Checkin1() {
+  const {
+    moodState: [mood, setMood],
+  } = useContext(CheckInContext);
+  
+  const handleChange = (e) => {
+    setMood(e.target.value);
+  };
 
   let step1 = {
     1: {
+      number: 1,
       luna: luna1,
       slider: slider1,
       text: "Overwhelmed",
     },
     2: {
+      number: 2,
       luna: luna2,
       slider: slider2,
       text: "Managing",
     },
     3: {
+      number: 3,
       luna: luna3,
       slider: slider3,
       text: "A Okay",
     },
     4: {
+      number: 4,
       luna: luna4,
       slider: slider4,
       text: "Happy",
     },
     5: {
+      number: 5,
       luna: luna5,
       slider: slider5,
       text: "Ecstatic",
@@ -51,7 +62,6 @@ function Checkin1({ setFormData, formData }) {
     if (mood === 5) return;
     setMood((prevMood) => prevMood + 1);
   };
-
   const decreaseMood = () => {
     if (mood === 1) return;
     setMood((prevMood) => prevMood - 1);
@@ -66,6 +76,7 @@ function Checkin1({ setFormData, formData }) {
       </div>
 
       <div>
+        <div onChange={handleChange}>{step1[mood].number}</div>
         <div>{step1[mood].text}</div>
       </div>
 
