@@ -39,19 +39,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative; /* Needed to position pseudo-elements */
+  position: relative;
 }
 
 .anim-circle::before,
 .anim-circle::after {
-  content: attr(data-text); /* Use the 'data-text' attribute as content */
+  content: attr(data-text);
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 24px;
   font-weight: bold;
-  opacity: 0; /* Set initial opacity to 0 */
+  opacity: 0;
 }
 
 @keyframes breathe {
@@ -63,7 +63,7 @@
     .exhale {
       opacity: 1;
     }
-    /* Hide "inhale" text */
+
     .inhale {
       opacity: 0;
     }
@@ -85,9 +85,9 @@
 @keyframes fadeOutAndIn {
   0%,
   100% {
-    opacity: 1; /* Image is fully visible at the start and end */
+    opacity: 1;
   }
   50% {
-    opacity: 0; /* Image will be hidden (completely transparent) at 4 seconds */
+    opacity: 0;
   }
 }
