@@ -1,0 +1,52 @@
+.full-screen-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.follow-breath-container {
+  border: 1px solid red;
+  width: 95%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.textbox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.anim-circle {
+  color: transparent;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgba(133, 126, 185, 0.889);
+  animation: breathe 7s linear infinite;
+}
+@keyframes breathe {
+  0% {
+    box-shadow: 0 0 0 15px rgba(133, 126, 185, 0.3),
+      0 0 0 30px rgba(133, 126, 185, 0.3), 0 0 0 45px rgba(133, 126, 185, 0.3),
+      0 0 0 60px rgba(133, 126, 185, 0.3), 0 0 0 75px rgba(133, 126, 185, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 25px rgba(133, 126, 185, 0.3),
+      0 0 0 50px rgba(133, 126, 185, 0.3), 0 0 0 75px rgba(133, 126, 185, 0.3),
+      0 0 0 100px rgba(133, 126, 185, 0.3), 0 0 0 125px rgba(133, 126, 185, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 0 15px rgba(133, 126, 185, 0.3),
+      0 0 0 30px rgba(133, 126, 185, 0.3), 0 0 0 45px rgba(133, 126, 185, 0.3),
+      0 0 0 60px rgba(133, 126, 185, 0.3), 0 0 0 75px rgba(133, 126, 185, 0.3);
+  }
+}
