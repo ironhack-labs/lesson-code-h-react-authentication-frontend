@@ -19,7 +19,7 @@ function AiTherapistPage() {
 
   const handlePostReq = async () => {
     const url =
-      "https://bookworm-backend.adaptable.app/ai-therapist/completions" ||
+      "http://bookworm-backend.adaptable.app" ||
       "http://localhost:5005/ai-therapist/completions";
     const storedToken = localStorage.getItem("authToken");
     try {
