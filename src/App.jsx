@@ -4,36 +4,36 @@ import "./App.css";
 
 // User Pages
 import HomePage from "./pages/HomePage";
-import SignupPage from "./pages/SignupPage";
-import LoginPage from "./pages/LoginPage";
+import SignupPage from "./pages/Authentication/SignupPage";
+import LoginPage from "./pages/Authentication/LoginPage";
 import IsAnon from "./components/IsAnon";
-import DashboardPage from "./pages/DashboardPage";
-import WelcomePage from "./pages/WelcomePage";
-import TalkPage from "./pages/TalkPage";
-import UserProfilePage from "./pages/UserProfilePage";
-import ExercisesPage from "./pages/ExercisesPage";
+import DashboardPage from "./pages/WelcomeAndDashboardPages/DashboardPage";
+import WelcomePage from "./pages/WelcomeAndDashboardPages/WelcomePage";
+import TalkPage from "./pages/TherapyPages/TalkPage";
+import UserProfilePage from "./pages//UserProfile/UserProfilePage";
+import ExercisesPage from "./pages/ContentPages/ExercisesPage";
 import CheckinPage from "./pages/CheckinPage";
-import AiTherapistPage from "./pages/AiTherapistPage";
-import FindATherapistPage from "./pages/FindATherapistPage";
-import TherapistDetailsPage from "./pages/TherapistDetailsPage";
-import BreathExercisesPage from "./pages/BreathExercisesPage";
-import ArticlesPage from "./pages/ArticlesPage";
-import CalmcastPage from "./pages/CalmcastPage";
-import EditUserPage from "./pages/EditUserProfile";
-import BookingPage from "./pages/BookingPage";
+import AiTherapistPage from "./pages/TherapyPages/AiTherapistPage";
+import FindATherapistPage from "./pages/TherapyPages/FindATherapistPage";
+import TherapistDetailsPage from "./pages/TherapyPages/TherapistDetailsPage";
+import BreathExercisesPage from "./pages/ContentPages/BreathExercisesPage";
+import ArticlesPage from "./pages/ContentPages/ArticlesPage";
+import CalmcastPage from "./pages/ContentPages/CalmcastPage";
+import EditUserPage from "./pages/UserProfile/EditUserProfile";
+import BookingPage from "./pages/TherapyPages/BookingPage";
 
 // Therapist Routes
 import IsTherapist from "./components/IsTherapist";
-import TherapistLoginPage from "./pages/TherapistLogin";
-import TherapistSignupPage from "./pages/TherapistSignUp";
-import TherapistProfile from "./pages/TherapistProfile";
-import TherapistEditProfile from "./pages/TherapistEditProfile";
-import TherapySuccessPage from "./pages/TherapySuccessPage";
+import TherapistLoginPage from "./pages/Authentication/TherapistLogin";
+import TherapistSignupPage from "./pages/Authentication/TherapistSignUp";
+import TherapistProfile from "./pages/TherapistProfile/TherapistProfilePage";
+import TherapistEditProfile from "./pages/TherapistProfile/TherapistEditProfile";
+import TherapySuccessPage from "./pages/TherapistProfile/TherapySuccessPage";
 
 // Sample Component Setup
 import DesignSamplePage from "./pages/DesignSamplePage";
 import ExamplePage from "./pages/ExamplePage";
-import FollowTheBreath from "./pages/FollowTheBreath";
+import FollowTheBreath from "./pages/ContentPages/FollowTheBreath";
 
 function App() {
   return (
