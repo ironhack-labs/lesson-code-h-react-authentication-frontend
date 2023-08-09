@@ -1,6 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import { FluentProvider, teamsLightTheme } from "@fluentui/react-components";
 import "./App.css";
+import * as CONSTS from "./utils/consts";
+import * as PATHS from "./utils/paths";
 
 // User Pages
 import HomePage from "./pages/HomePage";
@@ -41,24 +43,27 @@ function App() {
       <FluentProvider theme={teamsLightTheme}>
         <Routes>
           {/* ADD AUTH ROUTES FOR PLACEHOLDER PAGES */}
-          <Route path="/" element={<HomePage />} />
+          <Route path={PATHS.HOMEPAGE} element={<HomePage />} />
           <Route path="/design/sample" element={<DesignSamplePage />} />
-          <Route path="/dashboard" element={<DashboardPage />} />
-          <Route path="/welcome" element={<WelcomePage />} />
-          <Route path="/talk" element={<TalkPage />} />
-          <Route path="/dashboard/profile" element={<UserProfilePage />} />
-          <Route path="/exercises" element={<ExercisesPage />} />
-          <Route path="/checkin" element={<CheckinPage />} />
-          <Route path="/talk-to-luna" element={<AiTherapistPage />} />
-          <Route path="/breath-exercises" element={<BreathExercisesPage />} />
-          <Route path="/articles" element={<ArticlesPage />} />
-          <Route path="/calmcast" element={<CalmcastPage />} />
-          <Route path="/therapist/success" element={<TherapySuccessPage />} />
-          <Route path="/follow-the-breath" element={<FollowTheBreath />} />
-          <Route path="/book-a-therapist" element={<BookingPage />} />
+          <Route path={PATHS.DASHBOARD} element={<DashboardPage />} />
+          <Route path={PATHS.WELCOME} element={<WelcomePage />} />
+          <Route path={PATHS.TALKPAGE} element={<TalkPage />} />
+          <Route path={PATHS.USERPROFILE} element={<UserProfilePage />} />
+          <Route path={PATHS.EXERCISES} element={<ExercisesPage />} />
+          <Route path={PATHS.CHECKIN} element={<CheckinPage />} />
+          <Route path={PATHS.AITHERAPIST} element={<AiTherapistPage />} />
+          <Route
+            path={PATHS.BREATHEXERCISES}
+            element={<BreathExercisesPage />}
+          />
+          <Route path={PATHS.ARTICLES} element={<ArticlesPage />} />
+          <Route path={PATHS.CALMCAST} element={<CalmcastPage />} />
+          <Route path={PATHS.THERAPYSUCCESS} element={<TherapySuccessPage />} />
+          <Route path={PATHS.FOLLOWTHEBREATH} element={<FollowTheBreath />} />
+          <Route path={PATHS.BOOKATHERAPIST} element={<BookingPage />} />
 
           <Route
-            path="/signup"
+            path={PATHS.SIGNUPPAGE}
             element={
               <IsAnon>
                 {" "}
@@ -68,7 +73,7 @@ function App() {
           />
 
           <Route
-            path="/login"
+            path={PATHS.LOGINPAGE}
             element={
               <IsAnon>
                 {" "}
@@ -78,7 +83,7 @@ function App() {
           />
 
           <Route
-            path="/therapist/signup"
+            path={PATHS.THERAPISTSIGNUP}
             element={
               <IsAnon>
                 {" "}
@@ -87,7 +92,7 @@ function App() {
             }
           />
           <Route
-            path="/therapist/login"
+            path={PATHS.THERAPISTLOGIN}
             element={
               <IsAnon>
                 {" "}
@@ -96,7 +101,7 @@ function App() {
             }
           />
           <Route
-            path="/therapist/profile"
+            path={PATHS.THERAPISTLOGIN}
             element={
               <IsTherapist>
                 {" "}
@@ -105,7 +110,7 @@ function App() {
             }
           />
           <Route
-            path="/therapist/editProfile"
+            path={PATHS.EDITTHERAPISTPROFILE}
             element={
               <IsTherapist>
                 <TherapistEditProfile />{" "}
@@ -113,13 +118,13 @@ function App() {
             }
           />
 
-          <Route path="/find-a-therapist" element={<FindATherapistPage />} />
+          <Route path={PATHS.FINDATHERAPIST} element={<FindATherapistPage />} />
           <Route
-            path="/find-a-therapist/:therapistId"
+            path={PATHS.THERAPISTDETAILS}
             element={<TherapistDetailsPage />}
           />
 
-          <Route path="dashboard/profile/editUser" element={<EditUserPage />} />
+          <Route path={PATHS.EDITUSERPROFILE} element={<EditUserPage />} />
         </Routes>
       </FluentProvider>
     </div>
