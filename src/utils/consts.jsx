@@ -1,6 +1,6 @@
-export const ACCESS_TOKEN = "access_token";
+export const ACCESS_TOKEN = "authToken";
 
-const URL = process.env.REACT_APP_SERVER_URL;
+const URL = import.meta.env.REACT_APP_SERVER_URL;
 export const SERVER_URL = URL ? `{URL}` : `http://localhost:5005`;
 
 export const USER_ROLE = ["User", "Therapist"];
