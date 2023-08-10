@@ -17,7 +17,7 @@
   margin: 0 auto;
   font-weight: 500;
   opacity: 1;
-  animation: fadeOutAndIn 12s infinite;
+  animation: fadeInAndOut 8s ease-in-out infinite;
 }
 
 .inhale {
@@ -26,7 +26,7 @@
   bottom: 150px;
   width: 80%;
   opacity: 0;
-  animation: fadeOutAndIn 12s infinite;
+  animation: fadeOutAndIn 8s ease-in-out infinite;
 }
 
 .anim-circle {
@@ -89,5 +89,15 @@
   }
   50% {
     opacity: 0;
+  }
+}
+
+@keyframes fadeInAndOut {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
   }
 }
