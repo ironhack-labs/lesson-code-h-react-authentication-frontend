@@ -18,7 +18,7 @@ function AiTherapistPage() {
   const handlePrompt = (e) => setPrompt(e.target.value);
 
   const handlePostReq = async () => {
-    const url = "http://localhost:5005/ai-therapist/completions";
+    const url = "https://localhost:5005/ai-therapist/completions";
     const storedToken = localStorage.getItem("authToken");
     try {
       const response = await axios.post(
