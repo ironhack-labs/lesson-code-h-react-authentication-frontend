@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: space-around;
   color: var(--selected-purple, #857eb9);
-  position: absolute;
+  position: fixed;
   bottom: 0;
 }
 
