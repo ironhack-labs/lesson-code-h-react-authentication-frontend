@@ -18,7 +18,7 @@ function AiTherapistPage() {
   const handlePrompt = (e) => setPrompt(e.target.value);
 
   const handlePostReq = async () => {
-    const apiURL = process.env.VITE_LIVE_SERVER;
+    const apiURL = import.meta.env.VITE_LIVE_SERVER;
     const url = `${apiURL}/ai-therapist/completions`;
     const storedToken = localStorage.getItem("authToken");
     try {
