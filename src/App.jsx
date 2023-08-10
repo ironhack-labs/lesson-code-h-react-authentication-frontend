@@ -101,7 +101,7 @@ function App() {
             }
           />
           <Route
-            path={PATHS.THERAPISTLOGIN}
+            path={PATHS.THERAPISTPROFILE}
             element={
               <IsTherapist>
                 {" "}
