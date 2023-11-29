@@ -1,3 +1,9 @@
+import {
+  FluentProvider,
+  teamsLightTheme,
+  Button,
+  Input
+} from "@fluentui/react-components";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
@@ -14,30 +20,64 @@ import IsAnon from "./components/IsAnon";
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      <FluentProvider theme={teamsLightTheme}>
+        <Navbar />
 
-      <Routes>      
-        <Route path="/" element={<HomePage />} />
+        <Button appearance="primary">FLUENT UI FOR STEPHEN</Button>
 
-        <Route
-          path="/projects"
-          element={ <IsPrivate> <ProjectListPage /> </IsPrivate> } 
-        />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
 
-        <Route
-          path="/projects/:projectId"
-          element={ <IsPrivate> <ProjectDetailsPage /> </IsPrivate> }
-        />
+          <Route
+            path="/projects"
+            element={
+              <IsPrivate>
+                {" "}
+                <ProjectListPage />{" "}
+              </IsPrivate>
+            }
+          />
 
-        <Route
-          path="/projects/edit/:projectId"
-          element={ <IsPrivate> <EditProjectPage /> </IsPrivate> } 
-        />
-        
-        <Route path="/signup" element={<IsAnon> <SignupPage /> </IsAnon>} />
-        <Route path="/login" element={<IsAnon> <LoginPage /> </IsAnon>} />
+          <Route
+            path="/projects/:projectId"
+            element={
+              <IsPrivate>
+                {" "}
+                <ProjectDetailsPage />{" "}
+              </IsPrivate>
+            }
+          />
 
-      </Routes>
+          <Route
+            path="/projects/edit/:projectId"
+            element={
+              <IsPrivate>
+                {" "}
+                <EditProjectPage />{" "}
+              </IsPrivate>
+            }
+          />
+
+          <Route
+            path="/signup"
+            element={
+              <IsAnon>
+                {" "}
+                <SignupPage />{" "}
+              </IsAnon>
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <IsAnon>
+                {" "}
+                <LoginPage />{" "}
+              </IsAnon>
+            }
+          />
+        </Routes>
+      </FluentProvider>
     </div>
   );
 }
