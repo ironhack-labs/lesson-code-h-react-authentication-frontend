@@ -3,18 +3,18 @@ import axios from "axios";
 
 const API_URL = import.meta.env.VITE_LIVE_SERVER;
 
-const AuthContext = React.createContext();
+const TherapistAuthContext = React.createContext();
 
-function AuthProviderWrapper(props) {
+function TherapistAuthProviderWrapper(props) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [user, setUser] = useState(null);
+  const [therapist, setTherapist] = useState(null);
 
   const storeToken = (token) => {
     localStorage.setItem("authToken", token);
   };
 
-  const authenticateUser = () => {
+  const authenticateTherapist = () => {
     // Get the stored token from the localStorage
     const storedToken = localStorage.getItem("authToken");
 
@@ -22,7 +22,7 @@ function AuthProviderWrapper(props) {
     if (storedToken) {
       // We must send the JWT token in the request's "Authorization" Headers
       axios
-        .get(`${API_URL}/auth/verify`, {
+        .get(`${API_URL}/therapist/verify`, {
           headers: { Authorization: `Bearer ${storedToken}` },
         })
         .then((response) => {
@@ -31,20 +31,20 @@ function AuthProviderWrapper(props) {
           // Update state variables
           setIsLoggedIn(true);
           setIsLoading(false);
-          setUser(user);
+          setTherapist(therapist);
         })
         .catch((error) => {
           // If the server sends an error response (invalid token) ❌
           // Update state variables
           setIsLoggedIn(false);
           setIsLoading(false);
-          setUser(null);
+          setTherapist(null);
         });
     } else {
       // If the token is not available
       setIsLoggedIn(false);
       setIsLoading(false);
-      setUser(null);
+      setTherapist(null);
     }
   };
 
@@ -53,31 +53,31 @@ function AuthProviderWrapper(props) {
     localStorage.removeItem("authToken");
   };
 
-  const logOutUser = () => {
+  const logOutTherapist = () => {
     removeToken();
-    authenticateUser();
+    authenticateTherapist();
   };
 
   useEffect(() => {
     // Run the function after the initial render,
     // after the components in the App render for the first time.
-    authenticateUser();
+    authenticateTherapist();
   }, []);
 
   return (
-    <AuthContext.Provider
+    <TherapistAuthContext.Provider
       value={{
         isLoggedIn,
         isLoading,
-        user,
+        therapist,
         storeToken,
-        authenticateUser,
-        logOutUser,
+        authenticateTherapist,
+        logOutTherapist,
       }}
     >
       {props.children}
-    </AuthContext.Provider>
+    </TherapistAuthContext.Provider>
   );
 }
 
-export { AuthProviderWrapper, AuthContext };
+export { TherapistAuthProviderWrapper, TherapistAuthContext };

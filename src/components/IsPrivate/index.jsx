@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { AuthContext } from "../context/auth.context";
+import { AuthContext } from "../../context/auth.context";
 import { Navigate } from "react-router-dom";
 
 function IsPrivate({ children }) {
@@ -9,10 +9,10 @@ function IsPrivate({ children }) {
   if (isLoading) return <p>Loading ...</p>;
 
   if (!isLoggedIn) {
-  // If the user is not logged in ❌
-    return <Navigate to="/login" />;
+    // If the user is not logged in ❌
+    return <Navigate to="/" />;
   } else {
-  // If the user is logged in, allow to see the page ✅
+    // If the user is logged in, allow to see the page ✅
     return children;
   }
 }
