@@ -1,0 +1,29 @@
+.checkin1 {
+  width: 95vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.hide-it {
+  color: #b5b0d8;
+}
+
+.luna-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  width: 300px;
+}
+
+.luna-mood {
+  object-fit: cover;
+}
+
+.mood-button-container {
+  width: 95vw;
+  display: flex;
+  justify-content: space-around;
+}
