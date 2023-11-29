@@ -1,0 +1,100 @@
+.user-profile-page {
+  background-color: none;
+  width: 95vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-profile-page-1 {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.user-profile-page-2 {
+  width: 100%;
+  height: 30%;
+  display: flex;
+}
+
+.user-profile-page-2-1 {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.profile-photo {
+  width: 80%;
+  border: 4px solid #413b6c;
+  border-radius: 50%;
+  background-color: #464071;
+}
+
+.user-profile-page-3 {
+  background-color: #464071;
+  width: 100%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.user-profile-page-4 {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #464071;
+}
+
+.user-profile-page-5 {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mood-card {
+  height: 28%;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20%;
+  background: #eee;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.card-1 {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #464071;
+  font-weight: 700;
+}
+
+.card-2 {
+  height: 70%;
+}
+
+.graphImg {
+  border-radius: 5%;
+}

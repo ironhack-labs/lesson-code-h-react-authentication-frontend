@@ -1,0 +1,60 @@
+.breath {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.breath-1 {
+  height: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-weight: 800;
+}
+
+.breath-2 {
+  width: 95vw;
+  height: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.breath-card {
+  height: 28%;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20%;
+  background: #eee;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.card-1 {
+  width: 60%;
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #464071;
+  font-weight: 700;
+}
+
+.card-2 {
+  height: 70%;
+}
+
+.mini-luna {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  padding-top: 4%;
+  height: 80%;
+}

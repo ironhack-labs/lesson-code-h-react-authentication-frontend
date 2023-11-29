@@ -1,0 +1,122 @@
+.dashboard-user-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 90vh;
+  width: 95vw;
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard-box-1 {
+  height: 10%;
+  width: 70vw;
+  overflow: hidden;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.dashboard-box-2 {
+  width: 317px;
+  color: var(--selected-purple, #857eb9);
+  padding: 8px;
+  width: 350px;
+  height: 200px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* Shadow 2 */
+  box-shadow: 4px 4px 22px 4px rgba(0, 0, 0, 0.1);
+}
+.dashboard-box-3 {
+  width: 350px;
+  height: 200px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: var(--selected-purple, #857eb9);
+  box-shadow: 4px 4px 22px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.quote {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  height: 60%;
+  color: #fff;
+  text-align: center;
+  font-family: Helvetica;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.author {
+  width: 70%;
+  color: var(--white, #fff);
+  text-align: center;
+  font-family: Helvetica;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120.49%;
+}
+
+.dashboard-box-4 {
+  padding: 8px;
+  width: 350px;
+  height: 200px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: var(--background-purple, #b5b0d8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* Shadow 2 */
+  box-shadow: 4px 4px 22px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-box-4-1 {
+  padding-top: 10px;
+  height: 10%;
+  width: 100%;
+  font-size: 1.5em;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-box-4-2 {
+  height: 60%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-box-4-3 {
+  padding: 10px;
+  height: 30%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  font-weight: 400;
+  text-align: justify;
+}
