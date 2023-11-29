@@ -1,40 +1,43 @@
 import { useState } from "react";
 import axios from "axios";
 
-const API_URL = "http://localhost:5005";
+const API_URL = import.meta.env.VITE_LIVE_SERVER;
 
-function AddProject(props) {
+function AddTask(props) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    const requestBody = { title, description };
+
+    // We need the project id when creating the new task
+    const { projectId } = props;
+    // Create an object representing the body of the POST request
+    const requestBody = { title, description, projectId };
 
     // Get the token from the localStorage
-    const storedToken = localStorage.getItem('authToken');
+    const storedToken = localStorage.getItem("authToken");
 
     // Send the token through the request "Authorization" Headers
     axios
-      .post(
-        `${API_URL}/api/projects`,
-        requestBody,
-        { headers: { Authorization: `Bearer ${storedToken}` } }
-      )
+      .post(`${API_URL}/api/tasks`, requestBody, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
       .then((response) => {
-        // Reset the state
+        // Reset the state to clear the inputs
         setTitle("");
         setDescription("");
-        props.refreshProjects();
+
+        // Invoke the callback function coming through the props
+        // from the ProjectDetailsPage, to refresh the project details
+        props.refreshProject();
       })
       .catch((error) => console.log(error));
   };
 
-
   return (
-    <div className="AddProject">
-      <h3>Add Project</h3>
+    <div className="AddTask">
+      <h3>Add New Task</h3>
 
       <form onSubmit={handleSubmit}>
         <label>Title:</label>
@@ -53,10 +56,10 @@ function AddProject(props) {
           onChange={(e) => setDescription(e.target.value)}
         />
 
-        <button type="submit">Submit</button>
+        <button type="submit">Add Task</button>
       </form>
     </div>
   );
 }
 
-export default AddProject;
+export default AddTask;

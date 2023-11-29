@@ -1,18 +1,28 @@
+import {
+  Button,
+  Input,
+  Toast,
+  Label,
+  Text,
+  Title1,
+  Link as UILink,
+} from "@fluentui/react-components";
 import { useState, useContext } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../context/auth.context";
+import { TherapistAuthContext } from "../../context/therapistAuth.context";
 
-const API_URL = "http://localhost:5005";
+const API_URL = import.meta.env.VITE_LIVE_SERVER;
 
-function LoginPage(props) {
+function TherapistLoginPage(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
 
   const navigate = useNavigate();
 
-  const { storeToken, authenticateUser } = useContext(AuthContext);
+  const { storeToken, authenticateTherapist } =
+    useContext(TherapistAuthContext);
 
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
@@ -22,13 +32,13 @@ function LoginPage(props) {
     const requestBody = { email, password };
 
     axios
-      .post(`${API_URL}/auth/login`, requestBody)
+      .post(`${API_URL}/therapist/login`, requestBody)
       .then((response) => {
         console.log("JWT token", response.data.authToken);
 
         storeToken(response.data.authToken);
-        authenticateUser();
-        navigate("/");
+        authenticateTherapist();
+        navigate("/therapist/dashboard");
       })
       .catch((error) => {
         const errorDescription = error.response.data.message;
@@ -38,28 +48,31 @@ function LoginPage(props) {
 
   return (
     <div className="LoginPage">
-      <h1>Login</h1>
+      <Title1>Therapist Login</Title1>
 
       <form onSubmit={handleLoginSubmit}>
-        <label>Email:</label>
-        <input type="email" name="email" value={email} onChange={handleEmail} />
+        <Label>Email:</Label>
+        <Input type="email" name="email" value={email} onChange={handleEmail} />
 
-        <label>Password:</label>
-        <input
+        <Label>Password:</Label>
+        <Input
           type="password"
           name="password"
           value={password}
           onChange={handlePassword}
         />
 
-        <button type="submit">Login</button>
+        <Button type="submit">Login</Button>
       </form>
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
+      {errorMessage && <Toast className="error-message">{errorMessage}</Toast>}
 
-      <p>Don't have an account yet?</p>
-      <Link to={"/signup"}> Sign Up</Link>
+      <Text>Don't have an account yet?</Text>
+      <Link to={"/therapist/signup"}>
+        {" "}
+        <UILink>Register</UILink>
+      </Link>
     </div>
   );
 }
 
-export default LoginPage;
+export default TherapistLoginPage;

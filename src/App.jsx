@@ -1,3 +1,9 @@
+import {
+  FluentProvider,
+  teamsLightTheme,
+  Button,
+  Input,
+} from "@fluentui/react-components";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
@@ -10,34 +16,100 @@ import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import IsPrivate from "./components/IsPrivate";
 import IsAnon from "./components/IsAnon";
+import IsTherapist from "./components/IsTherapist";
+import TherapistLoginPage from "./pages/TherapistLogin";
+import TherapistSignupPage from "./pages/TherapistSignUp";
+import TherapistDashboard from "./pages/TherapistDashboard";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      <FluentProvider theme={teamsLightTheme}>
+        <Navbar />
 
-      <Routes>      
-        <Route path="/" element={<HomePage />} />
+        <Button appearance="primary">FLUENT UI FOR STEPHEN</Button>
 
-        <Route
-          path="/projects"
-          element={ <IsPrivate> <ProjectListPage /> </IsPrivate> } 
-        />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
 
-        <Route
-          path="/projects/:projectId"
-          element={ <IsPrivate> <ProjectDetailsPage /> </IsPrivate> }
-        />
+          <Route
+            path="/projects"
+            element={
+              <IsPrivate>
+                {" "}
+                <ProjectListPage />{" "}
+              </IsPrivate>
+            }
+          />
 
-        <Route
-          path="/projects/edit/:projectId"
-          element={ <IsPrivate> <EditProjectPage /> </IsPrivate> } 
-        />
-        
-        <Route path="/signup" element={<IsAnon> <SignupPage /> </IsAnon>} />
-        <Route path="/login" element={<IsAnon> <LoginPage /> </IsAnon>} />
+          <Route
+            path="/projects/:projectId"
+            element={
+              <IsPrivate>
+                {" "}
+                <ProjectDetailsPage />{" "}
+              </IsPrivate>
+            }
+          />
 
-      </Routes>
+          <Route
+            path="/projects/edit/:projectId"
+            element={
+              <IsPrivate>
+                {" "}
+                <EditProjectPage />{" "}
+              </IsPrivate>
+            }
+          />
+
+          <Route
+            path="/signup"
+            element={
+              <IsAnon>
+                {" "}
+                <SignupPage />{" "}
+              </IsAnon>
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <IsAnon>
+                {" "}
+                <LoginPage />{" "}
+              </IsAnon>
+            }
+          />
+
+          <Route
+            path="/therapist/signup"
+            element={
+              <IsAnon>
+                {" "}
+                <TherapistSignupPage />{" "}
+              </IsAnon>
+            }
+          />
+          <Route
+            path="/therapist/login"
+            element={
+              <IsAnon>
+                {" "}
+                <TherapistLoginPage />{" "}
+              </IsAnon>
+            }
+          />
+          <Route
+            path="/therapist/dashboard"
+            element={
+              <IsTherapist>
+                {" "}
+                <TherapistDashboard />{" "}
+              </IsTherapist>
+            }
+          />
+        </Routes>
+      </FluentProvider>
     </div>
   );
 }
